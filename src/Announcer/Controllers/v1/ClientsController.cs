@@ -5,7 +5,6 @@ using Announcer.Helpers.Extensions;
 using Announcer.Models.v1;
 using Announcer.Services.Communication;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,7 +17,6 @@ namespace Announcer.Controllers.v1
     /// <summary>
     /// Client Api Controller v1
     /// </summary>
-    [Authorize(Policy = "RequireAdministratorRole")]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]

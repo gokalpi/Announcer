@@ -7,7 +7,6 @@ using Announcer.Services.v1;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -54,18 +53,16 @@ namespace Announcer
 
             services.AddDatabaseServices(Configuration.GetConnectionString("DefaultConnection"), _currentEnvironment.EnvironmentName);
 
-            services.AddIdentity();
+            services.AddSignalR();
 
-            services.AddJwtAuthentication(Configuration);
+            services.AddIdentity();
 
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("Administrators"));
                 options.AddPolicy("RequireUserRole", policy => policy.RequireRole("Users"));
             });
-
-            services.AddSignalR();
-
+            
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());

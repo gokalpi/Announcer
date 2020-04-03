@@ -41,8 +41,6 @@ namespace Announcer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient();
-
             services.AddRazorPages()
                     .AddRazorPagesOptions(options =>
             {
@@ -62,11 +60,8 @@ namespace Announcer
                 options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("Administrators"));
                 options.AddPolicy("RequireUserRole", policy => policy.RequireRole("Users"));
             });
-            
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            });
+
+            services.AddCorsPolicy();
 
             services.AddVersioning();
 
@@ -96,21 +91,20 @@ namespace Announcer
                 app.UseHsts();
             }
 
-            app.UseCors(options => options.AllowAnyOrigin());
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseResponseTimeMiddleware();
             app.UseCustomExceptionMiddleware();
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseVersionedSwagger(provider);
-
             app.UseRouting();
+
+            app.UseCorsPolicy();
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseVersionedSwagger(provider);
 
             app.UseEndpoints(endpoints =>
             {

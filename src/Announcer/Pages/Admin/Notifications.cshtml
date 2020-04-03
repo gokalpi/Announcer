@@ -1,0 +1,148 @@
+﻿@page
+@model NotificationsModel
+@{
+    ViewData["Title"] = "Mesajlar";
+}
+
+@section Header
+{
+    <environment include="Development">
+        <link href="~/lib/datatables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    </environment>
+}
+
+<div class="main">
+    <!-- Page -->
+    <div class="page">
+        <!-- Page Body -->
+        <div class="page-body">
+            <!-- Page Header -->
+            <div class="page-header border-bottom d-flex justify-content-between py-4 py-lg-6 px-6 px-lg-8">
+                <h2 class="font-bold">Mesajlar</h2>
+            </div>
+            <!-- Page Header -->
+            <!-- Page Content-->
+            <div class="page-content p-lg-8">
+                <!-- Card -->
+                <div class="card">
+                    <!-- Card Header -->
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <div class="form-group mb-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text border-0"><i class="las la-search la-lg"></i></div>
+                                    </div>
+                                    <input class="form-control form-control-sm" type="search" placeholder="Ara" id="search">
+                                </div>
+                            </div>
+                            <div class="form-group form-inline mb-0">
+                                <label for="status" class="mr-4">Durum:</label>
+                                <select id="status" class="custom-select custom-select-sm">
+                                    <option value="">Hepsi</option>
+                                    <option value="1">Aktif</option>
+                                    <option value="0">Silindi</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="displayAddModal()"><i class="las la-plus"></i> Yeni Mesaj</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Header -->
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <table id="notifications" class="stripe" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Mesaj No</th>
+                                    <th>Mesaj İçeriği</th>
+                                    <th>Gönderim Tarihi</th>
+                                    <th>Gönderen</th>
+                                    <th>Alıcı Grup</th>
+                                    <th>Alıcı İstemci</th>
+                                    <th>Durum</th>
+                                    <th class="text-center">Aksiyon</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!-- Card Body -->
+                </div>
+                <!-- Card -->
+            </div>
+            <!-- Page Content -->
+        </div>
+        <!-- Page Body -->
+    </div>
+    <!-- Page -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <form id="add-edit-form" action="javascript:void(0);">
+                <input type="hidden" id="notification-id" name="notification-id" value="" />
+                <div class="modal-header px-4">
+                    <h5 class="modal-title" id="modal-title">Yeni Mesaj</h5>
+                </div>
+                <div class="modal-body px-4">
+                    <div class="row mb-2">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="notification-content">Mesaj İçeriği</label>
+                                <textarea class="form-control" id="notification-content" name="notification-content" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="notification-sender">Gönderen</label>
+                                <input class="form-control" type="text" id="notification-sender" name="notification-sender" value="" required />
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="notification-sent-time">Gönderim Zamanı</label>
+                                <input class="form-control" type="datetime" id="notification-sent-time" name="notification-sent-time" value="" required />
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="notification-group">Alıcı Grup</label>
+                                <input class="form-control" type="text" id="notification-group" name="notification-group" value="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="notification-recipient">Alıcı İstemci</label>
+                                <input class="form-control" type="text" id="notification-recipient" name="notification-recipient" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer px-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="las la-ban mr-1"></i> İptal</button>
+                    <button type="button" class="btn btn-primary" id="modal-save-button" onclick="save()"><i class="las la-save"></i> Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <environment include="Development">
+        <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>
+        <script src="~/js/admin/notifications-service.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/js/admin/notifications-service.min.js"></script>
+    </environment>
+}

@@ -1,0 +1,75 @@
+﻿@using Announcer.Models.v1;
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <ul class="nav navbar-nav flex-row flex-xl-column flex-grow-1 justify-content-between justify-content-xl-center py-3 py-lg-0">
+        <!-- Invisible item to center nav vertically -->
+        <li class="nav-item d-none d-xl-block flex-xl-grow-1">
+        </li>
+
+        @if (User.IsInRole("Administrators"))
+        {
+            <!-- Groups -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" asp-page="/Admin/Groups" title="Gruplar">
+                    <i class="las la-user-friends"></i>
+                </a>
+            </li>
+
+            <!-- Clients -->
+            <li class="nav-item mt-xl-9 d-xl-block">
+                <a class="nav-link position-relative p-0 py-xl-3" asp-page="/Admin/Clients" title="İstemciler">
+                    <i class="las la-desktop"></i>
+                </a>
+            </li>
+
+            <!-- Group Members -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" asp-page="/Admin/GroupMembers" title="Grup Üyeleri">
+                    <i class="las la-clone"></i>
+                    <div class="badge badge-dot badge-primary badge-bottom-center"></div>
+                </a>
+            </li>
+
+            <!-- Notifications -->
+            <li class="nav-item mt-xl-9">
+                <a class="nav-link position-relative p-0 py-xl-3" asp-page="/Admin/Notifications" title="Mesajlar">
+                    <i class="las la-comments"></i>
+                    <div class="badge badge-dot badge-primary badge-bottom-center"></div>
+                </a>
+            </li>
+        }
+
+        <!-- Invisible item to center nav vertically -->
+        <li class="nav-item d-none d-xl-block flex-xl-grow-1">
+        </li>
+
+        <!-- Settings -->
+        <li class="nav-item mt-xl-9">
+            <a class="nav-link position-relative p-0 py-xl-3" asp-area="Identity" asp-page="/Account/Manage/Index" title="Profil">
+                <i class="las la-cog"></i>
+            </a>
+        </li>
+
+        <!-- Logout -->
+        <li class="nav-item mt-xl-9">
+            <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                <a id="logout" onclick="document.getElementById('logoutForm').submit();" class="nav-link position-relative p-0 py-xl-3"><i class="las la-sign-out-alt"></i></a>
+            </form>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav flex-row flex-xl-column flex-grow-1 justify-content-between justify-content-xl-center py-3 py-lg-0">
+        <li class="nav-item mt-xl-9">
+            <a class="nav-link position-relative p-0 py-xl-3" asp-area="Identity" asp-page="/Account/Login" title="Giriş">
+                <i class="las la-sign-in-alt"></i>
+            </a>
+        </li>
+    </ul>
+}

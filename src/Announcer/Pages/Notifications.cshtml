@@ -1,0 +1,65 @@
+﻿@page
+@model NotificationsModel
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Announcer - Mesajlar</title>
+
+    <link href="/css/notifications.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+            <div id="brand" class="brand">
+                <img src="/img/announcer_logo.svg" title="Announcer">
+            </div>
+            <div id="clock" class="clock"></div>
+        </header>
+
+        <main>
+            <div id="notifications-body" class="container-fluid">
+                <h2>Mesajlar</h2>
+                <table id="notifications-table" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="30%">Grup</th>
+                            <th width="70%">Mesaj</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notifications"></tbody>
+                </table>
+            </div>
+            <div id="error-body" style="display: none">
+                <h2>Hata</h2>
+                <h4 id="error-message"></h4>
+            </div>
+        </main>
+
+        <footer>
+            <div id="copyright">Announcer &copy; 2020 Ibrahim Gokalp</div>
+            <div id="update-info">
+                <b>Son güncelleme:</b>
+                <span id="last-update"></span>
+            </div>
+            <div id="client-info">
+                <b>İstemci:</b>
+                <span id="client-id"></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/lib/signalr/signalr.min.js"></script>
+    <script>
+        var clientIP = '@Model.ClientIP';
+    </script>
+    <script src="/js/notifications.js"></script>
+</body>
+</html>

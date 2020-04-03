@@ -83,12 +83,17 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <form id="add-edit-form" action="javascript:void(0);">
-                <input type="hidden" id="client-id" name="client-id" value="" />
                 <div class="modal-header px-4">
                     <h5 class="modal-title" id="modal-title">Yeni İstemci</h5>
                 </div>
                 <div class="modal-body px-4">
                     <div class="row mb-2">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="client-id">İstemci No</label>
+                                <input class="form-control" type="text" id="client-id" name="client-id" value="" readonly required />
+                            </div>
+                        </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label" for="client-name">İstemci Adı</label>

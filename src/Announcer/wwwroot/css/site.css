@@ -648,7 +648,8 @@ h6,
 
     .form-control:disabled,
     .form-control[readonly] {
-        background-color: #edeef6;
+        background-color: rgba(174, 191, 210, 0.8);
+        color: #353131;
     }
 
 .input-group-text {

@@ -5,6 +5,7 @@ using Announcer.Helpers.Extensions;
 using Announcer.Models.v1;
 using Announcer.Services.Communication;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,6 +21,7 @@ namespace Announcer.Controllers.v1
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize(Policy = "RequireAdministratorRole")]
     public class GroupsController : ControllerBase
     {
         private readonly IGroupService _service;

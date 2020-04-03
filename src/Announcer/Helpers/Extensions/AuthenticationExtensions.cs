@@ -38,10 +38,10 @@ namespace Announcer.Helpers.Extensions
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
                         ValidateAudience = true,
-                        ValidateLifetime = true,
+                        ValidateIssuer = true,
                         ValidateIssuerSigningKey = true,
+                        ValidateLifetime = true,
                         ValidIssuer = config["Jwt:Issuer"],
                         ValidAudience = config["Jwt:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"])),

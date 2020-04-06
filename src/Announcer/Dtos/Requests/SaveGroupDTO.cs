@@ -12,11 +12,13 @@ namespace Announcer.Dtos.Requests
         /// Name of group
         /// </summary>
         [Required]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         /// <summary>
         /// Description of group
         /// </summary>
+        [MaxLength(255)]
         public string Description { get; set; }
     }
 }

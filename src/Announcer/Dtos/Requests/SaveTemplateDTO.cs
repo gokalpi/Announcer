@@ -12,6 +12,7 @@ namespace Announcer.Dtos.Requests
         /// Name of group
         /// </summary>
         [Required]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         /// <summary>

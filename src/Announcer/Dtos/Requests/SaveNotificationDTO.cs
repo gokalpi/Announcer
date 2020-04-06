@@ -18,16 +18,19 @@ namespace Announcer.Dtos.Requests
         /// Sender Id of notification
         /// </summary>
         [Required]
+        [MaxLength(50)]
         public string SenderId { get; set; }
 
         /// <summary>
         /// Group Id of notification
         /// </summary>
+        [MaxLength(50)]
         public string GroupId { get; set; }
 
         /// <summary>
         /// Recipient Id of notification
         /// </summary>
+        [MaxLength(50)]
         public string RecipientId { get; set; }
     }
 }

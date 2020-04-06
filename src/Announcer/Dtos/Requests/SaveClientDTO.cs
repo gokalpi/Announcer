@@ -12,22 +12,26 @@ namespace Announcer.Dtos.Requests
         /// Client Id
         /// </summary>
         [Required]
+        [MaxLength(50)]
         public string Id { get; set; }
 
         /// <summary>
         /// Name of client
         /// </summary>
         [Required]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         /// <summary>
         /// Description of client
         /// </summary>
+        [MaxLength(255)]
         public string Description { get; set; }
 
         /// <summary>
         /// Template Id of client
         /// </summary>
+        [MaxLength(50)]
         public string TemplateId { get; set; }
     }
 }

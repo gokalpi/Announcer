@@ -53,7 +53,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/v1/Clients/Group
+        ///     POST /api/Clients/Group
         ///     {
         ///         "groupId": "35bf23d9-835e-4af9-987a-9cde811b35f5",
         ///         "clientId": "10.1.1.1"
@@ -87,7 +87,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/v1/Clients
+        ///     POST /api/Clients
         ///     {
         ///         "id": "10.1.1.1",
         ///         "name": "Sample Client",
@@ -131,7 +131,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/v1/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Client Id to be deleted</param>
         /// <returns>Deleted Client</returns>
@@ -167,7 +167,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Clients?Page=3&amp;PageSize=3&amp;IsDetailRequired=true
+        ///     GET /api/Clients?Page=3&amp;PageSize=3&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
         /// <returns>All Clients with paging support</returns>
@@ -205,7 +205,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Client with specified id</returns>
@@ -243,7 +243,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Groups
+        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Groups
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Groups of Client with specified id</returns>
@@ -279,7 +279,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Notifications
+        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Notifications
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Notifications of Client with specified id</returns>
@@ -342,7 +342,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/v1/Clients/10.1.1.1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE /api/Clients/10.1.1.1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Client Id to be deleted</param>
         /// <param name="groupId"></param>
@@ -377,7 +377,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /api/v1/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     PUT /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
         ///     {
         ///         "clientName": "Client 2",
         ///         "description": "Client 2",

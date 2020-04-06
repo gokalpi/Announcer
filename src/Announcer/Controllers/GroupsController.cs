@@ -47,7 +47,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/v1/Groups
+        ///     POST /api/Groups
         ///     {
         ///         "name": "Sample Group",
         ///         "description": "Sample Group Description"
@@ -90,7 +90,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/v1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Group Id to be deleted</param>
         /// <returns>Deleted Group</returns>
@@ -126,7 +126,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Groups?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
+        ///     GET /api/Groups?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
         /// <returns>All Groups with paging support</returns>
@@ -164,7 +164,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     GET /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Group id</param>
         /// <returns>Group with specified id</returns>
@@ -227,7 +227,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /api/v1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     PUT /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         ///     {
         ///         "groupName": "Group 2",
         ///         "description": "Group 2"

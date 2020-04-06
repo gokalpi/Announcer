@@ -47,7 +47,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/v1/Notifications
+        ///     POST /api/Notifications
         ///     {
         ///         "content": "Sample Group Notification 1",
         ///         "sentTime": "2020-03-06T12:50:00.000Z",
@@ -93,7 +93,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/v1/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE /api/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Notification Id to be deleted</param>
         /// <returns>Deleted Notification</returns>
@@ -129,7 +129,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Notifications?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
+        ///     GET /api/Notifications?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
         /// <returns>All Notifications with paging support</returns>
@@ -167,7 +167,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/v1/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     GET /api/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Notification id</param>
         /// <returns>Notification with specified id</returns>
@@ -230,7 +230,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /api/v1/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     PUT /api/Notifications/35bf23d9-835e-4af9-987a-9cde811b35f5
         ///     {
         ///         "content": "Sample Group Notification 1",
         ///         "sentTime": "2020-03-06T12:50:00.000Z",

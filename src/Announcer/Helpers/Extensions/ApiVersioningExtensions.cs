@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Announcer.Helpers.Extensions
 {
@@ -11,6 +13,15 @@ namespace Announcer.Helpers.Extensions
                 {
                     // reporting api versions will return the headers "api-supported-versions" and "api-deprecated-versions"
                     options.ReportApiVersions = true;
+
+                    // Specify the default API Version as 1.0
+                    options.DefaultApiVersion = new ApiVersion(1, 0);
+
+                    // If the client hasn't specified the API version in the request, use the default API version number
+                    options.AssumeDefaultVersionWhenUnspecified = true;
+
+                    // Supporting multiple versioning scheme
+                    options.ApiVersionReader = ApiVersionReader.Combine(new HeaderApiVersionReader("X-version"), new QueryStringApiVersionReader("api-version"));
                 });
 
             services.AddVersionedApiExplorer(

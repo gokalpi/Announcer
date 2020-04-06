@@ -19,7 +19,7 @@ namespace Announcer.Controllers
     /// Client Api Controller v1
     /// </summary>
     [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     [Authorize(Policy = "RequireAdministratorRole")]
     public class ClientsController : ControllerBase

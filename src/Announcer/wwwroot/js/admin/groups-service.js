@@ -1,4 +1,4 @@
-﻿var uri = "/api/v1/Groups";
+﻿var uri = "/api/Groups";
 var groupsTable;
 var operationType;
 

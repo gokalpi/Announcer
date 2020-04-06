@@ -1,4 +1,4 @@
-﻿var uri = "/api/v1/Notifications";
+﻿var uri = "/api/Notifications";
 var notificationsTable;
 var operationType;
 

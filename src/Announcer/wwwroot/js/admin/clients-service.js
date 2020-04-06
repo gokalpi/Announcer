@@ -1,4 +1,4 @@
-﻿var uri = "/api/v1/Clients";
+﻿var uri = "/api/Clients";
 var clientsTable;
 var operationType;
 

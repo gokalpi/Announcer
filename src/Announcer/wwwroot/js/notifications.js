@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var uri = "/api/v1/Clients";
+var uri = "/api/Clients";
 var clientId;
 var groups;
 

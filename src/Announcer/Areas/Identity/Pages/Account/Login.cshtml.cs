@@ -1,4 +1,4 @@
-﻿using Announcer.Models.v1;
+﻿using Announcer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

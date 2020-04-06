@@ -1,4 +1,4 @@
-﻿using Announcer.Models.v1;
+﻿using Announcer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Announcer.Dtos.Responses.v1
+namespace Announcer.Dtos.Responses
 {
     /// <summary>
     /// Notification DTO definition

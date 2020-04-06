@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Announcer.Dtos.Responses.v1
+namespace Announcer.Dtos.Responses
 {
     /// <summary>
     /// Group DTO definition

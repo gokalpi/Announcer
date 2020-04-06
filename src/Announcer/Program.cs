@@ -1,5 +1,5 @@
-using Announcer.Data.Contexts.v1;
-using Announcer.Models.v1;
+using Announcer.Data.Contexts;
+using Announcer.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;

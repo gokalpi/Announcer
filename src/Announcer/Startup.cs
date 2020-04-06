@@ -1,9 +1,9 @@
-using Announcer.Contracts.v1;
-using Announcer.Data.Repositories.v1;
+using Announcer.Contracts;
+using Announcer.Data.Repositories;
 using Announcer.Data.UnitOfWork;
 using Announcer.Helpers.Extensions;
 using Announcer.Hubs;
-using Announcer.Services.v1;
+using Announcer.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

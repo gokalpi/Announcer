@@ -1,6 +1,6 @@
-﻿using Announcer.Contracts.v1;
-using Announcer.Data.Contexts.v1;
-using Announcer.Data.Repositories.v1;
+﻿using Announcer.Contracts;
+using Announcer.Data.Contexts;
+using Announcer.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

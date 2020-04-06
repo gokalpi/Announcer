@@ -1,4 +1,4 @@
-﻿using Announcer.Contracts.v1;
+﻿using Announcer.Contracts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

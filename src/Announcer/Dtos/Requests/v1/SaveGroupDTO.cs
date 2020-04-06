@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Announcer.Dtos.Requests.v1
+namespace Announcer.Dtos.Requests
 {
     /// <summary>
     /// Group DTO definition used for create and update operations

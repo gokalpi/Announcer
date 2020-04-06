@@ -1,4 +1,4 @@
-﻿using Announcer.Data.Contexts.v1;
+﻿using Announcer.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

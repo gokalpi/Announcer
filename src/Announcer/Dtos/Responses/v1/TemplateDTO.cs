@@ -1,4 +1,4 @@
-﻿namespace Announcer.Dtos.Responses.v1
+﻿namespace Announcer.Dtos.Responses
 {
     /// <summary>
     /// Template DTO definition

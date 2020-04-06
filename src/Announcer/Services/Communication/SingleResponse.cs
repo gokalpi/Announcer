@@ -1,4 +1,4 @@
-﻿using Announcer.Contracts.v1;
+﻿using Announcer.Contracts;
 
 namespace Announcer.Services.Communication
 {

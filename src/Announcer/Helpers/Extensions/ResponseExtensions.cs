@@ -1,4 +1,4 @@
-﻿using Announcer.Contracts.v1;
+﻿using Announcer.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

@@ -1,5 +1,5 @@
-﻿using Announcer.Data.Contexts.v1;
-using Announcer.Models.v1;
+﻿using Announcer.Data.Contexts;
+using Announcer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;

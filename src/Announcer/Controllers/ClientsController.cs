@@ -16,12 +16,12 @@ using System.Threading.Tasks;
 namespace Announcer.Controllers
 {
     /// <summary>
-    /// Client Api Controller v1
+    /// Client Api Controller
     /// </summary>
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "RequireAdministratorRole")]
+    //[Authorize(Policy = "RequireAdministratorRole")]
     public class ClientsController : ControllerBase
     {
         private readonly IClientService _clientService;
@@ -53,7 +53,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/Clients/Group
+        ///     POST api/Clients/10.1.1.1/Group
         ///     {
         ///         "groupId": "35bf23d9-835e-4af9-987a-9cde811b35f5",
         ///         "clientId": "10.1.1.1"
@@ -67,9 +67,9 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddToGroup([FromBody] SaveGroupMemberDTO groupMemberDTO)
+        public async Task<IActionResult> AddToGroupAsync([FromBody] SaveGroupMemberDTO groupMemberDTO)
         {
-            _logger.LogDebug($"'{nameof(AddToGroup)}' has been invoked");
+            _logger.LogDebug($"'{nameof(AddToGroupAsync)}' has been invoked");
 
             if (groupMemberDTO == null)
                 return BadRequest("Group Member info is null");
@@ -87,42 +87,45 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/Clients
+        ///     POST api/Clients
         ///     {
         ///         "id": "10.1.1.1",
         ///         "name": "Sample Client",
-        ///         "description": "Sample Client Description"
+        ///         "description": "Sample Client Description",
+        ///         "templateId": null
         ///     }
         /// </remarks>
         /// <param name="clientDTO">Client to be created</param>
-        /// <param name="version">Version of controller</param>
         /// <returns>A newly created Client</returns>
         /// <response code="201">Returns the newly created client</response>
         /// <response code="400">If the item is null</response>
         /// <response code="500">If an exception happens</response>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ClientDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> CreateClient([FromBody] SaveClientDTO clientDTO, ApiVersion version = default)
+        public async Task<ActionResult<ClientDTO>> CreateClientAsync([FromBody] SaveClientDTO clientDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(CreateClient));
+            _logger.LogDebug("'{0}' has been invoked", nameof(CreateClientAsync));
 
-            if (clientDTO == null)
-                return BadRequest("Client info is null");
+            if (clientDTO == null) return BadRequest("Client info is null");
 
-            var response = await _clientService.AddAsync(_mapper.Map<Client>(clientDTO));
+            // Check if client exists
+            var getResult = await _clientService.GetAsync(c => c.Id == clientDTO.Id && !c.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model != null)
+                return BadRequest($"A client with id {clientDTO.Id} exists");
 
-            _logger.LogDebug($"Client with id {response.Model.Id} created.");
+            // Create a new client
+            var addResult = await _clientService.AddAsync(_mapper.Map<Client>(clientDTO));
+            if (!addResult.IsSuccessful)
+                return BadRequest(getResult.Message);
 
-            var result = new SingleResponse<ClientDTO>()
-            {
-                IsSuccessful = response.IsSuccessful,
-                Message = response.Message,
-                Model = _mapper.Map<ClientDTO>(response.Model)
-            };
+            _logger.LogDebug($"Client with id {addResult.Model.Id} created.");
 
-            return CreatedAtAction("GetClientById", new { id = result.Model.Id, version = version.ToString() }, result);
+            return CreatedAtRoute("GetClient", new { id = addResult.Model.Id },
+                _mapper.Map<ClientDTO>(addResult.Model));
         }
 
         /// <summary>
@@ -131,7 +134,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE api/Clients/10.1.1.1
         /// </remarks>
         /// <param name="id">Client Id to be deleted</param>
         /// <returns>Deleted Client</returns>
@@ -144,21 +147,27 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteClient(string id)
+        public async Task<IActionResult> DeleteClientAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteClient));
+            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteClientAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Client id is null or empty");
 
-            if (!await _clientService.ExistsAsync(c => c.Id == id))
+            // Check if client exists
+            var getResult = await _clientService.GetAsync(c => c.Id == id && !c.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model == null)
                 return NotFound($"Client with id {id} not found.");
 
-            var response = await _clientService.DeleteAsync(id);
+            // Delete client
+            var deleteResult = await _clientService.DeleteAsync(id);
 
-            _logger.LogDebug($"Client with id {id} deleted.");
+            if (deleteResult.IsSuccessful)
+                _logger.LogDebug($"Client with id {id} deleted.");
 
-            return response.ToHttpResponse();
+            return deleteResult.ToHttpResponse();
         }
 
         /// <summary>
@@ -167,7 +176,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Clients?Page=3&amp;PageSize=3&amp;IsDetailRequired=true
+        ///     GET api/Clients?Page=3&amp;PageSize=3&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
         /// <returns>All Clients with paging support</returns>
@@ -176,23 +185,25 @@ namespace Announcer.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllClients([FromQuery] QueryParams queryParams)
+        public async Task<IActionResult> GetAllClientsAsync([FromQuery] QueryParams queryParams)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllClients));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllClientsAsync));
 
-            var includeString = queryParams.IsDetailRequired ? "Groups.Group, NotificationsSent, NotificationsReceived" : "";
+            var includeString = queryParams.IsDetailRequired ? 
+                "Groups.Group, NotificationsSent, NotificationsReceived" : "";
 
-            var response = await _clientService.ListAsync(includeString: includeString, page: queryParams.Page, pageSize: queryParams.PageSize);
+            var response = await _clientService.ListAsync(includeString: includeString,
+                page: queryParams.Page, pageSize: queryParams.PageSize);
 
-            _logger.LogDebug($"Found {response.TotalItems} clients. Listing page {queryParams.Page} of {response.PageCount}");
+            _logger.LogDebug($"Found {response.TotalItems} clients. Listing page {queryParams.Page} of {response.TotalPages}");
 
             var result = new PagedResponse<ClientDTO>()
             {
                 IsSuccessful = response.IsSuccessful,
                 Message = response.Message,
-                PageNumber = queryParams.Page ?? 0,
-                PageSize = queryParams.PageSize ?? 0,
                 TotalItems = response.TotalItems,
+                PageSize = queryParams.PageSize ?? 0,
+                CurrentPage = queryParams.Page ?? 0,
                 Model = _mapper.Map<IEnumerable<ClientDTO>>(response.Model)
             };
 
@@ -205,25 +216,26 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     GET api/Clients/10.1.1.1
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Client with specified id</returns>
         /// <response code="200">Returns Client with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetClient")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetClientById(string id)
+        public async Task<IActionResult> GetClientByIdAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetClientById));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetClientByIdAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Client id is null or empty");
 
-            var response = await _clientService.GetAsync(g => g.Id == id, "Groups.Group, NotificationsSent, NotificationsReceived");
+            var response = await _clientService.GetAsync(g => g.Id == id,
+                "Groups.Group, NotificationsSent, NotificationsReceived");
 
             _logger.LogDebug($"Found client with {id}");
 
@@ -243,7 +255,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Groups
+        ///     GET api/Clients/10.1.1.1/Groups
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Groups of Client with specified id</returns>
@@ -254,9 +266,9 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetGroupsByClient(string id)
+        public async Task<IActionResult> GetGroupsByClientAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupsByClient));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupsByClientAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Client id is null or empty");
@@ -279,7 +291,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5/Notifications
+        ///     GET api/Clients/10.1.1.1/Notifications
         /// </remarks>
         /// <param name="id">Client id</param>
         /// <returns>Notifications of Client with specified id</returns>
@@ -290,9 +302,9 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetNotificationsByClient(string id)
+        public async Task<IActionResult> GetNotificationsByClientAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetNotificationsByClient));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetNotificationsByClientAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Client id is null or empty");
@@ -321,9 +333,9 @@ namespace Announcer.Controllers
         [HttpPost("LoadTable")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> LoadTable([FromBody] DTParameters dtParameters)
+        public async Task<IActionResult> LoadTableAsync([FromBody] DTParameters dtParameters)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(LoadTable));
+            _logger.LogDebug("'{0}' has been invoked", nameof(LoadTableAsync));
 
             var dtResult = await _clientService.LoadDatatableAsync(dtParameters);
 
@@ -342,7 +354,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/Clients/10.1.1.1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE api/Clients/10.1.1.1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Client Id to be deleted</param>
         /// <param name="groupId"></param>
@@ -354,9 +366,9 @@ namespace Announcer.Controllers
         [ProducesResponseType(typeof(ClientDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> RemoveFromGroup(string id, string groupId)
+        public async Task<IActionResult> RemoveFromGroupAsync(string id, string groupId)
         {
-            _logger.LogDebug($"'{nameof(RemoveFromGroup)}' has been invoked");
+            _logger.LogDebug($"'{nameof(RemoveFromGroupAsync)}' has been invoked");
 
             if (string.IsNullOrEmpty(id))
                 return BadRequest("Client info is null");
@@ -377,8 +389,9 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /api/Clients/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     PUT api/Clients/10.1.1.1
         ///     {
+        ///         "id": "10.1.1.1",
         ///         "clientName": "Client 2",
         ///         "description": "Client 2",
         ///         "templateId": "35bf23d9-835e-4af9-987a-9cde811b35f5"
@@ -394,14 +407,25 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateClient(string id, [FromBody] SaveClientDTO clientDTO)
+        public async Task<IActionResult> UpdateClientAsync(string id, [FromBody] SaveClientDTO clientDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateClient));
+            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateClientAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Client id is null or empty");
 
-            var response = await _clientService.UpdateAsync(_mapper.Map<Client>(clientDTO));
+            // Check if client exists
+            var getResult = await _clientService.GetAsync(c => c.Id == id && !c.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model == null)
+                return NotFound($"Group with id {id} not found.");
+
+            // Update client
+            var oldClient = getResult.Model;
+            _mapper.Map(clientDTO, oldClient);
+
+            var response = await _clientService.UpdateAsync(oldClient);
 
             _logger.LogDebug($"Client with id {id} updated.");
 

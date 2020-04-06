@@ -16,12 +16,12 @@ using System.Threading.Tasks;
 namespace Announcer.Controllers
 {
     /// <summary>
-    /// Group Api Controller v1
+    /// Group Api Controller
     /// </summary>
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "RequireAdministratorRole")]
+    //[Authorize(Policy = "RequireAdministratorRole")]
     public class GroupsController : ControllerBase
     {
         private readonly IGroupService _service;
@@ -47,14 +47,13 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST /api/Groups
+        ///     POST api/Groups
         ///     {
         ///         "name": "Sample Group",
         ///         "description": "Sample Group Description"
         ///     }
         /// </remarks>
         /// <param name="groupDTO">Group to be created</param>
-        /// <param name="version">Version of controller</param>
         /// <returns>A newly created Group</returns>
         /// <response code="201">Returns the newly created group</response>
         /// <response code="400">If the item is null</response>
@@ -63,25 +62,28 @@ namespace Announcer.Controllers
         [ProducesResponseType(typeof(GroupDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<GroupDTO>> CreateGroup([FromBody] SaveGroupDTO groupDTO, ApiVersion version = default)
+        public async Task<ActionResult<GroupDTO>> CreateGroupAsync([FromBody] SaveGroupDTO groupDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(CreateGroup));
+            _logger.LogDebug("'{0}' has been invoked", nameof(CreateGroupAsync));
 
-            if (groupDTO == null)
-                return BadRequest("Group info is null");
+            if (groupDTO == null) return BadRequest("Group info is null");
 
-            var response = await _service.AddAsync(_mapper.Map<Group>(groupDTO));
+            // Check if group exists
+            var getResult = await _service.GetAsync(g => g.Name == groupDTO.Name && !g.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model != null)
+                return BadRequest($"A group with name {groupDTO.Name} exists");
 
-            _logger.LogDebug($"Group with id {response.Model.Id} created.");
+            // Create a new group
+            var addResult = await _service.AddAsync(_mapper.Map<Group>(groupDTO));
+            if (!addResult.IsSuccessful)
+                return BadRequest(getResult.Message);
 
-            var result = new SingleResponse<GroupDTO>()
-            {
-                IsSuccessful = response.IsSuccessful,
-                Message = response.Message,
-                Model = _mapper.Map<GroupDTO>(response.Model)
-            };
+            _logger.LogDebug($"Group '{addResult.Model.Name}' with id '{addResult.Model.Id}' created.");
 
-            return CreatedAtAction("GetGroupById", new { id = result.Model.Id, version = version.ToString() }, result);
+            return CreatedAtRoute("GetGroup", new { id = addResult.Model.Id },
+                _mapper.Map<GroupDTO>(addResult.Model));
         }
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Group Id to be deleted</param>
         /// <returns>Deleted Group</returns>
@@ -103,21 +105,27 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteGroup(string id)
+        public async Task<IActionResult> DeleteGroupAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteGroup));
+            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteGroupAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Group id is null or empty");
 
-            if (!await _service.ExistsAsync(g => g.Id == id))
+            // Check if group exists
+            var getResult = await _service.GetAsync(g => g.Id == id && !g.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model == null)
                 return NotFound($"Group with id {id} not found.");
 
-            var response = await _service.DeleteAsync(id);
+            // Delete group
+            var deleteResult = await _service.DeleteAsync(getResult.Model);
 
-            _logger.LogDebug($"Group with id {id} deleted.");
+            if (deleteResult.IsSuccessful)
+                _logger.LogDebug($"Group with id {id} deleted.");
 
-            return response.ToHttpResponse();
+            return deleteResult.ToHttpResponse();
         }
 
         /// <summary>
@@ -126,7 +134,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Groups?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
+        ///     GET api/Groups?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
         /// <returns>All Groups with paging support</returns>
@@ -135,23 +143,61 @@ namespace Announcer.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllGroups([FromQuery] QueryParams queryParams)
+        public async Task<IActionResult> GetAllGroupsAsync([FromQuery] QueryParams queryParams)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllGroups));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllGroupsAsync));
 
-            var includeString = queryParams.IsDetailRequired ? "Clients.Client, NotificationsReceived" : "";
+            var includeString = queryParams.IsDetailRequired ?
+                "Clients.Client, NotificationsReceived" : "";
 
-            var response = await _service.ListAsync(includeString: includeString, page: queryParams.Page, pageSize: queryParams.PageSize);
+            var response = await _service.ListAsync(includeString: includeString,
+                page: queryParams.Page, pageSize: queryParams.PageSize);
 
-            _logger.LogDebug($"Found {response.TotalItems} groups. Listing page {queryParams.Page} of {response.PageCount}");
+            _logger.LogDebug($"Found {response.TotalItems} groups. Listing page {queryParams.Page} of {response.TotalPages}");
 
             var result = new PagedResponse<GroupDTO>()
             {
                 IsSuccessful = response.IsSuccessful,
                 Message = response.Message,
-                PageNumber = queryParams.Page ?? 0,
-                PageSize = queryParams.PageSize ?? 0,
                 TotalItems = response.TotalItems,
+                PageSize = queryParams.PageSize ?? 0,
+                CurrentPage = queryParams.Page ?? 0,
+                Model = _mapper.Map<IEnumerable<GroupDTO>>(response.Model)
+            };
+
+            return result.ToHttpResponse();
+        }
+
+        /// <summary>
+        /// Gets groups of a Client with specified id.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5/Clients
+        /// </remarks>
+        /// <param name="id">Client id</param>
+        /// <returns>Groups of Client with specified id</returns>
+        /// <response code="200">Returns groups of Client with specified id</response>
+        /// <response code="400">If the id is null</response>
+        /// <response code="500">If an exception happens</response>
+        [HttpGet("{id}/Clients")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetClientsByGroupAsync(string id)
+        {
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetClientsByGroupAsync));
+
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Group id is null or empty");
+
+            var response = await _service.ListGroupsByClientAsync(id);
+
+            var result = new ListResponse<GroupDTO>()
+            {
+                IsSuccessful = response.IsSuccessful,
+                Message = response.Message,
                 Model = _mapper.Map<IEnumerable<GroupDTO>>(response.Model)
             };
 
@@ -164,25 +210,26 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     GET api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         /// </remarks>
         /// <param name="id">Group id</param>
         /// <returns>Group with specified id</returns>
         /// <response code="200">Returns Group with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetGroup")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetGroupById(string id)
+        public async Task<IActionResult> GetGroupByIdAsync(string id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupById));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupByIdAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Group id is null or empty");
 
-            var response = await _service.GetAsync(g => g.Id == id, "Clients.Client, NotificationsReceived");
+            var response = await _service.GetAsync(g => g.Id == id,
+                "Clients.Client, NotificationsReceived");
 
             _logger.LogDebug($"Found group with {id}");
 
@@ -206,9 +253,9 @@ namespace Announcer.Controllers
         [HttpPost("LoadTable")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> LoadTable([FromBody] DTParameters dtParameters)
+        public async Task<IActionResult> LoadTableAsync([FromBody] DTParameters dtParameters)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(LoadTable));
+            _logger.LogDebug("'{0}' has been invoked", nameof(LoadTableAsync));
 
             var dtResult = await _service.LoadDatatableAsync(dtParameters);
 
@@ -227,7 +274,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     PUT api/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
         ///     {
         ///         "groupName": "Group 2",
         ///         "description": "Group 2"
@@ -240,20 +287,28 @@ namespace Announcer.Controllers
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateGroup(string id, [FromBody] SaveGroupDTO groupDTO)
+        public async Task<IActionResult> UpdateGroupAsync(string id, [FromBody] SaveGroupDTO groupDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateGroup));
+            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateGroupAsync));
 
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Group id is null or empty");
 
-            var group = _mapper.Map<Group>(groupDTO);
-            group.Id = id;
+            // Check if group exists
+            var getResult = await _service.GetAsync(g => g.Id == id && !g.IsDeleted);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model == null)
+                return NotFound($"Group with id {id} not found.");
 
-            var response = await _service.UpdateAsync(group);
+            // Update group
+            var oldGroup = getResult.Model; 
+            _mapper.Map(groupDTO, oldGroup);
+
+            var response = await _service.UpdateAsync(oldGroup);
 
             _logger.LogDebug($"Group with id {id} updated.");
 

@@ -52,6 +52,29 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
+        public async Task<IListResponse<Client>> ListClientsByGroupAsync(string groupId)
+        {
+            _logger.LogDebug($"'{nameof(ListClientsByGroupAsync)}' has been invoked");
+
+            var response = new ListResponse<Client>();
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(groupId))
+                    throw new ArgumentNullException(nameof(groupId));
+
+                response.Model = await _repository.ListAsync(predicate: c => c.Groups.Any(gm => gm.GroupId == groupId), includeString: "", orderBy: o => o.OrderBy(g => g.Name));
+                response.Message = $"Found {response.Model.Count()} clients of Group {groupId}";
+            }
+            catch (Exception ex)
+            {
+                response.SetError(ex, nameof(ListClientsByGroupAsync), _logger);
+            }
+
+            return response;
+        }
+
+        /// <inheritdoc/>
         public override async Task<DTResult<Client>> LoadDatatableAsync(DTParameters dtParameters)
         {
             var searchBy = dtParameters.Search?.Value;

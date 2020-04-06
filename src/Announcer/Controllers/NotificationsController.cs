@@ -146,15 +146,15 @@ namespace Announcer.Controllers
 
             var response = await _service.ListAsync(includeString: includeString, page: queryParams.Page, pageSize: queryParams.PageSize);
 
-            _logger.LogDebug($"Found {response.TotalItems} notifications. Listing page {queryParams.Page} of {response.PageCount}");
+            _logger.LogDebug($"Found {response.TotalItems} notifications. Listing page {queryParams.Page} of {response.TotalPages}");
 
             var result = new PagedResponse<NotificationDTO>()
             {
                 IsSuccessful = response.IsSuccessful,
                 Message = response.Message,
-                PageNumber = queryParams.Page ?? 0,
-                PageSize = queryParams.PageSize ?? 0,
                 TotalItems = response.TotalItems,
+                PageSize = queryParams.PageSize ?? 0,
+                CurrentPage = queryParams.Page ?? 0,
                 Model = _mapper.Map<IEnumerable<NotificationDTO>>(response.Model)
             };
 

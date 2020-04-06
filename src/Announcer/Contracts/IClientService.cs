@@ -17,6 +17,13 @@ namespace Announcer.Contracts
         Task<IResponse> AddToGroupAsync(GroupMember groupMember);
 
         /// <summary>
+        /// Lists all clients of group
+        /// </summary>
+        /// <param name="groupId">Group id</param>
+        /// <returns>List response of all clients of group</returns>
+        Task<IListResponse<Client>> ListClientsByGroupAsync(string groupId);
+
+        /// <summary>
         /// Removes a client from a group
         /// </summary>
         /// <param name="groupMember">Group membership of client</param>

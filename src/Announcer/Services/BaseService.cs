@@ -169,11 +169,11 @@ namespace Announcer.Services
 
             try
             {
-                response.PageNumber = page ?? 0;
-                response.PageSize = pageSize ?? 0;
                 response.TotalItems = await _repository.CountAsync();
-                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.PageNumber} of {response.PageCount}";
-                response.Model = await _repository.ListAllAsync(page, pageSize);
+                response.PageSize = pageSize ?? 0;
+                response.CurrentPage = page ?? 0;
+                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.CurrentPage} of {response.TotalPages}";
+                response.Model = await _repository.ListAllAsync(response.CurrentPage, response.PageSize);
             }
             catch (Exception ex)
             {
@@ -192,11 +192,11 @@ namespace Announcer.Services
 
             try
             {
-                response.PageNumber = page ?? 0;
-                response.PageSize = pageSize ?? 0;
                 response.TotalItems = await _repository.CountAsync();
-                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.PageNumber} of {response.PageCount}";
-                response.Model = await _repository.ListAsync(predicate, page, pageSize);
+                response.PageSize = pageSize ?? 0;
+                response.CurrentPage = page ?? 0;
+                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.CurrentPage} of {response.TotalPages}";
+                response.Model = await _repository.ListAsync(predicate, response.CurrentPage, response.PageSize);
             }
             catch (Exception ex)
             {
@@ -221,11 +221,11 @@ namespace Announcer.Services
 
             try
             {
-                response.PageNumber = page ?? 0;
-                response.PageSize = pageSize ?? 0;
                 response.TotalItems = await _repository.CountAsync();
-                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.PageNumber} of {response.PageCount}";
-                response.Model = await _repository.ListAsync(predicate, groupBy, orderBy, includeString, page, pageSize, disableTracking);
+                response.PageSize = pageSize ?? 0;
+                response.CurrentPage = page ?? 0;
+                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.CurrentPage} of {response.TotalPages}";
+                response.Model = await _repository.ListAsync(predicate, groupBy, orderBy, includeString, response.CurrentPage, response.PageSize, disableTracking);
             }
             catch (Exception ex)
             {
@@ -250,11 +250,11 @@ namespace Announcer.Services
 
             try
             {
-                response.PageNumber = page ?? 0;
-                response.PageSize = pageSize ?? 0;
                 response.TotalItems = await _repository.CountAsync();
-                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.PageNumber} of {response.PageCount}";
-                response.Model = await _repository.ListAsync(predicate, groupBy, orderBy, includes, page, pageSize, disableTracking);
+                response.PageSize = pageSize ?? 0;
+                response.CurrentPage = page ?? 0;
+                response.Message = $"Found {response.TotalItems} {typeof(T)}. Listing page {response.CurrentPage} of {response.TotalPages}";
+                response.Model = await _repository.ListAsync(predicate, groupBy, orderBy, includes, response.CurrentPage, response.PageSize, disableTracking);
             }
             catch (Exception ex)
             {

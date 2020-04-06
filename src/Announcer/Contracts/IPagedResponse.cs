@@ -14,6 +14,6 @@
         /// <summary>
         /// Number of pages
         /// </summary>
-        int PageCount { get; }
+        int TotalPages { get; }
     }
 }

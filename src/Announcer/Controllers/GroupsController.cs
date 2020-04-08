@@ -257,15 +257,22 @@ namespace Announcer.Controllers
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(LoadTableAsync));
 
-            var dtResult = await _service.LoadDatatableAsync(dtParameters);
-
-            return Ok(new
+            try
             {
-                draw = dtResult.Draw,
-                recordsTotal = dtResult.RecordsTotal,
-                recordsFiltered = dtResult.RecordsFiltered,
-                data = _mapper.Map<IEnumerable<GroupDTO>>(dtResult.Data)
-            });
+                var dtResult = await _service.LoadDatatableAsync(dtParameters);
+
+                return Ok(new
+                {
+                    draw = dtResult.Draw,
+                    recordsTotal = dtResult.RecordsTotal,
+                    recordsFiltered = dtResult.RecordsFiltered,
+                    data = _mapper.Map<IEnumerable<GroupDTO>>(dtResult.Data)
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>

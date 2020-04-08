@@ -1,4 +1,6 @@
-﻿var uri = "/api/Notifications";
+﻿var notificationsUri = "/api/Notifications";
+var clientsUri = "/api/Clients";
+var groupsUri = "/api/Groups";
 var notificationsTable;
 var operationType;
 
@@ -19,7 +21,7 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         ajax: {
-            url: `${uri}/LoadTable`,
+            url: `${notificationsUri}/LoadTable`,
             type: "POST",
             contentType: "application/json",
             dataType: "json",
@@ -31,7 +33,18 @@ $(document).ready(function () {
         columns: [
             { data: "id", visible: false },
             { data: "content" },
-            { data: "sentTime" },
+            {
+                data: "sentTime",
+                render: function (data, type, row) {
+                    if (type === 'display' || type === 'filter') {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                        var sentTime = new Intl.DateTimeFormat('tr-TR', options).format(new Date(data));
+                        return sentTime;
+                    }
+                    else
+                        return data;
+                }
+            },
             { data: "sender" },
             { data: "group" },
             { data: "recipient" },
@@ -80,13 +93,49 @@ function displayAddModal() {
     $("#modal-form").modal('show');
 }
 
+function getClients() {
+    fetch(clientsUri, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(`${response.status} status code received.`);
+            }
+
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.isSuccessful) {
+                let clients = data.model;
+                var clientList = $("");
+                for (var i = 0; i < clients.length; i++) {
+
+                };
+
+                notificationId.value = client.id;
+                notificationContent.value = client.name;
+            }
+            else {
+                swal("Mesaj Okuma Hatası", data.message, "error");
+            }
+        })
+        .catch(error => {
+            console.error('Unable to get notification.', error);
+            swal("Mesaj Okuma Hatası", error, "error");
+        });
+}
+
 function displayEditModal(id) {
     operationType = "edit";
     $("#add-edit-form")[0].reset();
     $("#modal-title").text("Mesaj Güncelleme");
     $("#modal-save-button").html('<i class="las la-save"></i> Güncelle');
 
-    fetch(`${uri}/${id}`, {
+    fetch(`${notificationsUri}/${id}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -134,7 +183,7 @@ function save() {
     };
 
     if (operationType === "edit") {
-        fetch(`${uri}/${notification.id}`, {
+        fetch(`${notificationsUri}/${notification.id}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
@@ -165,7 +214,7 @@ function save() {
             });
     }
     else {
-        fetch(uri, {
+        fetch(notificationsUri, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -209,7 +258,7 @@ function deleteNotification(id) {
     })
         .then((willDelete) => {
             if (willDelete) {
-                fetch(`${uri}/${id}`, {
+                fetch(`${notificationsUri}/${id}`, {
                     method: 'DELETE'
                 })
                     .then(function (response) {

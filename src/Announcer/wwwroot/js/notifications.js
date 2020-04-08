@@ -1,12 +1,14 @@
 ﻿"use strict";
 
-var uri = "/api/Clients";
+var hubUri = "/NotificationHub";
+var clientUri = "/api/Clients";
 var clientId;
 var groups;
+var infoColumnCount = 0;
 
 // Start the connection.
 var connection = new signalR.HubConnectionBuilder()
-    .withUrl("/NotificationHub")
+    .withUrl(hubUri)
     .configureLogging(signalR.LogLevel.Error)
     .build();
 
@@ -14,7 +16,7 @@ async function start() {
     try {
         await connection.start();
         if (connection.state === signalR.HubConnectionState.Connected) {
-            console.log("Connected to hub");
+            console.log(`Connected to hub at ${hubUri}`);
 
             // Join groups
             if (groups) {
@@ -49,90 +51,155 @@ connection.on("Send", function (notification) {
     displayNotification(notification.group, notification.message);
 });
 
-function displayClock() {
-    var date = new Date();
-    var hour = date.getHours().toString().padStart(2, '0');
-    var min = date.getMinutes().toString().padStart(2, '0');
-    var sec = date.getSeconds().toString().padStart(2, '0');
+async function joinGroup(groupName) {
+    if (groupName === "") return;
 
-    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec;
+    try {
+        await connection.invoke("AddToGroup", groupName);
+        console.log(`Joined to "${groupName}" group`);
+    }
+    catch (e) {
+        displayError(e);
+    }
+}
+
+async function leaveGroup(groupName) {
+    if (groupName === "") return;
+
+    try {
+        await connection.invoke("RemoveFromGroup", groupName);
+        console.log(`Left "${groupName}" group`);
+    }
+    catch (e) {
+        displayError(e);
+    }
+}
+
+function displayClock() {
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    let clock = document.getElementById("clock");
+    if (clock) {
+        clock.innerText = new Intl.DateTimeFormat('tr-TR', options).format(new Date());
+    }
 
     var t = setTimeout(function () {
         displayClock()
     }, 1000);
 }
 
-function displayLastUpdate() {
-    var date = new Date();
-    var hour = date.getHours().toString().padStart(2, '0');
-    var min = date.getMinutes().toString().padStart(2, '0');
-    var sec = date.getSeconds().toString().padStart(2, '0');
-    var msec = date.getMilliseconds().toString().padStart(2, '0');
+function displayError(error) {
+    var errorBody = document.getElementById("error-pane");
+    var errorMessage = document.getElementById("error-message");
 
-    document.getElementById("last-update").innerText = `${date.toLocaleDateString()} ${hour}:${min}:${sec}.${msec}`;
+    errorMessage.innerText = error;
+
+    errorBody.style = "";
+
+    //var t = setTimeout(function () {
+    //    errorBody.style = "display: none";
+    //}, 10000);
 }
 
-function getClientId() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+function displayHeaders(header) {
+    if (!header) return;
 
-    var clientId = urlParams.get("id");
+    var pageHeader = document.getElementById("page-header");
+    if (pageHeader) {
+        infoColumnCount = header.columns.length > 0 ? header.columns.length - 1 : 0;
 
-    if (!clientId || clientId === "") {
-        clientId = clientIP;
+        var c = document.createDocumentFragment();
+
+        header.columns.forEach(column => {
+            let e = document.createElement("div");
+            e.innerHTML = column;
+            c.appendChild(e);
+        });
+
+        pageHeader.appendChild(c);
     }
+}
 
-    if (clientId && clientId !== "") {
-        document.getElementById("client-id").innerText = clientId;
+function displayLastUpdate() {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    let lastUpdate = document.getElementById("last-update");
+    if (lastUpdate) {
+        lastUpdate.innerText = new Intl.DateTimeFormat('tr-TR', options).format(new Date());
     }
-    else {
-        displayError("İstemci bilgisi bulunamadı");
-    }
-
-    return clientId;
 }
 
 function displayNotification(group, content) {
+    var contentJson = JSON.parse(content);
     var groupSlug = slugify(group);
-    var groupRow = document.getElementById(`notification-${groupSlug}-row`);
+    var groupRowId = `group-${groupSlug}`;
+    var groupRow = document.getElementById(groupRowId);
 
     if (groupRow) {
-        var tdCurrentGroup = document.getElementById(`group-${groupSlug}`);
-        var tdCurrentContent = document.getElementById(`content-${groupSlug}`);
+        var groupColumns = groupRow.getElementsByClassName("group-col");
 
-        tdCurrentGroup.setAttribute("id", `group-${groupSlug}`);
+        for (var i = 0; i < groupColumns.length; i++) {
+            if (contentJson.columns[i]) {
+                groupColumns[i].innerHTML = contentJson.columns[i];
+            }
+        }
 
-        tdCurrentGroup.innerHTML = group;
-        tdCurrentContent.innerHTML = content;
+        groupRow.setAttribute("class", "active");
     }
     else {
         var notifications = document.getElementById('notifications');
+        if (notifications) {
+            groupRow = document.createElement('div');
+            groupRow.setAttribute("id", groupRowId);
 
-        let tr = document.createElement('tr'),
-            tdGroup = document.createElement('td'),
-            tdContent = document.createElement('td');
+            var c = document.createDocumentFragment();
 
-        tr.setAttribute("id", `notification-${groupSlug}-row`);
-        tr.setAttribute("class", "hvr-buzz-out");
+            var divGroupName = document.createElement("div");
+            divGroupName.className = "group-name";
+            divGroupName.innerHTML = group;
+            c.appendChild(divGroupName);
 
-        tdGroup.setAttribute("id", `group-${groupSlug}`);
-        tdGroup.innerHTML = group;
+            for (var j = 0; j < infoColumnCount; j++) {
+                var divCol = document.createElement('div');
+                divCol.className = "group-col";
+                if (contentJson.columns[j]) {
+                    divCol.innerHTML = contentJson.columns[j];
+                }
+                c.appendChild(divCol);
+            }
 
-        tdContent.setAttribute("id", `content-${groupSlug}`);
-        tdContent.innerHTML = content;
-
-        tr.appendChild(tdGroup);
-        tr.appendChild(tdContent);
-        notifications.appendChild(tr);
+            groupRow.appendChild(c);
+            notifications.appendChild(groupRow);
+        }
     }
 
-    displayLastUpdate();
+    if (groupRow) {
+        displayLastUpdate();
+    }
 }
 
-function getClientInfo(clientId) {
-    if (clientId === "") return;
+function getClientId() {
+    if (clientId && clientId.trim().length > 0) return clientId;
 
-    fetch(`${uri}/${clientId}`, {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    var clientId = urlParams.get("id");
+    if (!clientId || clientId.trim().length === 0)
+        clientId = clientIP;
+
+    if (clientId && clientId.trim().length > 0) {
+        clientId = clientId.trim();
+        document.getElementById("client-id").innerText = clientId;
+        return clientId;
+    }
+    else {
+        displayError("İstemci bilgisi bulunamadı");
+        return null;
+    }
+}
+
+function getClientInfo() {
+    if (!clientId) return;
+
+    fetch(`${clientUri}/${clientId}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -150,15 +217,20 @@ function getClientInfo(clientId) {
             if (data.isSuccessful) {
                 let clientInfo = data.model;
 
-                if (clientInfo.groups) {
-                    groups = clientInfo.groups.map(group => group.group).sort();
+                if (clientInfo.template) {
+                    let template = JSON.parse(clientInfo.template);
+                    displayHeaders(template.header);
 
-                    for (var i = 0; i < groups.length; i++) {
-                        displayNotification(groups[i], "");
+                    if (clientInfo.groups && clientInfo.groups.length > 0) {
+                        groups = clientInfo.groups.map(group => group.group).sort();
+
+                        for (var i = 0; i < groups.length; i++) {
+                            displayNotification(groups[i], '{ "columns": [ "", "" ] }');
+                        }
                     }
-                }
-                else {
-                    displayError("İstemcinin üye olduğu gruplar bulunamadı.");
+                    else {
+                        displayError("İstemcinin üye olduğu gruplar bulunamadı.");
+                    }
                 }
             }
             else {
@@ -173,7 +245,7 @@ function getClientInfo(clientId) {
 function getNotifications(clientId) {
     if (clientId === "") return;
 
-    fetch(`${uri}/${clientId}/Notifications`, {
+    fetch(`${clientUri}/${clientId}/Notifications`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -202,30 +274,6 @@ function getNotifications(clientId) {
         });
 }
 
-async function joinGroup(groupName) {
-    if (groupName === "") return;
-
-    try {
-        await connection.invoke("AddToGroup", groupName);
-        console.log(`Joined to "${groupName}" group`);
-    }
-    catch (e) {
-        displayError(e);
-    }
-}
-
-async function leaveGroup(groupName) {
-    if (groupName === "") return;
-
-    try {
-        await connection.invoke("RemoveFromGroup", groupName);
-        console.log(`Left "${groupName}" group`);
-    }
-    catch (e) {
-        displayError(e);
-    }
-}
-
 function slugify(text) {
     var trMap = { 'çÇ': 'c', 'ğĞ': 'g', 'şŞ': 's', 'üÜ': 'u', 'ıİ': 'i', 'öÖ': 'o' };
     for (var key in trMap) {
@@ -237,29 +285,14 @@ function slugify(text) {
         .toLowerCase();
 }
 
-function displayError(error) {
-    console.error(error);
-
-    var errorBody = document.getElementById("error-body");
-    var errorMessage = document.getElementById("error-message");
-
-    errorMessage.innerText = error;
-
-    errorBody.style = "";
-
-    var t = setTimeout(function () {
-        errorBody.style = "display: none";
-    }, 10000);
-}
-
-// Get client id
-clientId = getClientId();
-
 // Start displaying clock
 displayClock();
 
+// Set client id
+clientId = getClientId();
+
 // Get client info
-getClientInfo(clientId);
+getClientInfo();
 
 //getNotifications(clientId);
 

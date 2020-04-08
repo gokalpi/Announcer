@@ -39,13 +39,33 @@
                                     <input class="form-control form-control-sm" type="search" placeholder="Ara" id="search">
                                 </div>
                             </div>
-                            <div class="form-group form-inline mb-0">
-                                <label for="status" class="mr-4">Durum:</label>
-                                <select id="status" class="custom-select custom-select-sm">
-                                    <option value="">Hepsi</option>
-                                    <option value="1">Aktif</option>
-                                    <option value="0">Silindi</option>
-                                </select>
+                            <div class="d-flex justify-content-between">
+                                <div class="form-group form-inline mb-0">
+                                    <label for="sender" class="mr-4">Gönderen:</label>
+                                    <select id="sender" class="custom-select custom-select-sm">
+                                        <option value="">Hepsi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-inline ml-10 mb-0">
+                                    <label for="recipient" class="mr-4">Alıcı İstemci:</label>
+                                    <select id="recipient" class="custom-select custom-select-sm">
+                                        <option value="">Hepsi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-inline ml-10 mb-0">
+                                    <label for="recipientGroup" class="mr-4">Alıcı Grup:</label>
+                                    <select id="recipientGroup" class="custom-select custom-select-sm">
+                                        <option value="">Hepsi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-inline ml-10 mb-0">
+                                    <label for="status" class="mr-4">Durum:</label>
+                                    <select id="status" class="custom-select custom-select-sm">
+                                        <option value="">Hepsi</option>
+                                        <option value="1">Aktif</option>
+                                        <option value="0">Silindi</option>
+                                    </select>
+                                </div>
                             </div>
                             <div>
                                 <button type="button" class="btn btn-primary btn-sm" onclick="displayAddModal()"><i class="las la-plus"></i> Yeni Mesaj</button>

@@ -70,7 +70,7 @@ namespace Announcer.Services
                 orderAscendingDirection = true;
             }
 
-            var result = await _repository.ListAsync(includeString: "Clients.Client, NotificationsReceived");
+            var result = await _repository.ListAsync(includeString: "Clients, NotificationsReceived");
 
             if (!string.IsNullOrEmpty(searchBy))
             {

@@ -19,32 +19,24 @@
     <div class="layout">
         <header>
             <div id="brand" class="brand">
-                <img src="/img/announcer_logo.svg" title="Announcer">
+                <img src="~/img/saglik_bakanligi_logo.svg" />
             </div>
+            <div class="organization-name">Başakşehir Şehir Hastanesi</div>
             <div id="clock" class="clock"></div>
         </header>
 
         <main>
-            <div id="notifications-body" class="container-fluid">
-                <h2>Mesajlar</h2>
-                <table id="notifications-table" width="100%">
-                    <thead>
-                        <tr>
-                            <th width="30%">Grup</th>
-                            <th width="70%">Mesaj</th>
-                        </tr>
-                    </thead>
-                    <tbody id="notifications"></tbody>
-                </table>
-            </div>
-            <div id="error-body" style="display: none">
-                <h2>Hata</h2>
-                <h4 id="error-message"></h4>
+            <div id="notifications" class="notifications">
+                <div id="page-header" class="notifications-header"></div>
             </div>
         </main>
 
+        <div id="error-pane" class="error-pane" style="display: none">
+            <h3>Hata: <span id="error-message"></span></h3>
+        </div>
+
         <footer>
-            <div id="copyright">Announcer &copy; 2020 Ibrahim Gokalp</div>
+            <div id="copyright">Announcer &copy; 2020</div>
             <div id="update-info">
                 <b>Son güncelleme:</b>
                 <span id="last-update"></span>
@@ -58,7 +50,7 @@
 
     <script src="/lib/signalr/signalr.min.js"></script>
     <script>
-        var clientIP = '@Model.ClientIP';
+        var clientIP = "@Model.ClientIP";
     </script>
     <script src="/js/notifications.js"></script>
 </body>

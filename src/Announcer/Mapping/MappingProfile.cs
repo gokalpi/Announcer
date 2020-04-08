@@ -10,9 +10,19 @@ namespace Announcer.Mapping
         public MappingProfile()
         {
             CreateMap<Client, ClientDTO>()
+                .ForMember(dest => dest.GroupCount,
+                    opt => opt.MapFrom(src => src.Groups.Count))
+                .ForMember(dest => dest.NotificationsSentCount,
+                    opt => opt.MapFrom(src => src.NotificationsSent.Count))
+                .ForMember(dest => dest.NotificationsReceivedCount,
+                    opt => opt.MapFrom(src => src.NotificationsReceived.Count))
                 .ForMember(dest => dest.Template,
-                    opt => opt.MapFrom(src => src.Template.Name));
-            CreateMap<Group, GroupDTO>();
+                    opt => opt.MapFrom(src => src.Template.Content));
+            CreateMap<Group, GroupDTO>()
+                .ForMember(dest => dest.ClientCount,
+                    opt => opt.MapFrom(src => src.Clients.Count))
+                .ForMember(dest => dest.NotificationsReceivedCount,
+                    opt => opt.MapFrom(src => src.NotificationsReceived.Count));
             CreateMap<GroupMember, GroupMemberDTO>()
                 .ForMember(dest => dest.Group,
                     opt => opt.MapFrom(src => src.Group.Name))

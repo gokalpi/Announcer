@@ -34,6 +34,21 @@ namespace Announcer.Dtos.Responses
         public bool IsDeleted { get; set; }
 
         /// <summary>
+        /// Number of groups subscribed by Client
+        /// </summary>
+        public int GroupCount { get; set; }
+
+        /// <summary>
+        /// Number of notifications sent by client
+        /// </summary>
+        public int NotificationsSentCount { get; set; }
+
+        /// <summary>
+        /// Number of notifications received by client
+        /// </summary>
+        public int NotificationsReceivedCount { get; set; }
+
+        /// <summary>
         /// Groups client subscribed to
         /// </summary>
         public ICollection<GroupMemberDTO> Groups { get; set; }

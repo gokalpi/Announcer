@@ -30,11 +30,23 @@ $(document).ready(function () {
             { data: "name" },
             { data: "description" },
             {
-                data: null,
+                data: "clientCount",
                 orderable: false,
+                searchable: false,
+                className: "text-center"
+            },
+            {
+                data: "notificationsReceivedCount",
+                orderable: false,
+                searchable: false,
+                className: "text-center"
+            },
+            {
+                data: "isDeleted",
+                className: "text-center",
                 render: function (data, type, row) {
-                    var statusHTML = (data.isDeleted) ? `<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>` : `<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>`;
-                    return statusHTML;
+                    return (data) ? `<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>`
+                        : `<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>`;
                 }
             },
             {
@@ -51,7 +63,7 @@ $(document).ready(function () {
         ]
     });
 
-    $('#search').on('keyup change clear', function () {
+    $('#search').on('keyup change clear search', function () {
         if (groupsTable.search() !== this.value) {
             groupsTable.search(this.value);
             groupsTable.columns(3).search($('#status').val());
@@ -169,14 +181,9 @@ function save() {
                 return response.json();
             })
             .then(function (data) {
-                if (data.isSuccessful) {
-                    $("#add-edit-form")[0].reset();
-                    refreshDatatable();
-                    swal(`${group.name} adlı grup eklenmiştir.`, { icon: "success" });
-                }
-                else {
-                    swal("Grup Ekleme Hatası", data.message, "error");
-                }
+                $("#add-edit-form")[0].reset();
+                refreshDatatable();
+                swal(`${data.name} adlı grup eklenmiştir.`, { icon: "success" });
             })
             .catch(error => {
                 console.error('Unable to add group.', error);

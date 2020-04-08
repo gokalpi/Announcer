@@ -28,15 +28,31 @@ $(document).ready(function () {
         columns: [
             { data: "id" },
             { data: "name" },
+            { data: "description" },
             {
-                data: "description"
+                data: "groupCount",
+                orderable: false,
+                searchable: false,
+                className: "text-center"
             },
             {
-                data: null,
+                data: "notificationsSentCount",
                 orderable: false,
+                searchable: false,
+                className: "text-center"
+            },
+            {
+                data: "notificationsReceivedCount",
+                orderable: false,
+                searchable: false,
+                className: "text-center"
+            },
+            {
+                data: "isDeleted",
+                className: "text-center",
                 render: function (data, type, row) {
-                    var statusHTML = (data.isDeleted) ? `<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>` : `<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>`;
-                    return statusHTML;
+                    return (data) ? `<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>`
+                        : `<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>`;
                 }
             },
             {
@@ -53,7 +69,7 @@ $(document).ready(function () {
         ]
     });
 
-    $('#search').on('keyup change clear', function () {
+    $('#search').on('keyup change clear search', function () {
         if (clientsTable.search() !== this.value) {
             clientsTable.search(this.value);
             clientsTable.columns(3).search($('#status').val());
@@ -173,14 +189,9 @@ function save() {
                 return response.json();
             })
             .then(function (data) {
-                if (data.isSuccessful) {
-                    $("#add-edit-form")[0].reset();
-                    refreshDatatable();
-                    swal(`${client.name} adlı istemci eklenmiştir.`, { icon: "success" });
-                }
-                else {
-                    swal("İstemci Ekleme Hatası", data.message, "error");
-                }
+                $("#add-edit-form")[0].reset();
+                refreshDatatable();
+                swal(`${data.name} adlı istemci eklenmiştir.`, { icon: "success" });
             })
             .catch(error => {
                 console.error('Unable to add client.', error);

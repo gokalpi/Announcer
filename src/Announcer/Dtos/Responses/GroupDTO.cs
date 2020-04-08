@@ -29,14 +29,19 @@ namespace Announcer.Dtos.Responses
         public bool IsDeleted { get; set; }
 
         /// <summary>
+        /// Number of clients in group
+        /// </summary>
+        public int ClientCount { get; set; }
+
+        /// <summary>
+        /// Number of notifications received by group
+        /// </summary>
+        public int NotificationsReceivedCount { get; set; }
+
+        /// <summary>
         /// Clients of group
         /// </summary>
         public ICollection<GroupMemberDTO> Clients { get; set; }
-
-        /// <summary>
-        /// Notifications sent by client
-        /// </summary>
-        public ICollection<NotificationDTO> NotificationsSent { get; set; }
 
         /// <summary>
         /// Notifications received by client

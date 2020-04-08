@@ -350,7 +350,7 @@ namespace Announcer.Data.Contexts
         {
             return new List<Template>()
             {
-                new Template("9b5b4f26-1daf-4ed2-a833-3460654432d1", "Default Template", null)
+                new Template("9b5b4f26-1daf-4ed2-a833-3460654432d1", "Default Template", "{ \"header\": { \"columns\": [ \"Birim Adı\", \"Çağırılan Hasta\", \"Sonraki Hasta\" ] } }")
             };
         }
     }

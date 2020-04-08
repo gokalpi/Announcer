@@ -189,8 +189,8 @@ namespace Announcer.Controllers
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(GetAllClientsAsync));
 
-            var includeString = queryParams.IsDetailRequired ? 
-                "Groups.Group, NotificationsSent, NotificationsReceived" : "";
+            var includeString = queryParams.IsDetailRequired ?
+                "Template, Groups.Group, NotificationsSent, NotificationsReceived" : "";
 
             var response = await _clientService.ListAsync(includeString: includeString,
                 page: queryParams.Page, pageSize: queryParams.PageSize);
@@ -235,7 +235,7 @@ namespace Announcer.Controllers
                 return BadRequest("Client id is null or empty");
 
             var response = await _clientService.GetAsync(g => g.Id == id,
-                "Groups.Group, NotificationsSent, NotificationsReceived");
+                "Template, Groups.Group, NotificationsSent, NotificationsReceived");
 
             _logger.LogDebug($"Found client with {id}");
 
@@ -337,15 +337,22 @@ namespace Announcer.Controllers
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(LoadTableAsync));
 
-            var dtResult = await _clientService.LoadDatatableAsync(dtParameters);
-
-            return Ok(new
+            try
             {
-                draw = dtResult.Draw,
-                recordsTotal = dtResult.RecordsTotal,
-                recordsFiltered = dtResult.RecordsFiltered,
-                data = _mapper.Map<IEnumerable<ClientDTO>>(dtResult.Data)
-            });
+                var dtResult = await _clientService.LoadDatatableAsync(dtParameters);
+
+                return Ok(new
+                {
+                    draw = dtResult.Draw,
+                    recordsTotal = dtResult.RecordsTotal,
+                    recordsFiltered = dtResult.RecordsFiltered,
+                    data = _mapper.Map<IEnumerable<ClientDTO>>(dtResult.Data)
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>

@@ -269,6 +269,14 @@ namespace Announcer.Data.Contexts
                 new GroupMember("a5da5a6f-4627-4d0a-92fa-72b2b6f266d8", "32.136.41.245"),
                 new GroupMember("0eee704c-0321-41cf-b7ad-55a22892be2c", "215.182.79.194"),
                 new GroupMember("a5da5a6f-4627-4d0a-92fa-72b2b6f266d8", "182.173.77.191"),
+                new GroupMember("0eee704c-0321-41cf-b7ad-55a22892be2c", "136.206.138.34"),
+                new GroupMember("1ef7f6f0-7222-4481-9b8e-bc8de17469f0", "136.206.138.34"),
+                new GroupMember("58849348-6c24-46fb-bdb0-7d2f9b5bbff1", "136.206.138.34"),
+                new GroupMember("63341b5b-eec0-436c-9559-d65538d4bae7", "136.206.138.34"),
+                new GroupMember("8580913f-8e94-48bb-8daf-b8c1955a80fb", "136.206.138.34"),
+                new GroupMember("d4530752-c8d4-4a21-a409-c900548f4434", "136.206.138.34"),
+                new GroupMember("dc74c4e5-8bab-4062-8725-4ed642763cfd", "136.206.138.34"),
+                new GroupMember("f11b6017-7010-4a9e-924c-5f2d1a7b00ec", "136.206.138.34")
             };
         }
 

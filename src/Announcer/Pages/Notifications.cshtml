@@ -12,7 +12,12 @@
     <meta name="description" content="">
     <title>Announcer - Mesajlar</title>
 
-    <link href="/css/notifications.min.css" rel="stylesheet">
+    <environment include="Development">
+        <link href="~/css/notifications.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/notifications.min.css" rel="stylesheet" />
+    </environment>
 </head>
 
 <body>
@@ -27,13 +32,14 @@
 
         <main>
             <div id="notifications" class="notifications">
-                <div id="page-header" class="notifications-header"></div>
+                <div id="notifications-header" class="notifications-header"></div>
             </div>
         </main>
 
         <div id="error-pane" class="error-pane" style="display: none">
             <h3>Hata: <span id="error-message"></span></h3>
         </div>
+        <div id="qrcode" class="qrCode"></div>
 
         <footer>
             <div id="copyright">Announcer &copy; 2020</div>
@@ -48,10 +54,19 @@
         </footer>
     </div>
 
-    <script src="/lib/signalr/signalr.min.js"></script>
     <script>
         var clientIP = "@Model.ClientIP";
     </script>
-    <script src="/js/notifications.js"></script>
+
+    <environment include="Development">
+        <script src="~/lib/signalr/signalr.js"></script>
+        <script src="~/js/qrcode.js"></script>
+        <script src="~/js/notifications.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/signalr/signalr.min.js"></script>
+        <script src="~/js/qrcode.min.js"></script>
+        <script src="~/js/notifications.js"></script>
+    </environment>
 </body>
 </html>

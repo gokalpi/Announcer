@@ -103,7 +103,7 @@ function displayError(error) {
 function displayHeaders(header) {
     if (!header) return;
 
-    var pageHeader = document.getElementById("page-header");
+    var pageHeader = document.getElementById("notifications-header");
     if (pageHeader) {
         infoColumnCount = header.columns.length > 0 ? header.columns.length - 1 : 0;
 
@@ -142,13 +142,14 @@ function displayNotification(group, content) {
             }
         }
 
-        groupRow.setAttribute("class", "active");
+        groupRow.className = "notification-item active";
     }
     else {
         var notifications = document.getElementById('notifications');
         if (notifications) {
             groupRow = document.createElement('div');
-            groupRow.setAttribute("id", groupRowId);
+            groupRow.id = groupRowId;
+            groupRow.className = "notification-item";
 
             var c = document.createDocumentFragment();
 
@@ -298,3 +299,10 @@ getClientInfo();
 
 // Start the connection.
 start();
+
+var qrCodeUri = location.href;
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: qrCodeUri,
+    width: 128,
+    height: 128
+});

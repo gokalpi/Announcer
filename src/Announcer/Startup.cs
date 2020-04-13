@@ -7,6 +7,7 @@ using Announcer.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +24,7 @@ namespace Announcer
         /// <param name="env">The current working environment.</param>
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            _currentEnvironment = env;
+            _env = env;
             Configuration = configuration;
         }
 
@@ -36,11 +37,19 @@ namespace Announcer
         /// <summary>
         /// Gets the current working environment
         /// </summary>
-        private readonly IWebHostEnvironment _currentEnvironment;
+        private readonly IWebHostEnvironment _env;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies
+                // is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services.AddRazorPages()
                     .AddRazorPagesOptions(options =>
             {
@@ -49,9 +58,7 @@ namespace Announcer
                 options.Conventions.AuthorizeFolder("/");
             });
 
-            services.AddDatabaseServices(Configuration.GetConnectionString("DefaultConnection"), _currentEnvironment.EnvironmentName);
-
-            services.AddSignalR();
+            services.AddDatabaseServices(Configuration.GetConnectionString("DefaultConnection"), _env.EnvironmentName);
 
             services.AddIdentity();
 
@@ -64,6 +71,8 @@ namespace Announcer
             services.AddCorsPolicy();
 
             services.AddVersioning();
+
+            services.AddSignalR(e => e.EnableDetailedErrors = true);
 
             services.AddSwagger();
 
@@ -79,7 +88,7 @@ namespace Announcer
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
-            if (_currentEnvironment.IsDevelopment())
+            if (_env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
@@ -103,6 +112,9 @@ namespace Announcer
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCookiePolicy();
+            app.UseWebSockets();
 
             app.UseVersionedSwagger(provider);
 

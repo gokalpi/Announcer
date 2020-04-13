@@ -17,13 +17,13 @@ namespace Announcer.Controllers
 
         public GroupNotificationsController(IHubContext<NotificationHub> hubContext)
         {
-            _hubContext = hubContext;
+            _hubContext = hubContext ?? throw new System.ArgumentNullException(nameof(hubContext));
         }
 
         [HttpPost]
         public async Task SendMessageToGroup(string groupName, string message)
         {
-            await _hubContext.Clients.Group(groupName).SendAsync("Send", new
+            await _hubContext.Clients.Group(groupName).SendAsync("ReceiveGroupMessage", new
             {
                 Group = groupName,
                 Message = message

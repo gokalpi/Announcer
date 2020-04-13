@@ -337,6 +337,7 @@ footer {
     }
 
     .clock {
+        display: block;
         font-size: 0.9rem;
         padding-top: 1.05rem;
     }
@@ -389,6 +390,7 @@ footer {
     }
 
     .clock {
+        display: block;
         font-size: 1.2rem;
         padding-top: 1.1rem;
     }
@@ -441,6 +443,7 @@ footer {
     }
 
     .clock {
+        display: block;
         font-size: 1.5rem;
         padding-top: 1.2rem;
     }
@@ -493,8 +496,9 @@ footer {
     }
 
     .clock {
-        font-size: 1.8rem;
-        padding-top: 1.4rem;
+        display: none;
+        /*font-size: 1.8rem;
+        padding-top: 1.4rem;*/
     }
 
     .notifications .notifications-header {
@@ -513,6 +517,10 @@ footer {
         .notifications .notification-item div {
             font-size: 1.9rem;
         }
+
+    .qrCode {
+        display: block;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -536,8 +544,9 @@ footer {
     }
 
     .clock {
-        font-size: 2.1rem;
-        padding-top: 1.4rem;
+        display: none;
+        /*font-size: 2.1rem;
+        padding-top: 1.4rem;*/
     }
 
     .notifications .notifications-header {
@@ -574,14 +583,10 @@ footer {
         padding-top: 0.2rem;
     }
 
-    /*.qrCode {
-        width: 90px;
-        height: 90px;
-    }*/
-
     .clock {
-        font-size: 2.3rem;
-        padding-top: 1.4rem;
+        display: none;
+        /*font-size: 2.3rem;
+        padding-top: 1.4rem;*/
     }
 
     .notifications .notifications-header {
@@ -600,4 +605,8 @@ footer {
         .notifications .notification-item div {
             font-size: 2.5rem;
         }
+
+    .qrCode {
+        display: block;
+    }
 }

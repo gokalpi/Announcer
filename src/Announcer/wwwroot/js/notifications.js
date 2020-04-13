@@ -6,15 +6,16 @@ var clientId;
 var groups;
 var infoColumnCount = 0;
 
-// Start the connection.
+// Create SignalR connection
 var connection = new signalR.HubConnectionBuilder()
     .withUrl(hubUri)
-    .configureLogging(signalR.LogLevel.Error)
+    .withAutomaticReconnect()
+    .configureLogging(signalR.LogLevel.Warning)
     .build();
 
+// Start SignalR connection
 async function start() {
-    try {
-        await connection.start();
+    await connection.start().then(function () {
         if (connection.state === signalR.HubConnectionState.Connected) {
             console.log(`Connected to hub at ${hubUri}`);
 
@@ -23,16 +24,36 @@ async function start() {
                 groups.map(group => joinGroup(group));
             }
         }
-    } catch (error) {
+    }).catch(error => {
         displayError(error);
 
         // If disconnected, start connection in 5 seconds
         if (connection.state === signalR.HubConnectionState.Disconnected) {
             setTimeout(() => start(), 5000);
         }
-    }
-};
+    });
+}
 
+// On reconnecting to the hub
+connection.onreconnecting((error) => {
+    console.assert(connection.state === signalR.HubConnectionState.Reconnecting);
+
+    console.warn(`Connection lost due to error "${error}". Reconnecting.`);
+});
+
+// On reconnected to the hub
+connection.onreconnected((connectionId) => {
+    console.assert(connection.state === signalR.HubConnectionState.Connected);
+
+    // Client rejoins to the groups
+    if (groups) {
+        groups.map(group => joinGroup(group));
+    }
+
+    console.warn(`Connection reestablished and joined to the groups. Connected with connectionId "${connectionId}".`);
+});
+
+// On closed connection to the hub
 connection.onclose(async (error) => {
     console.assert(connection.state === signalR.HubConnectionState.Disconnected);
 
@@ -44,34 +65,54 @@ connection.onclose(async (error) => {
     console.warn(`Connection closed due to error "${error}". Try refreshing this page to restart the connection.`);
 
     // If connection is closed, then reconnect again
-    await start();
+    //await start();
 });
 
-connection.on("Send", function (notification) {
-    displayNotification(notification.group, notification.message);
+// When user connected to the hub
+connection.on("UserConnected", function (connectionId) {
+    console.log(`Client connected with connection id "${connectionId}"`);
+});
+
+// When user disconnected from the hub
+connection.on("UserDisconnected", function (user, connectionId) {
+    console.log(`Client disconnected with connection id "${connectionId}"`);
+});
+
+// When user joined to a group
+connection.on("JoinedGroup", function (user, group) {
+    console.log(`User "${user}" joined to group ${group}`);
+});
+
+// When user leaves a group
+connection.on("LeftGroup", function (user, group) {
+    console.log(`User "${user}" left group ${group}`);
+});
+
+// Group message received function
+connection.on("ReceiveGroupMessage", function (req) {
+    displayNotification(req.group, req.message);
+});
+
+// Message received function
+connection.on("ReceiveMessage", function (message) {
+    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    console.log(msg);
 });
 
 async function joinGroup(groupName) {
-    if (groupName === "") return;
-
-    try {
-        await connection.invoke("AddToGroup", groupName);
-        console.log(`Joined to "${groupName}" group`);
-    }
-    catch (e) {
-        displayError(e);
+    if (groupName) {
+        await connection.invoke("AddToGroupAsync", groupName).then(function () {
+            //console.log(`Joined to "${groupName}" group`);
+        }).catch(error => displayError(error));
     }
 }
 
 async function leaveGroup(groupName) {
-    if (groupName === "") return;
-
-    try {
-        await connection.invoke("RemoveFromGroup", groupName);
-        console.log(`Left "${groupName}" group`);
-    }
-    catch (e) {
-        displayError(e);
+    if (groupName) {
+        await connection.invoke("RemoveFromGroupAsync", groupName).then(function () {
+            //console.log(`Left "${groupName}" group`);
+        }).catch(error => displayError(error));
     }
 }
 
@@ -303,6 +344,6 @@ start();
 var qrCodeUri = location.href;
 var qrcode = new QRCode(document.getElementById("qrcode"), {
     text: qrCodeUri,
-    width: 128,
-    height: 128
+    width: 100,
+    height: 100
 });

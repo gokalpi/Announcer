@@ -21,7 +21,7 @@ namespace Announcer.Contracts
         /// </summary>
         /// <param name="groupId">Group id</param>
         /// <returns>List response of all clients of group</returns>
-        Task<IListResponse<Client>> ListClientsByGroupAsync(string groupId);
+        Task<IListResponse<Client>> ListClientsByGroupAsync(int groupId);
 
         /// <summary>
         /// Removes a client from a group

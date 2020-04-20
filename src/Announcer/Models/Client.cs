@@ -12,18 +12,16 @@ namespace Announcer.Models
     {
         public Client()
         {
-            Groups = new HashSet<GroupMember>();
-            NotificationsSent = new HashSet<Notification>();
-            NotificationsReceived = new HashSet<Notification>();
         }
 
-        public Client(string id, string name, string description, string userId, string templateId) : base()
+        public Client(string id, string name, string description, string userId, int templateId, bool isDeleted = false)
         {
             Id = string.IsNullOrEmpty(id) ? throw new ArgumentNullException(nameof(id)) : id;
             Name = string.IsNullOrEmpty(name) ? throw new ArgumentNullException(nameof(name)) : name;
             UserId = userId;
             TemplateId = templateId;
             Description = description;
+            IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -49,7 +47,7 @@ namespace Announcer.Models
         /// <summary>
         /// Template Id of client
         /// </summary>
-        public string TemplateId { get; set; }
+        public int TemplateId { get; set; }
 
         /// <summary>
         /// Client soft deleted?
@@ -69,16 +67,16 @@ namespace Announcer.Models
         /// <summary>
         /// Groups client subscribed to
         /// </summary>
-        public virtual ICollection<GroupMember> Groups { get; set; }
+        public virtual ICollection<GroupMember> Groups { get; set; } = new HashSet<GroupMember>();
 
         /// <summary>
         /// Notifications sent by client
         /// </summary>
-        public virtual ICollection<Notification> NotificationsSent { get; set; }
+        public virtual ICollection<Notification> NotificationsSent { get; set; } = new HashSet<Notification>();
 
         /// <summary>
         /// Notifications received by client
         /// </summary>
-        public virtual ICollection<Notification> NotificationsReceived { get; set; }
+        public virtual ICollection<Notification> NotificationsReceived { get; set; } = new HashSet<Notification>();
     }
 }

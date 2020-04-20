@@ -11,7 +11,7 @@ namespace Announcer.Dtos.Responses
         /// <summary>
         /// Group Id
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Name of group

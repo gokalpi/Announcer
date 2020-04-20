@@ -100,17 +100,14 @@ namespace Announcer.Controllers
         /// <response code="400">If the id is null</response>
         /// <response code="404">If the group is not found</response>
         /// <response code="500">If an exception happens</response>
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteGroupAsync(string id)
+        public async Task<IActionResult> DeleteGroupAsync(int id)
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(DeleteGroupAsync));
-
-            if (string.IsNullOrWhiteSpace(id))
-                return BadRequest("Group id is null or empty");
 
             // Check if group exists
             var getResult = await _service.GetAsync(g => g.Id == id && !g.IsDeleted);
@@ -217,16 +214,13 @@ namespace Announcer.Controllers
         /// <response code="200">Returns Group with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id}", Name = "GetGroup")]
+        [HttpGet("{id:int}", Name = "GetGroup")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetGroupByIdAsync(string id)
+        public async Task<IActionResult> GetGroupByIdAsync(int id)
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupByIdAsync));
-
-            if (string.IsNullOrWhiteSpace(id))
-                return BadRequest("Group id is null or empty");
 
             var response = await _service.GetAsync(g => g.Id == id,
                 "Clients.Client, NotificationsReceived");
@@ -293,16 +287,13 @@ namespace Announcer.Controllers
         /// <response code="204">Returns no content</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateGroupAsync(string id, [FromBody] SaveGroupDTO groupDTO)
+        public async Task<IActionResult> UpdateGroupAsync(int id, [FromBody] SaveGroupDTO groupDTO)
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(UpdateGroupAsync));
-
-            if (string.IsNullOrWhiteSpace(id))
-                return BadRequest("Group id is null or empty");
 
             // Check if group exists
             var getResult = await _service.GetAsync(g => g.Id == id && !g.IsDeleted);

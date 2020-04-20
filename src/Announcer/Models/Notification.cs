@@ -14,7 +14,7 @@ namespace Announcer.Models
             Id = Guid.NewGuid().ToString();
         }
 
-        public Notification(string id, string content, string senderId, DateTime sentTime, string groupId = null, string recipientId = null) : base()
+        public Notification(string id, string content, string senderId, DateTime sentTime, int? groupId = null, string recipientId = null, bool isDeleted = false)
         {
             Id = string.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
             Content = string.IsNullOrEmpty(content) ? throw new ArgumentNullException(nameof(content)) : content;
@@ -22,6 +22,7 @@ namespace Announcer.Models
             SentTime = sentTime;
             GroupId = groupId;
             RecipientId = recipientId;
+            IsDeleted = isDeleted;
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace Announcer.Models
         /// <summary>
         /// Group Id of notification
         /// </summary>
-        public string GroupId { get; set; }
+        public int? GroupId { get; set; }
 
         /// <summary>
         /// Recipient Id of notification

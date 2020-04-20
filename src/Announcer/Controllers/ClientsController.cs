@@ -373,15 +373,12 @@ namespace Announcer.Controllers
         [ProducesResponseType(typeof(ClientDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> RemoveFromGroupAsync(string id, string groupId)
+        public async Task<IActionResult> RemoveFromGroupAsync(string id, int groupId)
         {
             _logger.LogDebug($"'{nameof(RemoveFromGroupAsync)}' has been invoked");
 
             if (string.IsNullOrEmpty(id))
                 return BadRequest("Client info is null");
-
-            if (string.IsNullOrEmpty(groupId))
-                return BadRequest("Group info is null");
 
             var response = await _clientService.RemoveFromGroupAsync(new GroupMember(groupId, id));
 

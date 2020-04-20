@@ -13,9 +13,7 @@ namespace Announcer.Data.Config
             builder.HasKey(gm => new { gm.GroupId, gm.ClientId });
 
             builder.Property(gm => gm.GroupId)
-                   .IsRequired()
-                   .HasMaxLength(50)
-                   .IsUnicode(false);
+                   .IsRequired();
 
             builder.Property(gm => gm.ClientId)
                    .IsRequired()

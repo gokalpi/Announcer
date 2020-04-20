@@ -1,0 +1,990 @@
+[
+  {
+    "GroupId": 1,
+    "ClientId": "10.100.1.1"
+  },
+  {
+    "GroupId": 2,
+    "ClientId": "10.100.1.1"
+  },
+  {
+    "GroupId": 18,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 55,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 56,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 57,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 58,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 59,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 66,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 67,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 235,
+    "ClientId": "10.100.1.10"
+  },
+  {
+    "GroupId": 13,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 68,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 72,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 73,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 74,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 75,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 76,
+    "ClientId": "10.100.1.11"
+  },
+  {
+    "GroupId": 69,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 70,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 71,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 77,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 78,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 79,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 216,
+    "ClientId": "10.100.1.12"
+  },
+  {
+    "GroupId": 80,
+    "ClientId": "10.100.1.13"
+  },
+  {
+    "GroupId": 81,
+    "ClientId": "10.100.1.13"
+  },
+  {
+    "GroupId": 82,
+    "ClientId": "10.100.1.13"
+  },
+  {
+    "GroupId": 83,
+    "ClientId": "10.100.1.13"
+  },
+  {
+    "GroupId": 84,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 91,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 92,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 93,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 94,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 95,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 96,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 97,
+    "ClientId": "10.100.1.14"
+  },
+  {
+    "GroupId": 85,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 86,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 87,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 88,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 89,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 90,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 98,
+    "ClientId": "10.100.1.15"
+  },
+  {
+    "GroupId": 99,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 106,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 107,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 108,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 109,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 110,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 111,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 112,
+    "ClientId": "10.100.1.16"
+  },
+  {
+    "GroupId": 100,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 101,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 102,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 103,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 104,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 105,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 113,
+    "ClientId": "10.100.1.17"
+  },
+  {
+    "GroupId": 15,
+    "ClientId": "10.100.1.18"
+  },
+  {
+    "GroupId": 114,
+    "ClientId": "10.100.1.18"
+  },
+  {
+    "GroupId": 115,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 123,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 124,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 125,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 126,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 127,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 128,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 129,
+    "ClientId": "10.100.1.19"
+  },
+  {
+    "GroupId": 3,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 4,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 5,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 6,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 7,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 8,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 9,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 10,
+    "ClientId": "10.100.1.2"
+  },
+  {
+    "GroupId": 116,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 117,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 118,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 119,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 120,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 121,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 122,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 130,
+    "ClientId": "10.100.1.20"
+  },
+  {
+    "GroupId": 132,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 143,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 147,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 148,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 149,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 150,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 151,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 152,
+    "ClientId": "10.100.1.21"
+  },
+  {
+    "GroupId": 133,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 134,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 135,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 136,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 137,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 138,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 153,
+    "ClientId": "10.100.1.22"
+  },
+  {
+    "GroupId": 139,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 140,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 141,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 142,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 144,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 145,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 146,
+    "ClientId": "10.100.1.23"
+  },
+  {
+    "GroupId": 154,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 155,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 156,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 157,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 158,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 159,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 160,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 161,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 162,
+    "ClientId": "10.100.1.24"
+  },
+  {
+    "GroupId": 163,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 169,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 170,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 171,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 172,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 173,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 174,
+    "ClientId": "10.100.1.25"
+  },
+  {
+    "GroupId": 16,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 164,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 165,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 166,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 167,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 168,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 175,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 176,
+    "ClientId": "10.100.1.26"
+  },
+  {
+    "GroupId": 177,
+    "ClientId": "10.100.1.27"
+  },
+  {
+    "GroupId": 179,
+    "ClientId": "10.100.1.27"
+  },
+  {
+    "GroupId": 180,
+    "ClientId": "10.100.1.27"
+  },
+  {
+    "GroupId": 181,
+    "ClientId": "10.100.1.27"
+  },
+  {
+    "GroupId": 182,
+    "ClientId": "10.100.1.27"
+  },
+  {
+    "GroupId": 178,
+    "ClientId": "10.100.1.28"
+  },
+  {
+    "GroupId": 183,
+    "ClientId": "10.100.1.28"
+  },
+  {
+    "GroupId": 184,
+    "ClientId": "10.100.1.28"
+  },
+  {
+    "GroupId": 185,
+    "ClientId": "10.100.1.28"
+  },
+  {
+    "GroupId": 186,
+    "ClientId": "10.100.1.28"
+  },
+  {
+    "GroupId": 187,
+    "ClientId": "10.100.1.29"
+  },
+  {
+    "GroupId": 188,
+    "ClientId": "10.100.1.29"
+  },
+  {
+    "GroupId": 189,
+    "ClientId": "10.100.1.29"
+  },
+  {
+    "GroupId": 11,
+    "ClientId": "10.100.1.3"
+  },
+  {
+    "GroupId": 12,
+    "ClientId": "10.100.1.3"
+  },
+  {
+    "GroupId": 190,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 191,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 192,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 193,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 194,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 195,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 196,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 197,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 198,
+    "ClientId": "10.100.1.30"
+  },
+  {
+    "GroupId": 199,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 208,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 209,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 210,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 211,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 212,
+    "ClientId": "10.100.1.31"
+  },
+  {
+    "GroupId": 200,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 201,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 202,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 213,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 214,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 215,
+    "ClientId": "10.100.1.32"
+  },
+  {
+    "GroupId": 203,
+    "ClientId": "10.100.1.33"
+  },
+  {
+    "GroupId": 204,
+    "ClientId": "10.100.1.33"
+  },
+  {
+    "GroupId": 205,
+    "ClientId": "10.100.1.33"
+  },
+  {
+    "GroupId": 206,
+    "ClientId": "10.100.1.33"
+  },
+  {
+    "GroupId": 207,
+    "ClientId": "10.100.1.33"
+  },
+  {
+    "GroupId": 217,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 218,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 219,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 220,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 221,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 222,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 223,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 224,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 225,
+    "ClientId": "10.100.1.34"
+  },
+  {
+    "GroupId": 226,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 227,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 228,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 229,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 230,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 231,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 232,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 233,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 234,
+    "ClientId": "10.100.1.35"
+  },
+  {
+    "GroupId": 244,
+    "ClientId": "10.100.1.38"
+  },
+  {
+    "GroupId": 245,
+    "ClientId": "10.100.1.38"
+  },
+  {
+    "GroupId": 131,
+    "ClientId": "10.100.1.39"
+  },
+  {
+    "GroupId": 246,
+    "ClientId": "10.100.1.39"
+  },
+  {
+    "GroupId": 247,
+    "ClientId": "10.100.1.39"
+  },
+  {
+    "GroupId": 248,
+    "ClientId": "10.100.1.39"
+  },
+  {
+    "GroupId": 249,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 251,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 252,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 253,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 254,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 255,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 256,
+    "ClientId": "10.100.1.40"
+  },
+  {
+    "GroupId": 35,
+    "ClientId": "10.100.1.41"
+  },
+  {
+    "GroupId": 250,
+    "ClientId": "10.100.1.41"
+  },
+  {
+    "GroupId": 257,
+    "ClientId": "10.100.1.41"
+  },
+  {
+    "GroupId": 258,
+    "ClientId": "10.100.1.41"
+  },
+  {
+    "GroupId": 19,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 27,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 28,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 29,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 30,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 31,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 32,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 33,
+    "ClientId": "10.100.1.5"
+  },
+  {
+    "GroupId": 20,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 21,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 22,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 23,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 24,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 25,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 26,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 34,
+    "ClientId": "10.100.1.6"
+  },
+  {
+    "GroupId": 36,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 37,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 38,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 39,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 40,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 41,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 42,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 43,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 44,
+    "ClientId": "10.100.1.7"
+  },
+  {
+    "GroupId": 46,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 47,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 48,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 49,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 50,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 51,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 52,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 53,
+    "ClientId": "10.100.1.8"
+  },
+  {
+    "GroupId": 54,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 60,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 61,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 62,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 63,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 64,
+    "ClientId": "10.100.1.9"
+  },
+  {
+    "GroupId": 65,
+    "ClientId": "10.100.1.9"
+  }
+]

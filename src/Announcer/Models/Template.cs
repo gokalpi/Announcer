@@ -12,20 +12,20 @@ namespace Announcer.Models
     {
         public Template()
         {
-            Id = Guid.NewGuid().ToString();
         }
 
-        public Template(string id, string name, string content) : base()
+        public Template(int id, string name, string content, bool isDeleted = false)
         {
-            Id = string.IsNullOrEmpty(id) ? Guid.NewGuid().ToString() : id;
+            Id = id;
             Name = string.IsNullOrEmpty(name) ? throw new ArgumentNullException(nameof(name)) : name;
             Content = content;
+            IsDeleted = isDeleted;
         }
 
         /// <summary>
         /// Template Id
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Name of Template

@@ -29,9 +29,7 @@ namespace Announcer.Data.Config
                    .HasMaxLength(50)
                    .IsUnicode(false);
 
-            builder.Property(n => n.GroupId)
-                   .HasMaxLength(50)
-                   .IsUnicode(false);
+            builder.Property(n => n.GroupId);
 
             builder.Property(n => n.SenderId)
                    .HasMaxLength(50)

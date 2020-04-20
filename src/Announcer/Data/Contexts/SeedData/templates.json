@@ -1,0 +1,7 @@
+[
+  {
+    "Id": 1,
+    "Name": "Default Template",
+    "Content": "{ \\\"header\\\": { \\\"columns\\\": [ \\\"Birim Adý\\\", \\\"Çaðýrýlan Hasta\\\", \\\"Sonraki Hasta\\\" ] } }"
+  }
+]

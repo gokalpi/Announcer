@@ -1,0 +1,1745 @@
+[
+  {
+    "Id": "9d26bd69-25ce-479f-8bd6-a726e224263f",
+    "Content": "{ \\\"columns\\\": [ \\\"Özde Acarkan\\\", \\\"Zülal Çolak\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-19T21:49:18",
+    "GroupId": 2
+  },
+  {
+    "Id": "d300a2dc-eb60-46a6-bce8-e8e5be699bde",
+    "Content": "{ \\\"columns\\\": [ \\\"Atahan Adanýr\\\", \\\"Ozan Ege Çomu\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T15:00:24",
+    "GroupId": 3
+  },
+  {
+    "Id": "ace16e3a-d056-4f28-926d-bcbc4cce61c6",
+    "Content": "{ \\\"columns\\\": [ \\\"Hacý Mehmet Adýgüzel\\\", \\\"Hilal Ebru Çonay\\\" ] }",
+    "SenderId": "10.100.1.17",
+    "SentTime": "2020-04-20T09:00:21",
+    "GroupId": 4
+  },
+  {
+    "Id": "39fd600b-0bbe-4c11-a2a3-e23221fcc70b",
+    "Content": "{ \\\"columns\\\": [ \\\"Mükerrem Zeynep Aðca\\\", \\\"Ayben Çorumlu\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T08:35:03",
+    "GroupId": 5
+  },
+  {
+    "Id": "9684526c-5b23-443e-a529-fbfe2697296f",
+    "Content": "{ \\\"columns\\\": [ \\\"Bestami Aðýraðaç\\\", \\\"Abdulbaki Çotur\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T02:54:44",
+    "GroupId": 6
+  },
+  {
+    "Id": "4815ffc2-7a86-4ad8-abb8-73fd860247e3",
+    "Content": "{ \\\"columns\\\": [ \\\"Aykanat Aðýroðlu\\\", \\\"Neva Çuhadar\\\" ] }",
+    "SenderId": "10.100.1.24",
+    "SentTime": "2020-04-20T05:22:55",
+    "GroupId": 7
+  },
+  {
+    "Id": "6fa4999b-f0de-4168-ae69-c7b5b8b461e7",
+    "Content": "{ \\\"columns\\\": [ \\\"Þennur Aðnar\\\", \\\"Öznur Çulhaoðlu\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-20T17:01:59",
+    "GroupId": 8
+  },
+  {
+    "Id": "288ea4ad-85cf-41b3-930f-c014c0a220a5",
+    "Content": "{ \\\"columns\\\": [ \\\"Tutkum Ahmadý Asl\\\", \\\"Olgun Dadalýoðlu\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-20T08:36:34",
+    "GroupId": 9
+  },
+  {
+    "Id": "7acc4a9d-425d-47b2-b16f-93254acb2d41",
+    "Content": "{ \\\"columns\\\": [ \\\"Mügenur Ahmet\\\", \\\"Çaðrý Atahan Daðar\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T01:24:20",
+    "GroupId": 10
+  },
+  {
+    "Id": "5297d641-fa5e-4576-b6b2-f4847c6c3292",
+    "Content": "{ \\\"columns\\\": [ \\\"Sevinç Ak\\\", \\\"Özalp Daðbað\\\" ] }",
+    "SenderId": "10.100.1.10",
+    "SentTime": "2020-04-20T09:28:58",
+    "GroupId": 11
+  },
+  {
+    "Id": "15cadd13-a1f0-45ed-9ded-d32068b9640c",
+    "Content": "{ \\\"columns\\\": [ \\\"Kayýhan Nedim Akarcalý\\\", \\\"Hüsne Aysun Dal\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-20T10:06:34",
+    "GroupId": 12
+  },
+  {
+    "Id": "755e7ec1-dd77-4662-9235-cc2da8818fcc",
+    "Content": "{ \\\"columns\\\": [ \\\"Fatma Özlem Acar\\\", \\\"Gürbüz Çivici\\\" ] }",
+    "SenderId": "10.100.1.24",
+    "SentTime": "2020-04-20T14:23:48",
+    "GroupId": 1
+  },
+  {
+    "Id": "c72e47cb-2a36-4da7-a372-c26fde654e3d",
+    "Content": "{ \\\"columns\\\": [ \\\"Lemi Akarçay\\\", \\\"Aydonat Dalkýlýç\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-19T21:03:02",
+    "GroupId": 13
+  },
+  {
+    "Id": "2a0a25a9-489b-4ecc-b217-232312843d05",
+    "Content": "{ \\\"columns\\\": [ \\\"Cihan Akarpýnar\\\", \\\"Ezgin Dallý\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-19T20:16:35",
+    "GroupId": 14
+  },
+  {
+    "Id": "0b0f79f8-dad7-4258-b12f-27d92be1d26b",
+    "Content": "{ \\\"columns\\\": [ \\\"Rafi Akaþ\\\", \\\"Refiye Seda Dalyaprak\\\" ] }",
+    "SenderId": "10.100.1.1",
+    "SentTime": "2020-04-20T05:19:34",
+    "GroupId": 15
+  },
+  {
+    "Id": "fa403175-3bbc-44ed-aea6-fe93d5c165bc",
+    "Content": "{ \\\"columns\\\": [ \\\"Mehmetcan Akay\\\", \\\"Esat Erdem Daniþ\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T11:14:02",
+    "GroupId": 16
+  },
+  {
+    "Id": "52b67c17-57bc-40f6-a834-fae13543bc1e",
+    "Content": "{ \\\"columns\\\": [ \\\"Nuhaydar Akbilmez\\\", \\\"Ayþe Neslihan Daþdemir\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-19T19:00:47",
+    "GroupId": 17
+  },
+  {
+    "Id": "7f8b69fc-1801-47d7-bf32-efeb279b7d5f",
+    "Content": "{ \\\"columns\\\": [ \\\"Emine Münevver Akca\\\", \\\"Fetullah Davutoðlu\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T00:28:25",
+    "GroupId": 18
+  },
+  {
+    "Id": "33db19a9-3e12-403c-a811-0632d9e0e777",
+    "Content": "{ \\\"columns\\\": [ \\\"Servet Akçagunay\\\", \\\"Mert Görkem Dayýoðlu\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-19T19:43:09",
+    "GroupId": 19
+  },
+  {
+    "Id": "dd2270e6-3bd6-4366-82eb-036c3ee60edd",
+    "Content": "{ \\\"columns\\\": [ \\\"Çilem Akçay\\\", \\\"Ergün Deðirmendereli\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T08:19:02",
+    "GroupId": 20
+  },
+  {
+    "Id": "f78a7f97-9846-41b7-9919-217fa3537c3f",
+    "Content": "{ \\\"columns\\\": [ \\\"Recep Ali Samet Akdoðan\\\", \\\"Hülya Delý Chasan\\\" ] }",
+    "SenderId": "10.100.1.3",
+    "SentTime": "2020-04-20T11:47:28",
+    "GroupId": 21
+  },
+  {
+    "Id": "24610973-d835-4f9b-9f64-10bf6a3fc606",
+    "Content": "{ \\\"columns\\\": [ \\\"Emre Ayberk Akfýrat\\\", \\\"Doga Elif Delice\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T13:42:07",
+    "GroupId": 22
+  },
+  {
+    "Id": "2daa9749-ec9e-402a-b407-64474c413407",
+    "Content": "{ \\\"columns\\\": [ \\\"Kerime Hacer Akýllý\\\", \\\"Muhammed Bazit Deliloðlu\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T07:45:13",
+    "GroupId": 23
+  },
+  {
+    "Id": "b7236ae8-0b74-417f-a3b8-c270d08ffce9",
+    "Content": "{ \\\"columns\\\": [ \\\"Ercüment Akýncýlar\\\", \\\"Miraç Demýrören\\\" ] }",
+    "SenderId": "10.100.1.12",
+    "SentTime": "2020-04-20T02:10:00",
+    "GroupId": 24
+  },
+  {
+    "Id": "5f43f692-bae1-452a-94c3-9c3d74a1edc7",
+    "Content": "{ \\\"columns\\\": [ \\\"Sarper Akýþ\\\", \\\"Hürel Demiriz\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T12:36:25",
+    "GroupId": 25
+  },
+  {
+    "Id": "9e609526-38be-479b-9a28-7182108f7688",
+    "Content": "{ \\\"columns\\\": [ \\\"Berker Akkiray\\\", \\\"Sömer Demiroðlu\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T08:39:55",
+    "GroupId": 26
+  },
+  {
+    "Id": "013bc3f5-9ef2-449d-b632-1a321fcb561a",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýclal Akkoyun\\\", \\\"Aysel Aysu Demirsatan\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-20T17:09:11",
+    "GroupId": 27
+  },
+  {
+    "Id": "ec3f0d3e-c917-4e88-be33-5338e1c1f3ba",
+    "Content": "{ \\\"columns\\\": [ \\\"Lemis Akküt\\\", \\\"Mehmet Kemal Dengizek\\\" ] }",
+    "SenderId": "10.100.1.21",
+    "SentTime": "2020-04-19T21:56:56",
+    "GroupId": 28
+  },
+  {
+    "Id": "a63d73e7-fe60-478d-9e6a-8bc6fc919706",
+    "Content": "{ \\\"columns\\\": [ \\\"Ahmet Polat Aklar Çörekçi\\\", \\\"Alya Denizgünü\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T00:53:48",
+    "GroupId": 29
+  },
+  {
+    "Id": "8a7f61e0-ec50-42a2-8565-0ae4ecc7d0b6",
+    "Content": "{ \\\"columns\\\": [ \\\"Ata Kerem Akman\\\", \\\"Zeynep Büþra Derdemez\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T09:17:03",
+    "GroupId": 30
+  },
+  {
+    "Id": "f4a2691e-9a2c-49c2-b1b1-19319a091cc0",
+    "Content": "{ \\\"columns\\\": [ \\\"Ahmet Raþit Akoðuz\\\", \\\"Tubanur Dereli\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T11:06:56",
+    "GroupId": 31
+  },
+  {
+    "Id": "0dd52605-bce1-45c1-baf7-a07fa38dc065",
+    "Content": "{ \\\"columns\\\": [ \\\"Ecem Hatice Akova\\\", \\\"Dalay Derya\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-19T20:57:11",
+    "GroupId": 32
+  },
+  {
+    "Id": "1c9765eb-f471-41d8-9ab2-32d9ca571607",
+    "Content": "{ \\\"columns\\\": [ \\\"Nüket Aksan\\\", \\\"Bedir Destereci\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-19T20:04:35",
+    "GroupId": 33
+  },
+  {
+    "Id": "5f959000-a65a-4e1c-b25c-a6a44b407b04",
+    "Content": "{ \\\"columns\\\": [ \\\"Senem Aksevim\\\", \\\"Rümeysa Ýrem Devecel\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-20T00:39:00",
+    "GroupId": 34
+  },
+  {
+    "Id": "40b12cbc-c9f4-427e-b4aa-e35906077672",
+    "Content": "{ \\\"columns\\\": [ \\\"Ayþen Aksoy\\\", \\\"Osman Sinan Devrim\\\" ] }",
+    "SenderId": "10.100.1.40",
+    "SentTime": "2020-04-19T22:52:33",
+    "GroupId": 35
+  },
+  {
+    "Id": "08850fe0-e23b-4ff8-9d61-10bc25e2b60f",
+    "Content": "{ \\\"columns\\\": [ \\\"Pekcan Aksöz\\\", \\\"Saliha Canan Dývarcý\\\" ] }",
+    "SenderId": "10.100.1.7",
+    "SentTime": "2020-04-19T22:22:14",
+    "GroupId": 36
+  },
+  {
+    "Id": "bd6f9d35-649c-4cdc-9cbf-09069f39e5d2",
+    "Content": "{ \\\"columns\\\": [ \\\"Bedirhan Lütfü Akþamoðlu\\\", \\\"Samet Emre Dikbaþ\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T08:38:38",
+    "GroupId": 37
+  },
+  {
+    "Id": "3e226937-308e-4378-904c-74266abb8610",
+    "Content": "{ \\\"columns\\\": [ \\\"Semina Aktuna\\\", \\\"Haldun Dinçtürk\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T07:26:13",
+    "GroupId": 38
+  },
+  {
+    "Id": "bc569320-ae84-4a78-afac-0b2036d4c9d6",
+    "Content": "{ \\\"columns\\\": [ \\\"Eda Sena Akyýldýz\\\", \\\"Goncagül Diri\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-19T21:27:48",
+    "GroupId": 39
+  },
+  {
+    "Id": "04ab8a67-5220-419e-b145-bc7e143bd202",
+    "Content": "{ \\\"columns\\\": [ \\\"Müyesser Akyildirim\\\", \\\"Ziya Doðramacý\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T05:51:51",
+    "GroupId": 40
+  },
+  {
+    "Id": "77636c9d-2f51-480f-a594-33ff33bca0f2",
+    "Content": "{ \\\"columns\\\": [ \\\"Selinti Al\\\", \\\"Zehra Pelin Döger\\\" ] }",
+    "SenderId": "10.100.1.12",
+    "SentTime": "2020-04-20T03:56:57",
+    "GroupId": 41
+  },
+  {
+    "Id": "3ab01ad8-126a-4c79-9038-2f0149bf98e4",
+    "Content": "{ \\\"columns\\\": [ \\\"Bahar Özlem Albaþ\\\", \\\"Seli M Sharef Dökülmez\\\" ] }",
+    "SenderId": "10.100.1.28",
+    "SentTime": "2020-04-20T16:31:30",
+    "GroupId": 42
+  },
+  {
+    "Id": "898efdee-cadb-4464-af0b-fa1631e60264",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýlma Aldað\\\", \\\"Firuze Dönder\\\" ] }",
+    "SenderId": "10.100.1.1",
+    "SentTime": "2020-04-20T12:44:16",
+    "GroupId": 43
+  },
+  {
+    "Id": "2f7ff5cd-1df3-40c2-8847-6eeb7bb17d2b",
+    "Content": "{ \\\"columns\\\": [ \\\"Kutlu Alibeyoðlu\\\", \\\"Doruk Deniz Döner\\\" ] }",
+    "SenderId": "10.100.1.40",
+    "SentTime": "2020-04-20T05:09:28",
+    "GroupId": 44
+  },
+  {
+    "Id": "f51d111e-0a67-4812-85eb-a15530441d81",
+    "Content": "{ \\\"columns\\\": [ \\\"Nesibe Nurefþan Alkan\\\", \\\"Çisil Zeynep Dönmez\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T20:10:06",
+    "GroupId": 45
+  },
+  {
+    "Id": "e4cc93ef-b142-4da1-8772-eb889ea8f270",
+    "Content": "{ \\\"columns\\\": [ \\\"Ömer Buðra Alparslan\\\", \\\"Tugce Dudu\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T23:31:54",
+    "GroupId": 46
+  },
+  {
+    "Id": "b9459fb8-656f-417a-befa-983b4d39c052",
+    "Content": "{ \\\"columns\\\": [ \\\"Hiba Alpuðan\\\", \\\"Enver Dur\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T03:04:56",
+    "GroupId": 47
+  },
+  {
+    "Id": "abf073d6-e5ed-42aa-8074-7643954486f0",
+    "Content": "{ \\\"columns\\\": [ \\\"Mazlum Altan\\\", \\\"Sanber Durak\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T02:17:44",
+    "GroupId": 48
+  },
+  {
+    "Id": "1be31732-66a0-441d-b562-33d7d5d2945f",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Tuðçe Altaþ\\\", \\\"Birsen Durmuþ\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T10:42:25",
+    "GroupId": 49
+  },
+  {
+    "Id": "cd6d32d3-d964-4d3c-9d7c-2cebb46b2a75",
+    "Content": "{ \\\"columns\\\": [ \\\"Ahmet Ruken Altay\\\", \\\"Taçmin Durmuþoðlu\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T07:21:37",
+    "GroupId": 50
+  },
+  {
+    "Id": "8880c366-5e0a-4bb7-b091-a3ed03067d37",
+    "Content": "{ \\\"columns\\\": [ \\\"Yaþar Utku Anýl Altýn\\\", \\\"Karanalp Dursun\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T13:29:23",
+    "GroupId": 51
+  },
+  {
+    "Id": "ad296926-0a0d-4206-9f2e-dddc1714e580",
+    "Content": "{ \\\"columns\\\": [ \\\"Rana Altýnoklu\\\", \\\"Öktem Duymuþ\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T01:51:31",
+    "GroupId": 52
+  },
+  {
+    "Id": "ac1fefa5-ee14-4365-b022-6f15ffed76c1",
+    "Content": "{ \\\"columns\\\": [ \\\"Fethullah Altýnöz\\\", \\\"Elanaz Dülgerbaki\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T03:33:06",
+    "GroupId": 53
+  },
+  {
+    "Id": "a512236b-360c-4345-9628-cd61d09eedd2",
+    "Content": "{ \\\"columns\\\": [ \\\"Burak Tatkan Altýntaþ\\\", \\\"Fidan Dündar\\\" ] }",
+    "SenderId": "10.100.1.10",
+    "SentTime": "2020-04-19T23:47:09",
+    "GroupId": 54
+  },
+  {
+    "Id": "30ab5c30-4cc3-4f85-932a-41377bf7e6d5",
+    "Content": "{ \\\"columns\\\": [ \\\"Merve Ece Altýok\\\", \\\"Barýn Düþenkalkar\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-20T16:36:09",
+    "GroupId": 55
+  },
+  {
+    "Id": "08a3f1c3-2e84-4b98-b82e-64c84d07d917",
+    "Content": "{ \\\"columns\\\": [ \\\"Rima Altýparmak\\\", \\\"Mehmet Erman Düzbayýr\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T00:46:31",
+    "GroupId": 56
+  },
+  {
+    "Id": "b2a9f305-5fe3-44c8-965f-005e185797cb",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Dilay Altinkaya\\\", \\\"Cem Efe Edeþ\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T15:39:52",
+    "GroupId": 57
+  },
+  {
+    "Id": "6e98d618-548a-4875-b680-b43736302c12",
+    "Content": "{ \\\"columns\\\": [ \\\"Sýrma Begüm Altunbaþ\\\", \\\"Erem Edibali Mp\\\" ] }",
+    "SenderId": "10.100.1.26",
+    "SentTime": "2020-04-20T01:18:36",
+    "GroupId": 58
+  },
+  {
+    "Id": "2c28f2b6-6651-4244-9caf-b21e770195c6",
+    "Content": "{ \\\"columns\\\": [ \\\"Nefse Altunbulak\\\", \\\"Volkan Eyüp Efþin\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-20T12:38:25",
+    "GroupId": 59
+  },
+  {
+    "Id": "fe4e2cd0-ceb8-4f74-b905-79987fe637ce",
+    "Content": "{ \\\"columns\\\": [ \\\"Büþra Gül Altundal\\\", \\\"Ýbrahim Alp Tekin Ege\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T17:04:48",
+    "GroupId": 60
+  },
+  {
+    "Id": "63521e4e-5ff2-4826-99be-656f591cfb07",
+    "Content": "{ \\\"columns\\\": [ \\\"Erna Aluç\\\", \\\"Güngör Erkin Egeli\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-19T20:22:17",
+    "GroupId": 61
+  },
+  {
+    "Id": "88de361c-cae3-4d5b-b1dd-6b626657d4a8",
+    "Content": "{ \\\"columns\\\": [ \\\"Hikmet Nazlý Alver\\\", \\\"Çaðýn Egin\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-20T09:48:02",
+    "GroupId": 62
+  },
+  {
+    "Id": "e3e53d35-b66d-4a1c-81ad-16ae58052e8a",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýsmail Umut Anýk\\\", \\\"Alphan Ekercan\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T14:24:43",
+    "GroupId": 63
+  },
+  {
+    "Id": "a895758c-2d05-4445-90df-a14689931223",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýlkay Ramazan Ankara\\\", \\\"Lale Ekrem\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T07:33:13",
+    "GroupId": 64
+  },
+  {
+    "Id": "05b9635a-b9e3-4cb4-a118-e6753ef894d0",
+    "Content": "{ \\\"columns\\\": [ \\\"Nebahat Ansen\\\", \\\"Baðýþ Can Elbaþý\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-19T17:23:44",
+    "GroupId": 65
+  },
+  {
+    "Id": "afa497f1-8849-48bb-ab7a-7586f3d03987",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýlyas Umut Apul\\\", \\\"Mert Cem Eliçin\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-20T16:54:59",
+    "GroupId": 66
+  },
+  {
+    "Id": "37550c7e-9a0e-42aa-9c1b-109e5d5de4cb",
+    "Content": "{ \\\"columns\\\": [ \\\"Halim Aral\\\", \\\"Ahmet Sencer Emikoðlu\\\" ] }",
+    "SenderId": "10.100.1.11",
+    "SentTime": "2020-04-20T03:10:11",
+    "GroupId": 67
+  },
+  {
+    "Id": "78c3b64c-34b1-4350-b2ec-c2a3d6cd7149",
+    "Content": "{ \\\"columns\\\": [ \\\"Yasin Þükrü Arap\\\", \\\"Akife Erbay\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T06:50:39",
+    "GroupId": 68
+  },
+  {
+    "Id": "8ea62b03-77fb-490e-aa51-0d4b7ac10973",
+    "Content": "{ \\\"columns\\\": [ \\\"Cansev Arat\\\", \\\"Burç Erbil\\\" ] }",
+    "SenderId": "10.100.1.1",
+    "SentTime": "2020-04-20T16:45:10",
+    "GroupId": 69
+  },
+  {
+    "Id": "16c0a589-22e5-4f54-ab8c-99ebc16b264c",
+    "Content": "{ \\\"columns\\\": [ \\\"Memet Ali Ardýç\\\", \\\"Nadire Erbul\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T06:12:38",
+    "GroupId": 70
+  },
+  {
+    "Id": "8bb03961-8e5e-4b1a-969a-8179ee874a49",
+    "Content": "{ \\\"columns\\\": [ \\\"Deniz Dilay Arýcan\\\", \\\"Hüseyin Zeyd Ercoþkun\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-19T23:16:01",
+    "GroupId": 71
+  },
+  {
+    "Id": "a9627579-a298-41c1-8681-86f5298dae63",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýzlem Arýnç\\\", \\\"Aynur Gül Ercüment\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T05:09:24",
+    "GroupId": 72
+  },
+  {
+    "Id": "3c78544d-76c3-4617-8980-b613aa768f51",
+    "Content": "{ \\\"columns\\\": [ \\\"Öget Arif\\\", \\\"Samed Erek\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T03:31:46",
+    "GroupId": 73
+  },
+  {
+    "Id": "e789b329-4300-45c0-a324-4b03975959f1",
+    "Content": "{ \\\"columns\\\": [ \\\"Þeyda Nur Arikan\\\", \\\"Cem Ozan Erim\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-20T02:19:09",
+    "GroupId": 74
+  },
+  {
+    "Id": "4e4445c1-84b8-46b2-bb73-8a6aa04b5813",
+    "Content": "{ \\\"columns\\\": [ \\\"Zeki Yiðithan Armutcu\\\", \\\"Bahar Cemre Erin\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T16:31:10",
+    "GroupId": 75
+  },
+  {
+    "Id": "47c093ac-39d8-493c-acde-0483fbdcc112",
+    "Content": "{ \\\"columns\\\": [ \\\"Nunazlý Arpacý\\\", \\\"Rekin Erkek\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T11:05:53",
+    "GroupId": 76
+  },
+  {
+    "Id": "1e1ba0b1-5abe-47e1-a86a-d027c7e0c66c",
+    "Content": "{ \\\"columns\\\": [ \\\"Ferdacan Aruca\\\", \\\"Hüseyin Serkan Erkekli\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-19T18:07:09",
+    "GroupId": 77
+  },
+  {
+    "Id": "b2138c6f-6c9f-47e4-8f52-a0cb8cbc59bd",
+    "Content": "{ \\\"columns\\\": [ \\\"Þerife Asil\\\", \\\"Ýbrahim Candaþ Erki\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-19T20:37:25",
+    "GroupId": 78
+  },
+  {
+    "Id": "04848804-5a3e-4d34-95f2-b2b03c3ffa1b",
+    "Content": "{ \\\"columns\\\": [ \\\"Mustafa Burhan Askýn\\\", \\\"Beniz Erkmen\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T05:40:09",
+    "GroupId": 79
+  },
+  {
+    "Id": "8d341373-84ff-436c-98d4-725b058e9c6a",
+    "Content": "{ \\\"columns\\\": [ \\\"Ilým Aslantürk\\\", \\\"Hasan Burak Erkoç\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T04:13:06",
+    "GroupId": 80
+  },
+  {
+    "Id": "03adf8be-0dec-4f83-93d2-0b8df26ce05f",
+    "Content": "{ \\\"columns\\\": [ \\\"Sevginur Aþcý\\\", \\\"Selman Erkoþan\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T21:33:40",
+    "GroupId": 81
+  },
+  {
+    "Id": "de3c517a-242e-4ae6-b01b-47356cc5bf71",
+    "Content": "{ \\\"columns\\\": [ \\\"Hayrunnisa Aþveren\\\", \\\"Hanife Nur Erkovan\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-20T01:34:10",
+    "GroupId": 82
+  },
+  {
+    "Id": "563c2537-812f-46e0-9067-6e3907e33fab",
+    "Content": "{ \\\"columns\\\": [ \\\"Hanife Duygu Ata\\\", \\\"Alper Emin Erkuþ\\\" ] }",
+    "SenderId": "10.100.1.24",
+    "SentTime": "2020-04-20T13:51:50",
+    "GroupId": 83
+  },
+  {
+    "Id": "fb5fcb18-1108-43a1-b22b-9deb3d6eba94",
+    "Content": "{ \\\"columns\\\": [ \\\"Sevtap Atan\\\", \\\"Elif Kevser Eroðlu\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T10:16:54",
+    "GroupId": 84
+  },
+  {
+    "Id": "39a00db3-b726-4966-860c-0477aa8cc51d",
+    "Content": "{ \\\"columns\\\": [ \\\"Paksoy Ateþ\\\", \\\"Abdullah Mert Erol\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-19T23:22:25",
+    "GroupId": 85
+  },
+  {
+    "Id": "b2a61823-a05f-4930-9f42-61bdb4e485e1",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýlkim Ateþcan\\\", \\\"Çisel Ersin\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-20T16:55:19",
+    "GroupId": 86
+  },
+  {
+    "Id": "70323b90-e398-433b-a889-df8f105cb146",
+    "Content": "{ \\\"columns\\\": [ \\\"Rubabe Gökçen Atlý\\\", \\\"Ýlkin Ersöz\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T04:39:13",
+    "GroupId": 87
+  },
+  {
+    "Id": "91fe225a-c032-41e3-9485-3156d3fc7f3b",
+    "Content": "{ \\\"columns\\\": [ \\\"Saba Atmaca\\\", \\\"Cantekin Erten\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T03:17:24",
+    "GroupId": 88
+  },
+  {
+    "Id": "7bd09685-c549-4d77-85e4-86f37c0e547c",
+    "Content": "{ \\\"columns\\\": [ \\\"Çisem Atok\\\", \\\"Onur Kerem Ertepýnar\\\" ] }",
+    "SenderId": "10.100.1.11",
+    "SentTime": "2020-04-20T02:12:09",
+    "GroupId": 89
+  },
+  {
+    "Id": "247ad884-3317-4d73-9be0-52886483cd13",
+    "Content": "{ \\\"columns\\\": [ \\\"Sabiha Elvan Atol\\\", \\\"Ýsmail Enes Eruzun\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T05:51:19",
+    "GroupId": 90
+  },
+  {
+    "Id": "e76f9992-1902-42f0-b4df-2ac0dac0b9b7",
+    "Content": "{ \\\"columns\\\": [ \\\"Edip Attila\\\", \\\"Hamýd Eryýldýz\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T04:00:30",
+    "GroupId": 91
+  },
+  {
+    "Id": "a4e64374-8f83-48fe-86af-78682c1beb77",
+    "Content": "{ \\\"columns\\\": [ \\\"Almina Avcý Özsoy\\\", \\\"Tunca Eryýlmaz\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-19T19:38:30",
+    "GroupId": 92
+  },
+  {
+    "Id": "6b82d259-e995-4764-a23d-36ab5606352b",
+    "Content": "{ \\\"columns\\\": [ \\\"Saime Avýandý\\\", \\\"Arslan Erzurumlu\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-20T10:07:24",
+    "GroupId": 93
+  },
+  {
+    "Id": "64d34b12-f05f-4fca-a200-c45ea2442bb9",
+    "Content": "{ \\\"columns\\\": [ \\\"Nehar Avþar\\\", \\\"Neslihan Buþra Esat\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T16:28:01",
+    "GroupId": 94
+  },
+  {
+    "Id": "e46ae5b3-761e-4afe-a5bc-5427285b9aa5",
+    "Content": "{ \\\"columns\\\": [ \\\"Kaan Muharrem Ay\\\", \\\"Lütfiye Sena Esen\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-19T23:20:07",
+    "GroupId": 95
+  },
+  {
+    "Id": "5db3f6c5-9ffa-4eda-a5da-6992f06c9b6b",
+    "Content": "{ \\\"columns\\\": [ \\\"Murat Kaan Ayanoglu\\\", \\\"Belin Esendemir\\\" ] }",
+    "SenderId": "10.100.1.3",
+    "SentTime": "2020-04-19T20:49:11",
+    "GroupId": 96
+  },
+  {
+    "Id": "397e01ea-5189-4cca-83fb-a23323317194",
+    "Content": "{ \\\"columns\\\": [ \\\"Murat Sinan Ayaz\\\", \\\"Rukiye Esgin\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-20T10:30:10",
+    "GroupId": 97
+  },
+  {
+    "Id": "c976fb05-9410-4e71-82ec-3d2ea6bc5401",
+    "Content": "{ \\\"columns\\\": [ \\\"Ateþ Aycý\\\", \\\"Ýslam Eshaqzada\\\" ] }",
+    "SenderId": "10.100.1.14",
+    "SentTime": "2020-04-20T00:09:51",
+    "GroupId": 98
+  },
+  {
+    "Id": "1e77f4dd-2005-420a-b8ff-1e74034f2a08",
+    "Content": "{ \\\"columns\\\": [ \\\"Zeynep Nihan Aydýnlýoðlu\\\", \\\"Batýray Eski\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-19T22:59:53",
+    "GroupId": 99
+  },
+  {
+    "Id": "5d50229e-4b30-42fc-99c1-6c66a8ac6e72",
+    "Content": "{ \\\"columns\\\": [ \\\"Kerime Aydoðan Yozgat\\\", \\\"Süheyl Esvap\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-19T22:52:13",
+    "GroupId": 100
+  },
+  {
+    "Id": "22a2a57f-8a58-4020-9667-c9983392fddc",
+    "Content": "{ \\\"columns\\\": [ \\\"Hami Aydoðdu\\\", \\\"Yargý Yekta Eþe\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T06:09:54",
+    "GroupId": 101
+  },
+  {
+    "Id": "750e36da-4ee5-4788-88b9-92e8fe1aa03d",
+    "Content": "{ \\\"columns\\\": [ \\\"Thomas Aygen\\\", \\\"Elzem Evrenos\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T03:01:49",
+    "GroupId": 102
+  },
+  {
+    "Id": "966cfbed-9bd4-4944-8420-f4e14ab8e814",
+    "Content": "{ \\\"columns\\\": [ \\\"Güneþ Aykan\\\", \\\"Ilgaz Eyipiþiren\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-20T16:16:48",
+    "GroupId": 103
+  },
+  {
+    "Id": "2a13ea74-25ff-4f8e-a0a8-2408175361e1",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Feyza Ayrým\\\", \\\"Ongar Eyyupoðlu\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-19T22:28:10",
+    "GroupId": 104
+  },
+  {
+    "Id": "be0be7d9-7ec2-44e5-9968-c5169619c0c4",
+    "Content": "{ \\\"columns\\\": [ \\\"Uður Ali Aysal\\\", \\\"Faik Ezber\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-20T01:44:57",
+    "GroupId": 105
+  },
+  {
+    "Id": "1508e4ec-d67e-410c-9844-ffb13c264ef4",
+    "Content": "{ \\\"columns\\\": [ \\\"Osman Yasin Aysan\\\", \\\"Turan Fahri\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T01:11:56",
+    "GroupId": 106
+  },
+  {
+    "Id": "eaa5a159-e326-4a3f-8fda-c99d2a4cf34b",
+    "Content": "{ \\\"columns\\\": [ \\\"Adem Ayvacýk\\\", \\\"Okbay Fatih\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-19T23:16:06",
+    "GroupId": 107
+  },
+  {
+    "Id": "e6e6dbf8-47d7-48ca-88da-52d7de7771dc",
+    "Content": "{ \\\"columns\\\": [ \\\"Sera Cansýn Azbay\\\", \\\"Latife Fatin\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T16:28:02",
+    "GroupId": 108
+  },
+  {
+    "Id": "e6adc660-63bf-40f0-bee3-5348b283f0a4",
+    "Content": "{ \\\"columns\\\": [ \\\"Ali Ýsmail Babacan\\\", \\\"Eyüp Orhun Fýndýk\\\" ] }",
+    "SenderId": "10.100.1.28",
+    "SentTime": "2020-04-19T17:11:16",
+    "GroupId": 109
+  },
+  {
+    "Id": "370e588c-a0b1-4e78-b5ef-c0e028408ece",
+    "Content": "{ \\\"columns\\\": [ \\\"Ruhugül Babadostu\\\", \\\"Ýrfan Anýl Fýndýkçý\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T08:55:56",
+    "GroupId": 110
+  },
+  {
+    "Id": "1f49b1ef-ba4a-41c8-a4c5-6305e3e66002",
+    "Content": "{ \\\"columns\\\": [ \\\"Alçiçek Bad\\\", \\\"Ertuð Furuncuoðlu\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-20T13:10:02",
+    "GroupId": 111
+  },
+  {
+    "Id": "34dc6485-aade-4da2-b98f-18c4b9c04c77",
+    "Content": "{ \\\"columns\\\": [ \\\"Memet Baðcý\\\", \\\"Berhudan Garip\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-19T21:09:22",
+    "GroupId": 112
+  },
+  {
+    "Id": "0a7c8614-14dd-4dcb-a189-5b3377bbfc69",
+    "Content": "{ \\\"columns\\\": [ \\\"Mercan Baðçivan\\\", \\\"Nihan Gazitepe\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T02:56:34",
+    "GroupId": 113
+  },
+  {
+    "Id": "69545634-d87b-4a7c-8be1-07f8210a3516",
+    "Content": "{ \\\"columns\\\": [ \\\"Gökay Baðýþ\\\", \\\"Menekþe Geben\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T12:22:01",
+    "GroupId": 114
+  },
+  {
+    "Id": "f130b267-8ac7-4bf2-bedf-5e9a72f770d8",
+    "Content": "{ \\\"columns\\\": [ \\\"Pýrýltý Bahçeli\\\", \\\"Þeniz Geboloðlu\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-19T18:52:52",
+    "GroupId": 115
+  },
+  {
+    "Id": "48246799-3852-4371-8867-720284ce6559",
+    "Content": "{ \\\"columns\\\": [ \\\"Özgün Bahtýyar\\\", \\\"Zeynep Senahan Geçioðlu\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T09:31:39",
+    "GroupId": 116
+  },
+  {
+    "Id": "a44295f4-59a2-4f46-8dbe-9a7c0fd89651",
+    "Content": "{ \\\"columns\\\": [ \\\"Özgen Baka\\\", \\\"Hayri Anýl Geçkin\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-20T12:35:07",
+    "GroupId": 117
+  },
+  {
+    "Id": "73e7ce85-17be-415e-ad7a-39739e562d2e",
+    "Content": "{ \\\"columns\\\": [ \\\"Seung Hun Baki\\\", \\\"Muazzez Ece Gemalmaz\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-19T22:59:43",
+    "GroupId": 118
+  },
+  {
+    "Id": "c135a26e-5b0d-43db-97de-69492cf4722d",
+    "Content": "{ \\\"columns\\\": [ \\\"Gülser Bal\\\", \\\"Kerem Cahit Gençoðlu\\\" ] }",
+    "SenderId": "10.100.1.7",
+    "SentTime": "2020-04-20T03:20:32",
+    "GroupId": 119
+  },
+  {
+    "Id": "44e38eb8-a7e6-4f30-82c5-002024c384ce",
+    "Content": "{ \\\"columns\\\": [ \\\"Yüksel Balcý\\\", \\\"Sadýk Can Gezmiþ\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T09:07:12",
+    "GroupId": 120
+  },
+  {
+    "Id": "fd841869-8123-462c-8918-6b63a25c8ee3",
+    "Content": "{ \\\"columns\\\": [ \\\"Ecren Baldo\\\", \\\"Resmiye Elif Gýrgýn\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T14:30:33",
+    "GroupId": 121
+  },
+  {
+    "Id": "0a5489e3-865a-476e-9526-48a264b0024a",
+    "Content": "{ \\\"columns\\\": [ \\\"Muhammet Raþit Balý\\\", \\\"Nergiz Gilim\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-20T00:28:45",
+    "GroupId": 122
+  },
+  {
+    "Id": "75d63d9b-6fde-40e1-ba8e-f570e4cf41ad",
+    "Content": "{ \\\"columns\\\": [ \\\"Sakýp Balýoðlu\\\", \\\"Mehmet Gökalp Ginoviç\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T03:12:29",
+    "GroupId": 123
+  },
+  {
+    "Id": "a2fdc5e9-94af-496d-9839-8cc19bd10e54",
+    "Content": "{ \\\"columns\\\": [ \\\"Kazým Balta\\\", \\\"Mehmetali Girgin\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T16:45:51",
+    "GroupId": 124
+  },
+  {
+    "Id": "03facb27-0c3e-405e-8339-1e9a3fcfb5e3",
+    "Content": "{ \\\"columns\\\": [ \\\"Abdullah Atakan Baluken\\\", \\\"Abdullah Halit Golba\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-20T13:19:08",
+    "GroupId": 125
+  },
+  {
+    "Id": "8abd094c-7081-419e-89b5-d96278e691d3",
+    "Content": "{ \\\"columns\\\": [ \\\"Coþkun Baran\\\", \\\"Tilbe Göç\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T12:32:13",
+    "GroupId": 126
+  },
+  {
+    "Id": "6657acb9-6cef-418d-a733-917d3c8d71a8",
+    "Content": "{ \\\"columns\\\": [ \\\"Serdar Kaan Barbaros\\\", \\\"Kubra Göçmen\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-19T21:01:24",
+    "GroupId": 127
+  },
+  {
+    "Id": "dd1fb2c8-97dd-4596-aef0-2a125b31d859",
+    "Content": "{ \\\"columns\\\": [ \\\"Ezel Bargan\\\", \\\"Kubilay Gödek\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T00:42:23",
+    "GroupId": 128
+  },
+  {
+    "Id": "e43550ea-9b54-4559-923c-91f0601fe8c5",
+    "Content": "{ \\\"columns\\\": [ \\\"Ayþegül Barutçuoðlu\\\", \\\"Busem Gökçeaslan\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-19T20:31:18",
+    "GroupId": 129
+  },
+  {
+    "Id": "5d270ae2-e3e9-4d0e-95a8-1d78f634bc28",
+    "Content": "{ \\\"columns\\\": [ \\\"Sefa Kadir Baþar\\\", \\\"Banuhan Gökçek\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T14:07:48",
+    "GroupId": 130
+  },
+  {
+    "Id": "8251d051-c30f-4b0e-9a35-cdb0bcd2e482",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Etga Baþeðmez\\\", \\\"Örgün Gökhan\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-19T23:28:05",
+    "GroupId": 131
+  },
+  {
+    "Id": "5f6e8ed7-6791-41ab-82ac-f5b3916001a7",
+    "Content": "{ \\\"columns\\\": [ \\\"Balýn Baþtepe\\\", \\\"Melike Göksoy\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-20T08:05:35",
+    "GroupId": 132
+  },
+  {
+    "Id": "aaa15a4d-8438-469d-a49d-35b0bf1e9b2c",
+    "Content": "{ \\\"columns\\\": [ \\\"Mahperi Baþtopçu\\\", \\\"Yeþim Gölmes\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-19T17:17:40",
+    "GroupId": 133
+  },
+  {
+    "Id": "1e99923e-0d1f-4317-9062-f39bd92fbbf8",
+    "Content": "{ \\\"columns\\\": [ \\\"Erol Özgür Baþtuð\\\", \\\"Nilüfer Gönay\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T14:17:35",
+    "GroupId": 134
+  },
+  {
+    "Id": "ba6bf3ee-c8a5-4ca4-a762-5b7fe77ccfa7",
+    "Content": "{ \\\"columns\\\": [ \\\"Atak Batar\\\", \\\"Denizhan Gönül\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-20T10:27:27",
+    "GroupId": 135
+  },
+  {
+    "Id": "e1e615b2-b72f-46cf-b53f-359f9bc9608d",
+    "Content": "{ \\\"columns\\\": [ \\\"Safa Batga\\\", \\\"Þueda Göreke\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-20T09:13:35",
+    "GroupId": 136
+  },
+  {
+    "Id": "ab7224ae-9c2d-486e-8530-7030cf425761",
+    "Content": "{ \\\"columns\\\": [ \\\"Gökmen Battal\\\", \\\"Ersin Görgülü\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-20T07:01:19",
+    "GroupId": 137
+  },
+  {
+    "Id": "40c6f1cc-f662-4856-9d00-957fc3ba1858",
+    "Content": "{ \\\"columns\\\": [ \\\"Fazýl Erem Batuk\\\", \\\"Þahabettin Görgüner\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T13:29:10",
+    "GroupId": 138
+  },
+  {
+    "Id": "09f1eeb2-f4a1-485f-82e5-6f486ea966ac",
+    "Content": "{ \\\"columns\\\": [ \\\"Bensu Batur\\\", \\\"Ayþe Elif Görür\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-19T23:16:06",
+    "GroupId": 139
+  },
+  {
+    "Id": "d31c81f2-d806-43c5-a71c-b86797ccf519",
+    "Content": "{ \\\"columns\\\": [ \\\"Nazým Orhun Baturalp\\\", \\\"Nazým Berke Göven\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-20T11:37:25",
+    "GroupId": 140
+  },
+  {
+    "Id": "94192fe6-1ab4-4ebe-a7f1-8c5302734efe",
+    "Content": "{ \\\"columns\\\": [ \\\"Safa Ahmet Baydar\\\", \\\"Meltem Göymen\\\" ] }",
+    "SenderId": "10.100.1.23",
+    "SentTime": "2020-04-19T23:59:27",
+    "GroupId": 141
+  },
+  {
+    "Id": "614756a0-4018-4557-8a1f-22dcc71accd3",
+    "Content": "{ \\\"columns\\\": [ \\\"Demircan Baydil\\\", \\\"Abdulhalim Guguk\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T14:43:51",
+    "GroupId": 142
+  },
+  {
+    "Id": "13cbb913-09e5-4e52-9bf7-7f4b058848f6",
+    "Content": "{ \\\"columns\\\": [ \\\"Burçin Kübra Baykal\\\", \\\"Gülten Güdücü\\\" ] }",
+    "SenderId": "10.100.1.28",
+    "SentTime": "2020-04-20T03:05:20",
+    "GroupId": 143
+  },
+  {
+    "Id": "4f6f5f39-2a81-4cfd-9fde-04285f7b889c",
+    "Content": "{ \\\"columns\\\": [ \\\"Derviþ Haluk Baykan\\\", \\\"Iþýnbýke Gülcan\\\" ] }",
+    "SenderId": "10.100.1.10",
+    "SentTime": "2020-04-20T16:33:12",
+    "GroupId": 144
+  },
+  {
+    "Id": "7399c586-360c-45fc-a652-3bf738e236b6",
+    "Content": "{ \\\"columns\\\": [ \\\"Taylan Remzi Baykuþ\\\", \\\"Vedia Gülçin\\\" ] }",
+    "SenderId": "10.100.1.17",
+    "SentTime": "2020-04-19T21:26:53",
+    "GroupId": 145
+  },
+  {
+    "Id": "347f8169-c676-469a-b650-5031751ec3ff",
+    "Content": "{ \\\"columns\\\": [ \\\"Abdulvahap Bayrakoðlu\\\", \\\"Fatma Sena Güldoðuþ\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-19T20:04:51",
+    "GroupId": 146
+  },
+  {
+    "Id": "91b5e27a-ac48-4056-b165-95213e1f2430",
+    "Content": "{ \\\"columns\\\": [ \\\"Aygün Bayram\\\", \\\"Ömer Okan Gülebakan\\\" ] }",
+    "SenderId": "10.100.1.21",
+    "SentTime": "2020-04-20T16:14:57",
+    "GroupId": 147
+  },
+  {
+    "Id": "585247a4-ee8f-41c7-b8cc-56e2b8a91faa",
+    "Content": "{ \\\"columns\\\": [ \\\"Ayla Baytýn\\\", \\\"Aybike Güleç\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T07:14:13",
+    "GroupId": 148
+  },
+  {
+    "Id": "d38b53f3-fca5-4b2d-b2c8-55c9b14273b5",
+    "Content": "{ \\\"columns\\\": [ \\\"Kubilay Barýþ Begiç\\\", \\\"Bektaþ Gülenç\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-19T22:28:16",
+    "GroupId": 149
+  },
+  {
+    "Id": "a1b86faa-1797-41fb-b2cd-c34ac2673c72",
+    "Content": "{ \\\"columns\\\": [ \\\"Mustafa Samed Beðenilmiþ\\\", \\\"Emircan Güleryüz\\\" ] }",
+    "SenderId": "10.100.1.24",
+    "SentTime": "2020-04-20T00:52:15",
+    "GroupId": 150
+  },
+  {
+    "Id": "eb97d1ac-66e9-417b-a1cc-91cd3db5e7b6",
+    "Content": "{ \\\"columns\\\": [ \\\"Berfin Dilay Bekaroðlu\\\", \\\"Merter Gülkan\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-20T02:06:54",
+    "GroupId": 151
+  },
+  {
+    "Id": "973ec0e7-ed69-45ca-83d7-ce3247dd6a99",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýbrahim Onat Belge\\\", \\\"Sevgi Tutku Güllüce\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T06:41:45",
+    "GroupId": 152
+  },
+  {
+    "Id": "5c526496-69fb-494b-9e85-acb0a117014a",
+    "Content": "{ \\\"columns\\\": [ \\\"Jutenya Benan\\\", \\\"Denktaþ Gülþen\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-19T22:44:44",
+    "GroupId": 153
+  },
+  {
+    "Id": "9761fe52-9990-4383-abef-b664f685a6e4",
+    "Content": "{ \\\"columns\\\": [ \\\"Hulki Bent\\\", \\\"Köksal Gültaþ\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-20T05:47:58",
+    "GroupId": 154
+  },
+  {
+    "Id": "b6c66db5-4ed5-4b26-b62c-672b92d3040f",
+    "Content": "{ \\\"columns\\\": [ \\\"Mustafa Doðukan Berberoðlu\\\", \\\"Hasan Fahri Gültepe\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-20T03:41:21",
+    "GroupId": 155
+  },
+  {
+    "Id": "62048d9d-47cd-4115-a016-b73914548b4a",
+    "Content": "{ \\\"columns\\\": [ \\\"Hüner Berk\\\", \\\"Öymen Gümüþsoy\\\" ] }",
+    "SenderId": "10.100.1.14",
+    "SentTime": "2020-04-19T17:53:54",
+    "GroupId": 156
+  },
+  {
+    "Id": "da9cfc9d-70d8-4c36-be00-09dd5186de98",
+    "Content": "{ \\\"columns\\\": [ \\\"Buse Gizem Berker\\\", \\\"Eylem Gündüz\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-20T12:17:12",
+    "GroupId": 157
+  },
+  {
+    "Id": "b0090098-1572-4942-909d-0a99570d4d9a",
+    "Content": "{ \\\"columns\\\": [ \\\"Halime Beydað\\\", \\\"Melek Diler Günel\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-20T02:13:51",
+    "GroupId": 158
+  },
+  {
+    "Id": "c23fed66-15c2-4c98-a360-c17e00758c4c",
+    "Content": "{ \\\"columns\\\": [ \\\"Didem Býçaksýz\\\", \\\"Argun Güneri\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-20T10:09:59",
+    "GroupId": 159
+  },
+  {
+    "Id": "fc7a4180-6940-41d0-a34b-a0d8c2b7d7e6",
+    "Content": "{ \\\"columns\\\": [ \\\"Mihrinaz Bilal\\\", \\\"Mehmet Yekta Güneyi\\\" ] }",
+    "SenderId": "10.100.1.24",
+    "SentTime": "2020-04-20T02:49:16",
+    "GroupId": 160
+  },
+  {
+    "Id": "1c17801a-32e4-4e13-a998-75bbebce9db8",
+    "Content": "{ \\\"columns\\\": [ \\\"Lal Bilgeç\\\", \\\"Yasemin Erva Güntek\\\" ] }",
+    "SenderId": "10.100.1.38",
+    "SentTime": "2020-04-20T01:26:16",
+    "GroupId": 161
+  },
+  {
+    "Id": "727e1629-8e87-41dc-b19e-2e7b1f02edb9",
+    "Content": "{ \\\"columns\\\": [ \\\"Senay Bilgen\\\", \\\"Günan Güral\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-20T05:26:50",
+    "GroupId": 162
+  },
+  {
+    "Id": "5983a752-17e0-4af4-ab83-2b0c63a6c083",
+    "Content": "{ \\\"columns\\\": [ \\\"Remzi Bilgi\\\", \\\"Osman Cihan Gürdemir\\\" ] }",
+    "SenderId": "10.100.1.36",
+    "SentTime": "2020-04-20T16:12:25",
+    "GroupId": 163
+  },
+  {
+    "Id": "95ca5219-ca0e-4977-a25a-fecdd860a946",
+    "Content": "{ \\\"columns\\\": [ \\\"Armaðan Bilgiç\\\", \\\"Okyanus Gürel\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-19T22:18:51",
+    "GroupId": 164
+  },
+  {
+    "Id": "ff7969a7-8171-412e-a595-7c6058eff0d2",
+    "Content": "{ \\\"columns\\\": [ \\\"Çelik Bilgir\\\", \\\"Mert Alican Güreþ\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-20T16:51:10",
+    "GroupId": 165
+  },
+  {
+    "Id": "44c40650-1fcc-4d38-a0ea-ab77a1ac1be4",
+    "Content": "{ \\\"columns\\\": [ \\\"Kübra Tansu Bilgit\\\", \\\"Zeynep Doða Gürses\\\" ] }",
+    "SenderId": "10.100.1.29",
+    "SentTime": "2020-04-20T02:38:18",
+    "GroupId": 166
+  },
+  {
+    "Id": "ad8b5d86-9a03-45c4-ae5d-3a3fcd3aaed2",
+    "Content": "{ \\\"columns\\\": [ \\\"Uluç Emre Binbay\\\", \\\"Tarýk Güven\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T00:22:33",
+    "GroupId": 167
+  },
+  {
+    "Id": "09e8348d-4dab-4e79-9a40-4ad60612b0c5",
+    "Content": "{ \\\"columns\\\": [ \\\"Mehmet Buðrahan Birgili\\\", \\\"Birgen Güvener\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-19T20:55:28",
+    "GroupId": 168
+  },
+  {
+    "Id": "05209a24-065d-428a-9579-2a239260cd11",
+    "Content": "{ \\\"columns\\\": [ \\\"Doðuþcan Biriz\\\", \\\"Ahmet Korhan Güzel\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T05:06:38",
+    "GroupId": 169
+  },
+  {
+    "Id": "ef554985-1a52-45ad-843a-286ce4eab70e",
+    "Content": "{ \\\"columns\\\": [ \\\"Altan Boy\\\", \\\"Manolya Güzeller\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T14:27:42",
+    "GroupId": 170
+  },
+  {
+    "Id": "ff691741-1b9f-488b-9e30-153cc2395c9b",
+    "Content": "{ \\\"columns\\\": [ \\\"Bengisu Boya\\\", \\\"Mustafa Berkay Güzeloðlu\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T06:26:01",
+    "GroupId": 171
+  },
+  {
+    "Id": "17203e80-6422-410d-84e1-99404d5e0973",
+    "Content": "{ \\\"columns\\\": [ \\\"Onur Taylan Boylu\\\", \\\"Mehmet Anýl Hacýalioðlu\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T14:37:53",
+    "GroupId": 172
+  },
+  {
+    "Id": "314b9a12-e71e-4867-88d8-9d9029b977c7",
+    "Content": "{ \\\"columns\\\": [ \\\"Ayseren Boyuktaþ\\\", \\\"Ahmet Furkan Hacýlar\\\" ] }",
+    "SenderId": "10.100.1.26",
+    "SentTime": "2020-04-20T00:16:31",
+    "GroupId": 173
+  },
+  {
+    "Id": "04e36361-d854-407e-b623-68590d0f502d",
+    "Content": "{ \\\"columns\\\": [ \\\"Pekin Boz\\\", \\\"Fazilet Hacýoðlu\\\" ] }",
+    "SenderId": "10.100.1.12",
+    "SentTime": "2020-04-20T00:28:50",
+    "GroupId": 174
+  },
+  {
+    "Id": "4b29fad0-514c-445d-aae8-0c4aa2c80a5b",
+    "Content": "{ \\\"columns\\\": [ \\\"Aksu Bozdað\\\", \\\"Kývýlcým Hadi\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T03:01:58",
+    "GroupId": 175
+  },
+  {
+    "Id": "94ae1964-f5d5-41e9-8cd6-129b549e1de3",
+    "Content": "{ \\\"columns\\\": [ \\\"Arkan Bozdemir\\\", \\\"Çisil Hazal Hafýz\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-20T07:43:31",
+    "GroupId": 176
+  },
+  {
+    "Id": "e34fa4d4-418b-4dc2-af77-d8e733afe7d9",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýltem Boztepe\\\", \\\"Feray Hakverdi\\\" ] }",
+    "SenderId": "10.100.1.40",
+    "SentTime": "2020-04-20T08:25:27",
+    "GroupId": 177
+  },
+  {
+    "Id": "d318b4d7-28b7-441b-bf70-0c3c34793cf7",
+    "Content": "{ \\\"columns\\\": [ \\\"Betül Bozyer\\\", \\\"Büþranur Halaçoðlu\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T17:04:06",
+    "GroupId": 178
+  },
+  {
+    "Id": "56a1b1fb-b663-4443-99e2-da041e25b57c",
+    "Content": "{ \\\"columns\\\": [ \\\"Ogün Bölge\\\", \\\"Selin Sýla Halýcýlar\\\" ] }",
+    "SenderId": "10.100.1.14",
+    "SentTime": "2020-04-20T05:43:45",
+    "GroupId": 179
+  },
+  {
+    "Id": "76cc75fd-6cef-426e-a8b0-f2af0d7279ab",
+    "Content": "{ \\\"columns\\\": [ \\\"Ýbrahim Hakký Bugey\\\", \\\"Yeter Hamamcýoðlu\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T17:07:41",
+    "GroupId": 180
+  },
+  {
+    "Id": "52353102-c6dd-4342-8a42-da3d76d221fd",
+    "Content": "{ \\\"columns\\\": [ \\\"Onay Buðdaypýnarý\\\", \\\"Ramazan Tarýk Hamarat\\\" ] }",
+    "SenderId": "10.100.1.11",
+    "SentTime": "2020-04-19T21:02:56",
+    "GroupId": 181
+  },
+  {
+    "Id": "167f13ed-465b-4d6c-947d-84109ca2ec0d",
+    "Content": "{ \\\"columns\\\": [ \\\"Cankýz Bulgan\\\", \\\"Boran Hamidi\\\" ] }",
+    "SenderId": "10.100.1.37",
+    "SentTime": "2020-04-20T03:19:38",
+    "GroupId": 182
+  },
+  {
+    "Id": "3c674f16-5282-42dd-9637-48c08e60e4e9",
+    "Content": "{ \\\"columns\\\": [ \\\"Arzucan Bulgur\\\", \\\"Tazika Hilal Hamzaoðlu\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-20T04:26:46",
+    "GroupId": 183
+  },
+  {
+    "Id": "cd45b2ce-ee4d-4b8b-8b28-ab475286868a",
+    "Content": "{ \\\"columns\\\": [ \\\"Asiye Burabak\\\", \\\"Aynur Dilan Hancý\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-19T19:22:57",
+    "GroupId": 184
+  },
+  {
+    "Id": "724e983b-8910-4325-9906-967fda58b08d",
+    "Content": "{ \\\"columns\\\": [ \\\"Ahmet Yasin Burak\\\", \\\"Ayman Hangül\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-19T18:05:52",
+    "GroupId": 185
+  },
+  {
+    "Id": "5167452a-5e20-49e7-8b12-8aa6ce808f07",
+    "Content": "{ \\\"columns\\\": [ \\\"Yaprak Bural\\\", \\\"Berrak Harman\\\" ] }",
+    "SenderId": "10.100.1.14",
+    "SentTime": "2020-04-19T19:07:18",
+    "GroupId": 186
+  },
+  {
+    "Id": "3f772a86-5f69-4779-aa55-7c56af0db790",
+    "Content": "{ \\\"columns\\\": [ \\\"Aleda Buyuran\\\", \\\"Erk Deha Harmankaya\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T07:49:51",
+    "GroupId": 187
+  },
+  {
+    "Id": "2f4f6e8a-033a-4b9a-9c38-42ad8945777e",
+    "Content": "{ \\\"columns\\\": [ \\\"Can Güney Bülbül\\\", \\\"Perihan Haykýr\\\" ] }",
+    "SenderId": "10.100.1.13",
+    "SentTime": "2020-04-20T14:03:04",
+    "GroupId": 188
+  },
+  {
+    "Id": "4c5f87d0-ed2f-4bdb-afee-4d0ba98c27ba",
+    "Content": "{ \\\"columns\\\": [ \\\"Mahmut Bilal Bülend\\\", \\\"Turhan Onur Hýrlak\\\" ] }",
+    "SenderId": "10.100.1.3",
+    "SentTime": "2020-04-19T20:41:27",
+    "GroupId": 189
+  },
+  {
+    "Id": "0a13ed4a-e8aa-4276-a1a5-c41163f8fd2f",
+    "Content": "{ \\\"columns\\\": [ \\\"Saliha Zeynep Bülent\\\", \\\"Furkan Hýzarcýoðlu\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-20T12:20:16",
+    "GroupId": 190
+  },
+  {
+    "Id": "0195118f-322b-49c8-93ba-bfe1dc2be389",
+    "Content": "{ \\\"columns\\\": [ \\\"Melike Dilara Büyükfýrat\\\", \\\"Mustafa Ali Hiçyýlmam\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-20T09:54:10",
+    "GroupId": 191
+  },
+  {
+    "Id": "68a0d03d-08d2-493e-a39a-e3ff8855e866",
+    "Content": "{ \\\"columns\\\": [ \\\"Hayriye Büyükgüngör\\\", \\\"Muhammed Sefa Hilal\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-20T07:42:25",
+    "GroupId": 192
+  },
+  {
+    "Id": "5de2ca7d-083d-48d3-84e7-d10676901456",
+    "Content": "{ \\\"columns\\\": [ \\\"Sebiha Büyüköztürk\\\", \\\"Argün Hilmi\\\" ] }",
+    "SenderId": "10.100.1.27",
+    "SentTime": "2020-04-20T05:15:03",
+    "GroupId": 193
+  },
+  {
+    "Id": "ee5d7036-4958-473b-b471-b5b16f03bf04",
+    "Content": "{ \\\"columns\\\": [ \\\"Mehmet Can Akçaözoðlu\\\", \\\"Fadik Himoðlu\\\" ] }",
+    "SenderId": "10.100.1.6",
+    "SentTime": "2020-04-20T04:48:15",
+    "GroupId": 194
+  },
+  {
+    "Id": "a559702c-7bbc-4bfc-8d15-2caddb8d5dd4",
+    "Content": "{ \\\"columns\\\": [ \\\"Mehmet Enes Canan\\\", \\\"Ahmet Hakký Hirik\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T12:25:16",
+    "GroupId": 195
+  },
+  {
+    "Id": "fb40f726-6563-4509-ae17-d2f3dc6cb47a",
+    "Content": "{ \\\"columns\\\": [ \\\"Kurtbey Canbaðý\\\", \\\"Mustafa Sefa Hopacý\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T15:59:25",
+    "GroupId": 196
+  },
+  {
+    "Id": "5eb8c847-c0e7-4e9f-8cb8-2014b6e4f9ca",
+    "Content": "{ \\\"columns\\\": [ \\\"Mustafa Taha Canbek\\\", \\\"Toykan Horata\\\" ] }",
+    "SenderId": "10.100.1.10",
+    "SentTime": "2020-04-19T22:58:46",
+    "GroupId": 197
+  },
+  {
+    "Id": "68016f24-f458-4b0b-b379-a8ddb0b2217c",
+    "Content": "{ \\\"columns\\\": [ \\\"Sena Nur Candan\\\", \\\"Selime Hüner\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-19T22:43:43",
+    "GroupId": 198
+  },
+  {
+    "Id": "065e852f-f3d8-4702-ad84-1882618b8862",
+    "Content": "{ \\\"columns\\\": [ \\\"Abdullah Emirhan Caner\\\", \\\"Denizcan Ilýk\\\" ] }",
+    "SenderId": "10.100.1.26",
+    "SentTime": "2020-04-20T15:54:28",
+    "GroupId": 199
+  },
+  {
+    "Id": "c7896717-df08-4be9-abec-bee5717254cd",
+    "Content": "{ \\\"columns\\\": [ \\\"Mustafa Kerem Cansu\\\", \\\"Ayþe Zeyneb Irýcýoðlu\\\" ] }",
+    "SenderId": "10.100.1.8",
+    "SentTime": "2020-04-20T11:10:46",
+    "GroupId": 200
+  },
+  {
+    "Id": "bec64d17-1c23-4aad-b353-16f580d323e7",
+    "Content": "{ \\\"columns\\\": [ \\\"Doktora Canuyar\\\", \\\"Mustafa Furkan Iþýnay\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-19T21:58:21",
+    "GroupId": 201
+  },
+  {
+    "Id": "ea5c098e-8461-46dd-834a-04998b302395",
+    "Content": "{ \\\"columns\\\": [ \\\"Seyit Ceran\\\", \\\"Sude Ýbrahim\\\" ] }",
+    "SenderId": "10.100.1.5",
+    "SentTime": "2020-04-20T04:01:32",
+    "GroupId": 202
+  },
+  {
+    "Id": "be0bf6a9-9212-4b6a-bc93-d34f00061fb4",
+    "Content": "{ \\\"columns\\\": [ \\\"Selma Simge Ceylan\\\", \\\"Güçlü Ýçten\\\" ] }",
+    "SenderId": "10.100.1.21",
+    "SentTime": "2020-04-19T19:14:52",
+    "GroupId": 203
+  },
+  {
+    "Id": "f3521765-f93a-42bd-8cef-af3ca857afc7",
+    "Content": "{ \\\"columns\\\": [ \\\"Aþkým Chiklyaukova\\\", \\\"Katya Ýlgezdi\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-20T04:44:36",
+    "GroupId": 204
+  },
+  {
+    "Id": "4eb23d82-f099-4b2c-8f8e-c6e9eb008d0f",
+    "Content": "{ \\\"columns\\\": [ \\\"Özgür Choi\\\", \\\"Halid Ýlhan\\\" ] }",
+    "SenderId": "10.100.1.17",
+    "SentTime": "2020-04-20T05:48:45",
+    "GroupId": 205
+  },
+  {
+    "Id": "fc725e13-3a38-417e-a630-52fe6b8e909c",
+    "Content": "{ \\\"columns\\\": [ \\\"Tuðce Cibooðlu\\\", \\\"Nihal Ýlýsu\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-19T17:35:19",
+    "GroupId": 206
+  },
+  {
+    "Id": "a2ef8321-5267-486e-8249-d41d73312aac",
+    "Content": "{ \\\"columns\\\": [ \\\"Özer Seçkin Ciddi\\\", \\\"Elif Nisan Ýmamoðlu\\\" ] }",
+    "SenderId": "10.100.1.33",
+    "SentTime": "2020-04-20T00:26:39",
+    "GroupId": 207
+  },
+  {
+    "Id": "1a8946da-6d65-4b8e-bd3c-bf454e13cb14",
+    "Content": "{ \\\"columns\\\": [ \\\"Balkýn Cigerlioðlu\\\", \\\"Emine Selcen Ýmre\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T11:06:02",
+    "GroupId": 208
+  },
+  {
+    "Id": "b98c6aa7-4af8-4221-89f7-339f2c90e0e9",
+    "Content": "{ \\\"columns\\\": [ \\\"Yücel Civan\\\", \\\"Tevfik Ýnal\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-20T11:22:34",
+    "GroupId": 209
+  },
+  {
+    "Id": "3da82239-8ffe-4561-bfa1-6dd7da2cda37",
+    "Content": "{ \\\"columns\\\": [ \\\"Þansal Coþan\\\", \\\"Ýbrahim Kaðan Ýncekara\\\" ] }",
+    "SenderId": "10.100.1.17",
+    "SentTime": "2020-04-20T11:52:37",
+    "GroupId": 210
+  },
+  {
+    "Id": "27e56a5b-ba63-40d1-8b66-45d01c387f72",
+    "Content": "{ \\\"columns\\\": [ \\\"Oðuzcan Coþandal\\\", \\\"Sidar Ýnceoðlu\\\" ] }",
+    "SenderId": "10.100.1.40",
+    "SentTime": "2020-04-20T14:35:24",
+    "GroupId": 211
+  },
+  {
+    "Id": "17a9892e-e735-460f-8251-3d63d97a7ac1",
+    "Content": "{ \\\"columns\\\": [ \\\"Mayýs Cumalý\\\", \\\"Nesli Ýpçizade\\\" ] }",
+    "SenderId": "10.100.1.7",
+    "SentTime": "2020-04-20T06:25:53",
+    "GroupId": 212
+  },
+  {
+    "Id": "aa5c9f04-795b-4c67-97c2-d1212b46d00a",
+    "Content": "{ \\\"columns\\\": [ \\\"Büþra Cüce\\\", \\\"Ýhsan Vehbi Ýpekoðlu\\\" ] }",
+    "SenderId": "10.100.1.23",
+    "SentTime": "2020-04-20T07:39:01",
+    "GroupId": 213
+  },
+  {
+    "Id": "c80b74e6-08f8-45f1-a57a-11b333b9e500",
+    "Content": "{ \\\"columns\\\": [ \\\"Afra Selcen Çaðan\\\", \\\"Necati Ýrsoy\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T16:55:09",
+    "GroupId": 214
+  },
+  {
+    "Id": "29a10017-e23d-40a9-97fd-01c688b2e191",
+    "Content": "{ \\\"columns\\\": [ \\\"Gönül Çaðatay\\\", \\\"Zerin Ýshakoðlu\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-19T18:03:11",
+    "GroupId": 215
+  },
+  {
+    "Id": "eb5fdcec-6b3b-424e-89eb-74d536921e32",
+    "Content": "{ \\\"columns\\\": [ \\\"Doðangün Çaðlar\\\", \\\"Dursun Korel Ýþgören\\\" ] }",
+    "SenderId": "10.100.1.19",
+    "SentTime": "2020-04-20T12:43:22",
+    "GroupId": 216
+  },
+  {
+    "Id": "c0ccc24b-093c-447d-a7c0-a4a82fb4ccd3",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Ege Çaðlayan\\\", \\\"Ahuþen Ýþgüzar\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T23:06:23",
+    "GroupId": 217
+  },
+  {
+    "Id": "659ba534-6c17-446a-8604-46226d025390",
+    "Content": "{ \\\"columns\\\": [ \\\"Özen Çakan\\\", \\\"Uzel Kabataþ\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-19T19:13:12",
+    "GroupId": 218
+  },
+  {
+    "Id": "93c3d25a-2d54-4224-a76c-bece5d20159d",
+    "Content": "{ \\\"columns\\\": [ \\\"Dilhan Çakanel\\\", \\\"Melis Ezgi Kabayuka\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T22:59:03",
+    "GroupId": 219
+  },
+  {
+    "Id": "3313d9ba-84b8-4fda-957c-474647fd8dc5",
+    "Content": "{ \\\"columns\\\": [ \\\"Maral Çakýcý\\\", \\\"Þaziye Kabukçu\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-19T20:23:11",
+    "GroupId": 220
+  },
+  {
+    "Id": "c96210e6-5c42-4d6c-80a0-ddb4675ff663",
+    "Content": "{ \\\"columns\\\": [ \\\"Mahire Çalým\\\", \\\"Bergüzar Kaçaranoðlu\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T05:48:14",
+    "GroupId": 221
+  },
+  {
+    "Id": "8221c0b5-f719-4f7e-aedd-367379082f50",
+    "Content": "{ \\\"columns\\\": [ \\\"Hacý Bayram Ufuk Çamaþ\\\", \\\"Ömer Faruk Kadý\\\" ] }",
+    "SenderId": "10.100.1.4",
+    "SentTime": "2020-04-20T06:46:40",
+    "GroupId": 222
+  },
+  {
+    "Id": "7a4be345-a0bd-4da1-b9a4-59e6781d6151",
+    "Content": "{ \\\"columns\\\": [ \\\"Oltun Çanga\\\", \\\"Daðhan Kadoðlu\\\" ] }",
+    "SenderId": "10.100.1.30",
+    "SentTime": "2020-04-20T11:41:50",
+    "GroupId": 223
+  },
+  {
+    "Id": "6d47b347-7790-4518-9239-7732938568c7",
+    "Content": "{ \\\"columns\\\": [ \\\"Önel Çapa\\\", \\\"Ünzile Kalfaoðlu\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T05:01:37",
+    "GroupId": 224
+  },
+  {
+    "Id": "c7e44b0a-4dbd-4d9a-ac2f-2c4a0910e5bd",
+    "Content": "{ \\\"columns\\\": [ \\\"Bayülken Çaprak\\\", \\\"Sezer Kalsýn\\\" ] }",
+    "SenderId": "10.100.1.35",
+    "SentTime": "2020-04-20T13:11:51",
+    "GroupId": 225
+  },
+  {
+    "Id": "acd4f3eb-550e-4435-903d-e15ce9aefa10",
+    "Content": "{ \\\"columns\\\": [ \\\"Dilseren Çarýcý\\\", \\\"Þensoy Kalyoncu\\\" ] }",
+    "SenderId": "10.100.1.2",
+    "SentTime": "2020-04-19T19:25:44",
+    "GroupId": 226
+  },
+  {
+    "Id": "19bc7da1-f477-433e-a5b6-a471baecc584",
+    "Content": "{ \\\"columns\\\": [ \\\"Elif Beyza Çark\\\", \\\"Necatý Kamýþlý\\\" ] }",
+    "SenderId": "10.100.1.12",
+    "SentTime": "2020-04-20T11:48:35",
+    "GroupId": 227
+  },
+  {
+    "Id": "6b347263-aef4-429c-ad22-fbce0881a879",
+    "Content": "{ \\\"columns\\\": [ \\\"Elvan Çatal\\\", \\\"Þahan Kandaþoðlu\\\" ] }",
+    "SenderId": "10.100.1.9",
+    "SentTime": "2020-04-20T05:06:09",
+    "GroupId": 228
+  },
+  {
+    "Id": "c12f144b-6c6b-4d7f-8317-4e591536393f",
+    "Content": "{ \\\"columns\\\": [ \\\"Esim Çaylar\\\", \\\"Necip Fazýl Kanlý\\\" ] }",
+    "SenderId": "10.100.1.10",
+    "SentTime": "2020-04-20T00:04:30",
+    "GroupId": 229
+  },
+  {
+    "Id": "d1d4dd0e-39da-461f-8467-1c9616dd7dfb",
+    "Content": "{ \\\"columns\\\": [ \\\"Sena Çekmecelioðlu\\\", \\\"Muharrem Kanmaz\\\" ] }",
+    "SenderId": "10.100.1.28",
+    "SentTime": "2020-04-20T01:29:13",
+    "GroupId": 230
+  },
+  {
+    "Id": "699ebefa-67d0-409d-8412-35ed6691bb75",
+    "Content": "{ \\\"columns\\\": [ \\\"Muhammed Üzeyir Çekmeci\\\", \\\"Zeynep Figen Kantarcý\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T13:45:20",
+    "GroupId": 231
+  },
+  {
+    "Id": "ca834d6e-c54a-4048-8bd0-9656a1b12333",
+    "Content": "{ \\\"columns\\\": [ \\\"Aydýn Mert Çelebican\\\", \\\"Çilay Kapsýz\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T16:45:45",
+    "GroupId": 232
+  },
+  {
+    "Id": "9c8dda1c-198f-443c-898a-f1cb3169ed0b",
+    "Content": "{ \\\"columns\\\": [ \\\"Çaðkan Çelenlioðlu\\\", \\\"Suna Karaaslanlý\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T21:01:37",
+    "GroupId": 233
+  },
+  {
+    "Id": "f6356a57-5b09-4f0d-abb9-ece2f34a1855",
+    "Content": "{ \\\"columns\\\": [ \\\"Zümra Çelýk\\\", \\\"Ahmet Can Karabacak\\\" ] }",
+    "SenderId": "10.100.1.20",
+    "SentTime": "2020-04-19T17:30:46",
+    "GroupId": 234
+  },
+  {
+    "Id": "f684e638-1189-4f5f-82a1-1965df65ea73",
+    "Content": "{ \\\"columns\\\": [ \\\"Bayar Çelik\\\", \\\"Asya Sema Karabað\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-20T11:07:20",
+    "GroupId": 235
+  },
+  {
+    "Id": "e4bbb1b6-f42a-4b1e-97da-2f5f057f0b38",
+    "Content": "{ \\\"columns\\\": [ \\\"Gönülgül Çelikaðý\\\", \\\"Gül Sena Karabýyýk\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T02:50:30",
+    "GroupId": 236
+  },
+  {
+    "Id": "551e55a4-12c5-4eae-8541-04338dcb6468",
+    "Content": "{ \\\"columns\\\": [ \\\"Ece Pýnar Çeliker\\\", \\\"Fatma Büþra Karabýyýklý\\\" ] }",
+    "SenderId": "10.100.1.34",
+    "SentTime": "2020-04-20T05:58:49",
+    "GroupId": 237
+  },
+  {
+    "Id": "8c574230-3cd6-493b-ac8c-f75b9f740ab6",
+    "Content": "{ \\\"columns\\\": [ \\\"Mehmet Tarýk Çelikkol\\\", \\\"Arca Karabulut\\\" ] }",
+    "SenderId": "10.100.1.15",
+    "SentTime": "2020-04-20T12:03:38",
+    "GroupId": 238
+  },
+  {
+    "Id": "07d78bcd-32da-4345-b29e-557f9beb84eb",
+    "Content": "{ \\\"columns\\\": [ \\\"Elife Çerçi\\\", \\\"Abdullatif Karacabey\\\" ] }",
+    "SenderId": "10.100.1.32",
+    "SentTime": "2020-04-20T13:25:55",
+    "GroupId": 239
+  },
+  {
+    "Id": "bf328a52-987b-4f26-831f-d6e42acf8924",
+    "Content": "{ \\\"columns\\\": [ \\\"Efecan Çetintaþ\\\", \\\"Tuðra Karacan\\\" ] }",
+    "SenderId": "10.100.1.41",
+    "SentTime": "2020-04-20T03:11:36",
+    "GroupId": 240
+  },
+  {
+    "Id": "5e9df630-f543-4753-90c4-f244b6bac76f",
+    "Content": "{ \\\"columns\\\": [ \\\"Rýdvan Çýkýkcý\\\", \\\"Emir Doðan Karaçay\\\" ] }",
+    "SenderId": "10.100.1.16",
+    "SentTime": "2020-04-20T16:51:38",
+    "GroupId": 241
+  },
+  {
+    "Id": "fe48dcf2-f4a0-45d1-986c-fe4f17606a6e",
+    "Content": "{ \\\"columns\\\": [ \\\"Hatice Gamze Çýnar\\\", \\\"Haluk Barýþ Karaçeþme\\\" ] }",
+    "SenderId": "10.100.1.22",
+    "SentTime": "2020-04-20T05:12:21",
+    "GroupId": 242
+  },
+  {
+    "Id": "85973092-5f0c-4228-8e75-6e676cfef8df",
+    "Content": "{ \\\"columns\\\": [ \\\"Yansý Hilal Çýnaroðlu\\\", \\\"Seyit Ahmet Karadað\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T19:05:28",
+    "GroupId": 243
+  },
+  {
+    "Id": "195d79f6-73f1-4fe1-9af4-ebdab9d24cf0",
+    "Content": "{ \\\"columns\\\": [ \\\"Omaç Çýngýr\\\", \\\"Cevza Karadalan\\\" ] }",
+    "SenderId": "10.100.1.11",
+    "SentTime": "2020-04-20T10:03:07",
+    "GroupId": 244
+  },
+  {
+    "Id": "9a0c4801-94c7-41f5-ae9f-67c8d63aee20",
+    "Content": "{ \\\"columns\\\": [ \\\"Erhan Çýray\\\", \\\"Mustafa Emir Karademir\\\" ] }",
+    "SenderId": "10.100.1.18",
+    "SentTime": "2020-04-19T21:26:37",
+    "GroupId": 245
+  },
+  {
+    "Id": "1bc05e5b-26e7-4ce7-97f0-4d3903534125",
+    "Content": "{ \\\"columns\\\": [ \\\"Þüheda Çiçekli\\\", \\\"Ilgar Pamir Karaismail\\\" ] }",
+    "SenderId": "10.100.1.31",
+    "SentTime": "2020-04-20T10:34:40",
+    "GroupId": 246
+  },
+  {
+    "Id": "0b291ea2-ba35-4958-b1fa-238380b104c9",
+    "Content": "{ \\\"columns\\\": [ \\\"Ünkan Çini\\\", \\\"Seren Karakan\\\" ] }",
+    "SenderId": "10.100.1.39",
+    "SentTime": "2020-04-20T10:46:32",
+    "GroupId": 247
+  },
+  {
+    "Id": "2955678d-7a98-4b92-bab5-bcf503a3f7fa",
+    "Content": "{ \\\"columns\\\": [ \\\"Ahmet Gazi Çintan\\\", \\\"Büþra Hazal Karakaplan\\\" ] }",
+    "SenderId": "10.100.1.21",
+    "SentTime": "2020-04-20T04:54:07",
+    "GroupId": 248
+  },
+  {
+    "Id": "073046f3-cb8e-4b7c-9939-c9244c7fc2ef",
+    "Content": "{ \\\"columns\\\": [ \\\"Seher Ýrem Çitfçi\\\", \\\"Naci Karakaya\\\" ] }",
+    "SenderId": "10.100.1.25",
+    "SentTime": "2020-04-19T20:08:14",
+    "GroupId": 249
+  }
+]

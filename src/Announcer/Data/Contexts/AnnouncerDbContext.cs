@@ -2,6 +2,7 @@
 using Announcer.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -10,12 +11,8 @@ using System.Threading.Tasks;
 
 namespace Announcer.Data.Contexts
 {
-    public class AnnouncerDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+    public class AnnouncerDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AnnouncerDbContext()
-        {
-        }
-
         public AnnouncerDbContext(DbContextOptions<AnnouncerDbContext> options) : base(options)
         {
         }
@@ -100,6 +97,28 @@ namespace Announcer.Data.Contexts
             }
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            // If using Sqlite as dbcontext, then adjustments has to be made for decimals and datetimeoffset typed columns
+            if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            {
+                foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+                {
+                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
+                    var dateTimeProperties = entityType.ClrType.GetProperties()
+                        .Where(p => p.PropertyType == typeof(DateTimeOffset));
+
+                    foreach (var property in properties)
+                    {
+                        modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
+                    }
+
+                    foreach (var property in dateTimeProperties)
+                    {
+                        modelBuilder.Entity(entityType.Name).Property(property.Name)
+                            .HasConversion(new DateTimeOffsetToBinaryConverter());
+                    }
+                }
+            }
 
             base.OnModelCreating(modelBuilder);
         }

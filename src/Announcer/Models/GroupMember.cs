@@ -12,16 +12,16 @@ namespace Announcer.Models
         {
         }
 
-        public GroupMember(string groupId, string clientId) : base()
+        public GroupMember(int groupId, string clientId)
         {
-            GroupId = string.IsNullOrEmpty(groupId) ? throw new ArgumentNullException(nameof(groupId)) : groupId;
+            GroupId = groupId;
             ClientId = string.IsNullOrEmpty(clientId) ? throw new ArgumentNullException(nameof(clientId)) : clientId;
         }
 
         /// <summary>
         /// Group Id
         /// </summary>
-        public string GroupId { get; set; }
+        public int GroupId { get; set; }
 
         /// <summary>
         /// Client Id

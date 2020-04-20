@@ -1,0 +1,1302 @@
+[
+  {
+    "Id": 1,
+    "Name": "Alerji ve Ýmmünoloji 1",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 2,
+    "Name": "Alerji ve Ýmmünoloji 2",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 3,
+    "Name": "Beyin ve Sinir Cerrahisi 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 4,
+    "Name": "Beyin ve Sinir Cerrahisi 2",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 5,
+    "Name": "Beyin ve Sinir Cerrahisi 3",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 6,
+    "Name": "Beyin ve Sinir Cerrahisi 4",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 7,
+    "Name": "Beyin ve Sinir Cerrahisi 5",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 8,
+    "Name": "Beyin ve Sinir Cerrahisi 6",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 9,
+    "Name": "Beyin ve Sinir Cerrahisi 7",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 10,
+    "Name": "Beyin ve Sinir Cerrahisi 8",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 11,
+    "Name": "Cerrahi Onkoloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 12,
+    "Name": "Cerrahi Onkoloji 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 13,
+    "Name": "Çocuk Cerrahisi 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 14,
+    "Name": "Çocuk Gastroenterolojisi 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 15,
+    "Name": "Çocuk Hematolojisi 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 16,
+    "Name": "Çocuk Kardiyolojisi 1",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 17,
+    "Name": "Çocuk Psiyikatri 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 18,
+    "Name": "Çocuk Romatolojisi 1",
+    "Description": "FTR"
+  },
+  {
+    "Id": 19,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 1",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 20,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 10",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 21,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 11",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 22,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 12",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 23,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 13",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 24,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 14",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 25,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 15",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 26,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 16",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 27,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 2",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 28,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 3",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 29,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 4",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 30,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 5",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 31,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 6",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 32,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 7",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 33,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 8",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 34,
+    "Name": "Çocuk Saðlýðý ve Hastalýklarý 9",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 35,
+    "Name": "Çocuk Ürolojisi 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 36,
+    "Name": "Dermatoloji 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 37,
+    "Name": "Dermatoloji 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 38,
+    "Name": "Dermatoloji 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 39,
+    "Name": "Dermatoloji 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 40,
+    "Name": "Dermatoloji 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 41,
+    "Name": "Dermatoloji 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 42,
+    "Name": "Dermatoloji 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 43,
+    "Name": "Dermatoloji 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 44,
+    "Name": "Dermatoloji 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 45,
+    "Name": "Endokrinoloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 46,
+    "Name": "Enfeksiyon 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 47,
+    "Name": "Enfeksiyon 2",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 48,
+    "Name": "Enfeksiyon 3",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 49,
+    "Name": "Enfeksiyon 4",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 50,
+    "Name": "Enfeksiyon 5",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 51,
+    "Name": "Enfeksiyon 6",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 52,
+    "Name": "Enfeksiyon 7",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 53,
+    "Name": "Enfeksiyon 8",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 54,
+    "Name": "Fizik Tedavi 1",
+    "Description": "FTR"
+  },
+  {
+    "Id": 55,
+    "Name": "Fizik Tedavi 10",
+    "Description": "FTR"
+  },
+  {
+    "Id": 56,
+    "Name": "Fizik Tedavi 11",
+    "Description": "FTR"
+  },
+  {
+    "Id": 57,
+    "Name": "Fizik Tedavi 12",
+    "Description": "FTR"
+  },
+  {
+    "Id": 58,
+    "Name": "Fizik Tedavi 13",
+    "Description": "FTR"
+  },
+  {
+    "Id": 59,
+    "Name": "Fizik Tedavi 14",
+    "Description": "FTR"
+  },
+  {
+    "Id": 60,
+    "Name": "Fizik Tedavi 2",
+    "Description": "FTR"
+  },
+  {
+    "Id": 61,
+    "Name": "Fizik Tedavi 3",
+    "Description": "FTR"
+  },
+  {
+    "Id": 62,
+    "Name": "Fizik Tedavi 4",
+    "Description": "FTR"
+  },
+  {
+    "Id": 63,
+    "Name": "Fizik Tedavi 5",
+    "Description": "FTR"
+  },
+  {
+    "Id": 64,
+    "Name": "Fizik Tedavi 6",
+    "Description": "FTR"
+  },
+  {
+    "Id": 65,
+    "Name": "Fizik Tedavi 7",
+    "Description": "FTR"
+  },
+  {
+    "Id": 66,
+    "Name": "Fizik Tedavi 8",
+    "Description": "FTR"
+  },
+  {
+    "Id": 67,
+    "Name": "Fizik Tedavi 9",
+    "Description": "FTR"
+  },
+  {
+    "Id": 68,
+    "Name": "Genel Cerrahi 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 69,
+    "Name": "Genel Cerrahi 10",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 70,
+    "Name": "Genel Cerrahi 11",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 71,
+    "Name": "Genel Cerrahi 12",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 72,
+    "Name": "Genel Cerrahi 2",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 73,
+    "Name": "Genel Cerrahi 3",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 74,
+    "Name": "Genel Cerrahi 4",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 75,
+    "Name": "Genel Cerrahi 5",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 76,
+    "Name": "Genel Cerrahi 6",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 77,
+    "Name": "Genel Cerrahi 7",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 78,
+    "Name": "Genel Cerrahi 8",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 79,
+    "Name": "Genel Cerrahi 9",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 80,
+    "Name": "Göðüs Cerrahisi 1",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 81,
+    "Name": "Göðüs Cerrahisi 2",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 82,
+    "Name": "Göðüs Cerrahisi 3",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 83,
+    "Name": "Göðüs Cerrahisi 4",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 84,
+    "Name": "Göðüs Hastalýklarý 1",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 85,
+    "Name": "Göðüs Hastalýklarý 10",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 86,
+    "Name": "Göðüs Hastalýklarý 11",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 87,
+    "Name": "Göðüs Hastalýklarý 12",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 88,
+    "Name": "Göðüs Hastalýklarý 13",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 89,
+    "Name": "Göðüs Hastalýklarý 14",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 90,
+    "Name": "Göðüs Hastalýklarý 15",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 91,
+    "Name": "Göðüs Hastalýklarý 2",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 92,
+    "Name": "Göðüs Hastalýklarý 3",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 93,
+    "Name": "Göðüs Hastalýklarý 4",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 94,
+    "Name": "Göðüs Hastalýklarý 5",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 95,
+    "Name": "Göðüs Hastalýklarý 6",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 96,
+    "Name": "Göðüs Hastalýklarý 7",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 97,
+    "Name": "Göðüs Hastalýklarý 8",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 98,
+    "Name": "Göðüs Hastalýklarý 9",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 99,
+    "Name": "Göz Hastalýklarý 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 100,
+    "Name": "Göz Hastalýklarý 10",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 101,
+    "Name": "Göz Hastalýklarý 11",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 102,
+    "Name": "Göz Hastalýklarý 12",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 103,
+    "Name": "Göz Hastalýklarý 13",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 104,
+    "Name": "Göz Hastalýklarý 14",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 105,
+    "Name": "Göz Hastalýklarý 15",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 106,
+    "Name": "Göz Hastalýklarý 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 107,
+    "Name": "Göz Hastalýklarý 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 108,
+    "Name": "Göz Hastalýklarý 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 109,
+    "Name": "Göz Hastalýklarý 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 110,
+    "Name": "Göz Hastalýklarý 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 111,
+    "Name": "Göz Hastalýklarý 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 112,
+    "Name": "Göz Hastalýklarý 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 113,
+    "Name": "Göz Hastalýklarý 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 114,
+    "Name": "Hematoloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 115,
+    "Name": "Ýç Hastalýklarý 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 116,
+    "Name": "Ýç Hastalýklarý 10",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 117,
+    "Name": "Ýç Hastalýklarý 11",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 118,
+    "Name": "Ýç Hastalýklarý 12",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 119,
+    "Name": "Ýç Hastalýklarý 13",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 120,
+    "Name": "Ýç Hastalýklarý 14",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 121,
+    "Name": "Ýç Hastalýklarý 15",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 122,
+    "Name": "Ýç Hastalýklarý 16",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 123,
+    "Name": "Ýç Hastalýklarý 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 124,
+    "Name": "Ýç Hastalýklarý 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 125,
+    "Name": "Ýç Hastalýklarý 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 126,
+    "Name": "Ýç Hastalýklarý 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 127,
+    "Name": "Ýç Hastalýklarý 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 128,
+    "Name": "Ýç Hastalýklarý 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 129,
+    "Name": "Ýç Hastalýklarý 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 130,
+    "Name": "Ýç Hastalýklarý 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 131,
+    "Name": "Jinekolojik Onkoloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 132,
+    "Name": "Kadýn Hastalýklarý ve Doðum 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 133,
+    "Name": "Kadýn Hastalýklarý ve Doðum 10",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 134,
+    "Name": "Kadýn Hastalýklarý ve Doðum 11",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 135,
+    "Name": "Kadýn Hastalýklarý ve Doðum 12",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 136,
+    "Name": "Kadýn Hastalýklarý ve Doðum 13",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 137,
+    "Name": "Kadýn Hastalýklarý ve Doðum 14",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 138,
+    "Name": "Kadýn Hastalýklarý ve Doðum 15",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 139,
+    "Name": "Kadýn Hastalýklarý ve Doðum 16",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 140,
+    "Name": "Kadýn Hastalýklarý ve Doðum 17",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 141,
+    "Name": "Kadýn Hastalýklarý ve Doðum 18",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 142,
+    "Name": "Kadýn Hastalýklarý ve Doðum 19",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 143,
+    "Name": "Kadýn Hastalýklarý ve Doðum 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 144,
+    "Name": "Kadýn Hastalýklarý ve Doðum 20",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 145,
+    "Name": "Kadýn Hastalýklarý ve Doðum 21",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 146,
+    "Name": "Kadýn Hastalýklarý ve Doðum 22",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 147,
+    "Name": "Kadýn Hastalýklarý ve Doðum 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 148,
+    "Name": "Kadýn Hastalýklarý ve Doðum 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 149,
+    "Name": "Kadýn Hastalýklarý ve Doðum 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 150,
+    "Name": "Kadýn Hastalýklarý ve Doðum 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 151,
+    "Name": "Kadýn Hastalýklarý ve Doðum 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 152,
+    "Name": "Kadýn Hastalýklarý ve Doðum 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 153,
+    "Name": "Kadýn Hastalýklarý ve Doðum 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 154,
+    "Name": "Kalp ve Damar Cerrahisi 1",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 155,
+    "Name": "Kalp ve Damar Cerrahisi 2",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 156,
+    "Name": "Kalp ve Damar Cerrahisi 3",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 157,
+    "Name": "Kalp ve Damar Cerrahisi 4",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 158,
+    "Name": "Kalp ve Damar Cerrahisi 5",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 159,
+    "Name": "Kalp ve Damar Cerrahisi 6",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 160,
+    "Name": "Kalp ve Damar Cerrahisi 7",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 161,
+    "Name": "Kalp ve Damar Cerrahisi 8",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 162,
+    "Name": "Kalp ve Damar Cerrahisi 9",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 163,
+    "Name": "Kardiyoloji 1",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 164,
+    "Name": "Kardiyoloji 10",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 165,
+    "Name": "Kardiyoloji 11",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 166,
+    "Name": "Kardiyoloji 12",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 167,
+    "Name": "Kardiyoloji 13",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 168,
+    "Name": "Kardiyoloji 14",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 169,
+    "Name": "Kardiyoloji 2",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 170,
+    "Name": "Kardiyoloji 3",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 171,
+    "Name": "Kardiyoloji 4",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 172,
+    "Name": "Kardiyoloji 5",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 173,
+    "Name": "Kardiyoloji 6",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 174,
+    "Name": "Kardiyoloji 7",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 175,
+    "Name": "Kardiyoloji 8",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 176,
+    "Name": "Kardiyoloji 9",
+    "Description": "A Blok"
+  },
+  {
+    "Id": 177,
+    "Name": "Kulak Burun Boðaz 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 178,
+    "Name": "Kulak Burun Boðaz 10",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 179,
+    "Name": "Kulak Burun Boðaz 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 180,
+    "Name": "Kulak Burun Boðaz 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 181,
+    "Name": "Kulak Burun Boðaz 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 182,
+    "Name": "Kulak Burun Boðaz 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 183,
+    "Name": "Kulak Burun Boðaz 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 184,
+    "Name": "Kulak Burun Boðaz 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 185,
+    "Name": "Kulak Burun Boðaz 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 186,
+    "Name": "Kulak Burun Boðaz 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 187,
+    "Name": "Nefroloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 188,
+    "Name": "Nefroloji 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 189,
+    "Name": "Nefroloji 3",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 190,
+    "Name": "Nöroloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 191,
+    "Name": "Nöroloji 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 192,
+    "Name": "Nöroloji 3",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 193,
+    "Name": "Nöroloji 4",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 194,
+    "Name": "Nöroloji 5",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 195,
+    "Name": "Nöroloji 6",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 196,
+    "Name": "Nöroloji 7",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 197,
+    "Name": "Nöroloji 8",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 198,
+    "Name": "Nöroloji 9",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 199,
+    "Name": "Ortopedi 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 200,
+    "Name": "Ortopedi 10",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 201,
+    "Name": "Ortopedi 11",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 202,
+    "Name": "Ortopedi 12",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 203,
+    "Name": "Ortopedi 13",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 204,
+    "Name": "Ortopedi 14",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 205,
+    "Name": "Ortopedi 15",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 206,
+    "Name": "Ortopedi 16",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 207,
+    "Name": "Ortopedi 17",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 208,
+    "Name": "Ortopedi 2",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 209,
+    "Name": "Ortopedi 3",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 210,
+    "Name": "Ortopedi 4",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 211,
+    "Name": "Ortopedi 5",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 212,
+    "Name": "Ortopedi 6",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 213,
+    "Name": "Ortopedi 7",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 214,
+    "Name": "Ortopedi 8",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 215,
+    "Name": "Ortopedi 9",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 216,
+    "Name": "Plastik Cerrahi 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 217,
+    "Name": "Psikiyatri 1",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 218,
+    "Name": "Psikiyatri 2",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 219,
+    "Name": "Psikiyatri 3",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 220,
+    "Name": "Psikiyatri 4",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 221,
+    "Name": "Psikiyatri 5",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 222,
+    "Name": "Psikiyatri 6",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 223,
+    "Name": "Psikiyatri 7",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 224,
+    "Name": "Psikiyatri 8",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 225,
+    "Name": "Psikiyatri 9",
+    "Description": "C Blok"
+  },
+  {
+    "Id": 226,
+    "Name": "Radyasyon Onkolojisi 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 227,
+    "Name": "Radyasyon Onkolojisi 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 228,
+    "Name": "Radyasyon Onkolojisi 3",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 229,
+    "Name": "Radyasyon Onkolojisi 4",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 230,
+    "Name": "Radyasyon Onkolojisi 5",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 231,
+    "Name": "Radyasyon Onkolojisi 6",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 232,
+    "Name": "Radyasyon Onkolojisi 7",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 233,
+    "Name": "Radyasyon Onkolojisi 8",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 234,
+    "Name": "Radyasyon Onkolojisi 9",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 235,
+    "Name": "Romatoloji 1",
+    "Description": "FTR"
+  },
+  {
+    "Id": 236,
+    "Name": "Sigarayý Býraktýrma 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 237,
+    "Name": "Sigarayý Býraktýrma 2",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 238,
+    "Name": "Sigarayý Býraktýrma 3",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 239,
+    "Name": "Sigarayý Býraktýrma 4",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 240,
+    "Name": "Sigarayý Býraktýrma 5",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 241,
+    "Name": "Sigarayý Býraktýrma 6",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 242,
+    "Name": "Sigarayý Býraktýrma 7",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 243,
+    "Name": "Sigarayý Býraktýrma 8",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 244,
+    "Name": "Týbbi Genetik 1",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 245,
+    "Name": "Týbbi Genetik 2",
+    "Description": "E Blok"
+  },
+  {
+    "Id": 246,
+    "Name": "Týbbi Onkoloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 247,
+    "Name": "Týbbi Onkoloji 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 248,
+    "Name": "Týbbi Onkoloji 3",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 249,
+    "Name": "Üroloji 1",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 250,
+    "Name": "Üroloji 10",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 251,
+    "Name": "Üroloji 2",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 252,
+    "Name": "Üroloji 3",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 253,
+    "Name": "Üroloji 4",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 254,
+    "Name": "Üroloji 5",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 255,
+    "Name": "Üroloji 6",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 256,
+    "Name": "Üroloji 7",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 257,
+    "Name": "Üroloji 8",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 258,
+    "Name": "Üroloji 9",
+    "Description": "D Blok"
+  },
+  {
+    "Id": 259,
+    "Name": "Yanýk Polikliniði 1",
+    "Description": "B Blok"
+  },
+  {
+    "Id": 260,
+    "Name": "Yanýk Polikliniði 2",
+    "Description": "B Blok"
+  }
+]

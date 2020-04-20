@@ -25,7 +25,8 @@ namespace Announcer.Data.Migrations
                 name: "Groups",
                 columns: table => new
                 {
-                    Id = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
@@ -43,7 +44,8 @@ namespace Announcer.Data.Migrations
                 name: "Templates",
                 columns: table => new
                 {
-                    Id = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
@@ -90,7 +92,7 @@ namespace Announcer.Data.Migrations
                     Name = table.Column<string>(maxLength: 255, nullable: false),
                     Description = table.Column<string>(maxLength: 255, nullable: true),
                     UserId = table.Column<string>(maxLength: 450, nullable: true),
-                    TemplateId = table.Column<string>(nullable: true),
+                    TemplateId = table.Column<int>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -101,7 +103,7 @@ namespace Announcer.Data.Migrations
                         column: x => x.TemplateId,
                         principalTable: "Templates",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -141,7 +143,7 @@ namespace Announcer.Data.Migrations
                 name: "GroupMembers",
                 columns: table => new
                 {
-                    GroupId = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
+                    GroupId = table.Column<int>(nullable: false),
                     ClientId = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     CreatedBy = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
@@ -177,7 +179,7 @@ namespace Announcer.Data.Migrations
                     Content = table.Column<string>(nullable: false),
                     SenderId = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     SentTime = table.Column<DateTime>(nullable: false),
-                    GroupId = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
+                    GroupId = table.Column<int>(nullable: true),
                     RecipientId = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false)
                 },

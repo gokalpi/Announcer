@@ -42,6 +42,7 @@ namespace Announcer.Mapping
             CreateMap<SaveGroupMemberDTO, GroupMember>();
             CreateMap<SaveNotificationDTO, Notification>();
             CreateMap<SaveTemplateDTO, Template>();
+            CreateMap<SendGroupNotificationDTO, SendGroupNotification>();
         }
     }
 }

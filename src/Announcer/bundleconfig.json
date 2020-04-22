@@ -40,5 +40,11 @@
     "inputFiles": [
       "wwwroot/js/qrcode.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/notifications.min.js",
+    "inputFiles": [
+      "wwwroot/js/notifications.js"
+    ]
   }
 ]

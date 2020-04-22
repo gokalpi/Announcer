@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id?}"
 @model NotificationsModel
 @{
     Layout = null;
@@ -21,6 +21,14 @@
 </head>
 
 <body>
+    <div id="loader-wrapper" class="loader-wrapper" hidden>
+        <div id="loader" class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+            <div class="message">Bağlanıyor...</div>
+        </div>
+    </div>
     <div class="layout">
         <header>
             <div id="brand" class="brand">
@@ -54,10 +62,6 @@
         </footer>
     </div>
 
-    <script>
-        var clientIP = "@Model.ClientIP";
-    </script>
-
     <environment include="Development">
         <script src="~/lib/signalr/signalr.js"></script>
         <script src="~/js/qrcode.js"></script>
@@ -66,7 +70,24 @@
     <environment exclude="Development">
         <script src="~/lib/signalr/signalr.min.js"></script>
         <script src="~/js/qrcode.min.js"></script>
-        <script src="~/js/notifications.js"></script>
+        <script src="~/js/notifications.min.js"></script>
     </environment>
+
+    <script>
+        // Start displaying clock
+        displayClock();
+
+        // Set client id
+        var clientId = setClientId("@Model.ClientIP");
+
+        // Get client info
+        //var clientInfo = getClientInfo(clientId);
+
+        // Get latest notifications of client
+        //getNotifications(clientId);
+
+        // Start the connection.
+        start();
+    </script>
 </body>
 </html>

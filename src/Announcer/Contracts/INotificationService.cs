@@ -10,6 +10,13 @@ namespace Announcer.Contracts
     public interface INotificationService : IService<Notification>
     {
         /// <summary>
+        /// Lists all group notifications of client
+        /// </summary>
+        /// <param name="clientId">Client id</param>
+        /// <returns>List response of all group notifications of client</returns>
+        Task<IListResponse<Notification>> ListGroupNotificationsByClientAsync(string clientId);
+
+        /// <summary>
         /// Lists all notifications of client
         /// </summary>
         /// <param name="clientId">Client id</param>

@@ -8,19 +8,24 @@ namespace Announcer.Pages
     {
         public string ClientIP { get; set; }
 
-        public void OnGet()
+        public void OnGet(string id)
         {
-            string header = HttpContext.Request.Headers["CF-Connecting-IP"].FirstOrDefault() ?? HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
-            if  (IPAddress.TryParse(header?.Split(":")[0], out IPAddress ip))
+            if (string.IsNullOrWhiteSpace(id))
             {
-                ClientIP = ip.ToString();
+                string header = HttpContext.Request.Headers["CF-Connecting-IP"].FirstOrDefault() ?? HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+                if (IPAddress.TryParse(header?.Split(":")[0], out IPAddress ip))
+                {
+                    ClientIP = ip.ToString();
+                }
+                else
+                {
+                    ClientIP = HttpContext?.Connection?.RemoteIpAddress?.ToString();
+                }
+
+                ClientIP = (ClientIP == "::1") ? "" : ClientIP;
             }
             else
-            {
-                ClientIP = HttpContext?.Connection?.RemoteIpAddress?.ToString();
-            }
-
-            ClientIP = (ClientIP == "::1") ? "" : ClientIP; 
+                ClientIP = id;
         }
     }
 }

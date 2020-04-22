@@ -1,8 +1,12 @@
-﻿using Announcer.Hubs;
+﻿using Announcer.Contracts;
+using Announcer.Dtos.Requests;
+using Announcer.Helpers.Extensions;
+using Announcer.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Threading.Tasks;
 
 namespace Announcer.Controllers
@@ -13,33 +17,46 @@ namespace Announcer.Controllers
     [ApiVersion("1.0")]
     public class GroupNotificationsController : BaseApiController
     {
-        private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly IGroupNotificationService _service;
+        private readonly IMapper _mapper;
 
-        public GroupNotificationsController(IHubContext<NotificationHub> hubContext, IHttpContextAccessor httpContextAccessor, ILogger logger) : base(httpContextAccessor, logger)
+        public GroupNotificationsController(IGroupNotificationService service, IMapper mapper,
+            IHttpContextAccessor httpContextAccessor, ILogger<GroupNotificationsController> logger)
+            : base(httpContextAccessor, logger)
         {
-            _hubContext = hubContext ?? throw new System.ArgumentNullException(nameof(hubContext));
+            _service = service ?? throw new ArgumentNullException(nameof(service));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        /// <summary>
+        /// Sends a group notification.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST api/GroupNotifications
+        ///     {
+        ///        "groupName": "Fizik Tedavi 12",
+        ///        "message": "{ \"columns\": [ \"Ali Yılmaz\", \"Veli Yıldırım\" ] }"
+        ///     }
+        /// </remarks>
+        /// <param name="notificationDTO">Group notification to be send</param>
+        /// <returns></returns>
+        /// <response code="200">Returns the newly created group</response>
         [HttpPost]
-        public async Task<ActionResult> SendMessageToGroup(string groupName, string message)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> SendMessageToGroup(SendGroupNotificationDTO notificationDTO)
         {
-            try
-            {
-                await _hubContext.Clients.Group(groupName).SendAsync("ReceiveGroupMessage", new
-                {
-                    Group = groupName,
-                    Message = message
-                });
+            _logger.LogDebug("'{0}' has been invoked", nameof(SendMessageToGroup));
 
-                _logger.LogInformation($"Message '{message}' sent to group '{groupName}' from '{clientIpAddress}'");
+            if (notificationDTO == null)
+                return BadRequest("Notification info is null");
 
-                return Ok();
-            }
-            catch (System.Exception ex)
-            {
-                _logger.LogError(ex, $"Error occured in {nameof(SendMessageToGroup)}");
-                throw ex;
-            }
+            var response = await _service.SendMessageToGroup(_mapper.Map<SendGroupNotification>(notificationDTO));
+
+            _logger.LogDebug($"Notification to {notificationDTO.GroupName} group sent.");
+
+            return response.ToHttpResponse();
         }
     }
 }

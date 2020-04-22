@@ -1,28 +1,32 @@
-﻿"use strict";
-
+﻿// jshint esversion: 6
 var hubUri = "/NotificationHub";
 var clientUri = "/api/Clients";
-var clientId;
-var groups;
 var infoColumnCount = 0;
+var groups;
+
+// QRCode generation
+var qrCodeUri = location.href;
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: qrCodeUri,
+    width: 100,
+    height: 100
+});
 
 // Create SignalR connection
 var connection = new signalR.HubConnectionBuilder()
     .withUrl(hubUri)
     .withAutomaticReconnect()
-    .configureLogging(signalR.LogLevel.Warning)
+    .configureLogging(signalR.LogLevel.Error)
     .build();
 
 // Start SignalR connection
-async function start() {
-    await connection.start().then(function () {
+function start() {
+    connection.start().then(function () {
         if (connection.state === signalR.HubConnectionState.Connected) {
-            console.log(`Connected to hub at ${hubUri}`);
+            console.log('Connected to hub at ' + hubUri);
 
-            // Join groups
-            if (groups) {
-                groups.map(group => joinGroup(group));
-            }
+            // Get client Info
+            getClientInfo(clientId);
         }
     }).catch(error => {
         displayError(error);
@@ -36,6 +40,20 @@ async function start() {
 
 // On reconnecting to the hub
 connection.onreconnecting((error) => {
+    console.log('Reconnecting');
+
+    // Show loader animation
+    document.getElementById('loader-wrapper').hidden = false;
+
+    var groupRows = document.getElementsByClassName('notification-item');
+    for (var i = 0; i < groupRows.length; i++) {
+        groupRows[i].className = 'notification-item disconnected';
+        var groupCols = groupRows[i].getElementsByClassName('group-col');
+        for (var j = 0; j < groupCols.length; j++) {
+            groupCols[j].innerHTML = '';
+        }
+    }
+
     console.assert(connection.state === signalR.HubConnectionState.Reconnecting);
 
     console.warn(`Connection lost due to error "${error}". Reconnecting.`);
@@ -43,29 +61,37 @@ connection.onreconnecting((error) => {
 
 // On reconnected to the hub
 connection.onreconnected((connectionId) => {
+    console.log('Reconnected');
+
+    // Hide loader animation
+    document.getElementById('loader-wrapper').hidden = true;
+
+    var groupRows = document.getElementsByClassName('notification-item');
+    for (var i = 0; i < groupRows.length; i++) {
+        groupRows[i].className = 'notification-item';
+    }
+
     console.assert(connection.state === signalR.HubConnectionState.Connected);
 
-    // Client rejoins to the groups
-    if (groups) {
-        groups.map(group => joinGroup(group));
-    }
+    // Client reconnected, so get client info again
+    getClientInfo(clientId);
 
     console.warn(`Connection reestablished and joined to the groups. Connected with connectionId "${connectionId}".`);
 });
 
 // On closed connection to the hub
-connection.onclose(async (error) => {
+connection.onclose(error => {
     console.assert(connection.state === signalR.HubConnectionState.Disconnected);
 
     // Leave groups
     if (groups) {
-        groups.map(group => leaveGroup(group));
+        for (var j = 0; j < groups.length; j++) {
+            console.log('On close - leaving groups[%d]: %o', j, groups[j]);
+            leaveGroup(groups[j]);
+        }
     }
 
-    console.warn(`Connection closed due to error "${error}". Try refreshing this page to restart the connection.`);
-
-    // If connection is closed, then reconnect again
-    //await start();
+    console.warn('Connection closed due to error ' + error + '. Try refreshing this page to restart the connection.');
 });
 
 // When user connected to the hub
@@ -80,12 +106,12 @@ connection.on("UserDisconnected", function (user, connectionId) {
 
 // When user joined to a group
 connection.on("JoinedGroup", function (user, group) {
-    console.log(`User "${user}" joined to group ${group}`);
+    console.log(`Client "${user}" joined to group "${group}"`);
 });
 
 // When user leaves a group
 connection.on("LeftGroup", function (user, group) {
-    console.log(`User "${user}" left group ${group}`);
+    console.log(`Client "${user}" left group "${group}"`);
 });
 
 // Group message received function
@@ -100,17 +126,17 @@ connection.on("ReceiveMessage", function (message) {
     console.log(msg);
 });
 
-async function joinGroup(groupName) {
+function joinGroup(groupName) {
     if (groupName) {
-        await connection.invoke("AddToGroupAsync", groupName).then(function () {
+        connection.invoke("AddToGroupAsync", groupName).then(function () {
             //console.log(`Joined to "${groupName}" group`);
         }).catch(error => displayError(error));
     }
 }
 
-async function leaveGroup(groupName) {
+function leaveGroup(groupName) {
     if (groupName) {
-        await connection.invoke("RemoveFromGroupAsync", groupName).then(function () {
+        connection.invoke("RemoveFromGroupAsync", groupName).then(function () {
             //console.log(`Left "${groupName}" group`);
         }).catch(error => displayError(error));
     }
@@ -123,8 +149,8 @@ function displayClock() {
         clock.innerText = new Intl.DateTimeFormat('tr-TR', options).format(new Date());
     }
 
-    var t = setTimeout(function () {
-        displayClock()
+    setTimeout(function () {
+        displayClock();
     }, 1000);
 }
 
@@ -136,7 +162,7 @@ function displayError(error) {
 
     errorBody.style = "";
 
-    //var t = setTimeout(function () {
+    // setTimeout(function () {
     //    errorBody.style = "display: none";
     //}, 10000);
 }
@@ -146,6 +172,9 @@ function displayHeaders(header) {
 
     var pageHeader = document.getElementById("notifications-header");
     if (pageHeader) {
+        // Remove all header columns
+        pageHeader.querySelectorAll('*').forEach(n => n.remove());
+
         infoColumnCount = header.columns.length > 0 ? header.columns.length - 1 : 0;
 
         var c = document.createDocumentFragment();
@@ -184,13 +213,15 @@ function displayNotification(group, content) {
         }
 
         groupRow.className = "notification-item active";
+        setTimeout(() => groupRow.className = "notification-item", 6500);
     }
     else {
         var notifications = document.getElementById('notifications');
         if (notifications) {
             groupRow = document.createElement('div');
             groupRow.id = groupRowId;
-            groupRow.className = "notification-item";
+            groupRow.className = "notification-item active";
+            setTimeout(() => groupRow.className = "notification-item", 6500);
 
             var c = document.createDocumentFragment();
 
@@ -218,30 +249,10 @@ function displayNotification(group, content) {
     }
 }
 
-function getClientId() {
-    if (clientId && clientId.trim().length > 0) return clientId;
+function getClientInfo(id) {
+    if (!id) return null;
 
-    const urlParams = new URLSearchParams(window.location.search);
-
-    var clientId = urlParams.get("id");
-    if (!clientId || clientId.trim().length === 0)
-        clientId = clientIP;
-
-    if (clientId && clientId.trim().length > 0) {
-        clientId = clientId.trim();
-        document.getElementById("client-id").innerText = clientId;
-        return clientId;
-    }
-    else {
-        displayError("İstemci bilgisi bulunamadı");
-        return null;
-    }
-}
-
-function getClientInfo() {
-    if (!clientId) return;
-
-    fetch(`${clientUri}/${clientId}`, {
+    fetch(`${clientUri}/${id}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -257,18 +268,21 @@ function getClientInfo() {
         })
         .then(function (data) {
             if (data.isSuccessful) {
-                let clientInfo = data.model;
+                let client = data.model;
+                if (client.template) {
+                    let template = JSON.parse(client.template);
 
-                if (clientInfo.template) {
-                    let template = JSON.parse(clientInfo.template);
                     displayHeaders(template.header);
 
-                    if (clientInfo.groups && clientInfo.groups.length > 0) {
-                        groups = clientInfo.groups.map(group => group.group).sort();
+                    if (client.groups && client.groups.length > 0) {
+                        groups = client.groups.map(group => group.group).sort();
 
                         for (var i = 0; i < groups.length; i++) {
                             displayNotification(groups[i], '{ "columns": [ "", "" ] }');
+                            joinGroup(groups[i]);
                         }
+
+                        getNotifications(id);
                     }
                     else {
                         displayError("İstemcinin üye olduğu gruplar bulunamadı.");
@@ -284,10 +298,10 @@ function getClientInfo() {
         });
 }
 
-function getNotifications(clientId) {
-    if (clientId === "") return;
+function getNotifications(id) {
+    if (!id) return;
 
-    fetch(`${clientUri}/${clientId}/Notifications`, {
+    fetch(`${clientUri}/${id}/GroupNotifications`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -305,7 +319,9 @@ function getNotifications(clientId) {
             if (data.isSuccessful) {
                 let notifications = data.model;
 
-                return notifications.map(notification => displayNotification(notification));
+                for (var i = 0; i < notifications.length; i++) {
+                    displayNotification(notifications[i].group, notifications[i].content);
+                }
             }
             else {
                 displayError("İstemcinin mesajları okunamadı. " + data.message);
@@ -314,6 +330,31 @@ function getNotifications(clientId) {
         .catch(error => {
             displayError("İstemcinin mesajları bulunamadı. " + error);
         });
+}
+
+function setClientId(id) {
+    var clientId;
+
+    if (id && id.trim().length > 0) {
+        clientId = id;
+    }
+    else {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        clientId = urlParams.get("id");
+        if (!clientId || clientId.trim().length === 0)
+            clientId = clientIP;
+    }
+
+    if (clientId && clientId.trim().length > 0) {
+        clientId = clientId.trim();
+        document.getElementById("client-id").innerText = clientId;
+        return clientId;
+    }
+    else {
+        displayError("İstemci bilgisi bulunamadı");
+        return null;
+    }
 }
 
 function slugify(text) {
@@ -326,24 +367,3 @@ function slugify(text) {
         .replace(/[-]+/gi, "-") // trim repeated dashes
         .toLowerCase();
 }
-
-// Start displaying clock
-displayClock();
-
-// Set client id
-clientId = getClientId();
-
-// Get client info
-getClientInfo();
-
-//getNotifications(clientId);
-
-// Start the connection.
-start();
-
-var qrCodeUri = location.href;
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: qrCodeUri,
-    width: 100,
-    height: 100
-});

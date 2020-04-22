@@ -324,6 +324,44 @@ namespace Announcer.Controllers
         }
 
         /// <summary>
+        /// Gets all notifications of a Client's subscribed groups with specified id.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET api/Clients/10.1.1.1/GroupNotifications
+        /// </remarks>
+        /// <param name="id">Client id</param>
+        /// <returns>Group notifications of Client with specified id</returns>
+        /// <response code="200">Returns notifications of Client with specified id</response>
+        /// <response code="400">If the id is null</response>
+        /// <response code="500">If an exception happens</response>
+        [HttpGet("{id}/GroupNotifications")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetGroupNotificationsByClientAsync(string id)
+        {
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupNotificationsByClientAsync));
+
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Client id is null or empty");
+
+            var response = await _notificationService.ListGroupNotificationsByClientAsync(id);
+
+            _logger.LogInformation($"Found group notifications of client with id {id}.");
+
+            var result = new ListResponse<NotificationDTO>()
+            {
+                IsSuccessful = response.IsSuccessful,
+                Message = response.Message,
+                Model = _mapper.Map<IEnumerable<NotificationDTO>>(response.Model)
+            };
+
+            return result.ToHttpResponse();
+        }
+
+        /// <summary>
         /// Returns data necessary for Datatables operations
         /// </summary>
         /// <param name="dtParameters">Parameters coming from Datatables</param>

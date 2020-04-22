@@ -4,7 +4,6 @@ using Announcer.Models;
 using Announcer.Services.Communication;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,6 +23,29 @@ namespace Announcer.Services
         public NotificationService(IUnitOfWork unitOfWork, ILogger<BaseService<Notification>> logger)
             : base(unitOfWork, logger)
         {
+        }
+
+        /// <inheritdoc/>
+        public async Task<IListResponse<Notification>> ListGroupNotificationsByClientAsync(string clientId)
+        {
+            _logger.LogDebug($"'{nameof(ListGroupNotificationsByClientAsync)}' has been invoked");
+
+            var response = new ListResponse<Notification>();
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(clientId))
+                    throw new ArgumentNullException(nameof(clientId));
+
+                response.Model = await _repository.ListAsync(predicate: n => n.Group.Clients.Any(gm => gm.ClientId == clientId), includeString: "Sender, Group, Recipient", orderBy: o => o.OrderBy(n => n.Group.Name).ThenBy(n => n.SentTime));
+                response.Message = $"Found {response.Model.Count()} group notifications of Client {clientId}";
+            }
+            catch (Exception ex)
+            {
+                response.SetError(ex, nameof(ListGroupNotificationsByClientAsync), _logger);
+            }
+
+            return response;
         }
 
         /// <inheritdoc/>

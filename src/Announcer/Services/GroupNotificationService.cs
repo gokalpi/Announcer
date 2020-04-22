@@ -59,6 +59,7 @@ namespace Announcer.Services
                 else
                 {
                     notification.Content = groupNotification.Message;
+                    notification.SentTime = DateTime.Now;
                     notificationRepository.Update(notification);
                 }
 

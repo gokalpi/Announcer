@@ -338,4 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/src/Announcer/wwwroot/css/template.css
+
+# Sqlite databases
+*.db

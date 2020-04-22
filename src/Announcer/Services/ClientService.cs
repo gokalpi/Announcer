@@ -52,7 +52,7 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IListResponse<Client>> ListClientsByGroupAsync(string groupId)
+        public async Task<IListResponse<Client>> ListClientsByGroupAsync(int groupId)
         {
             _logger.LogDebug($"'{nameof(ListClientsByGroupAsync)}' has been invoked");
 
@@ -60,9 +60,6 @@ namespace Announcer.Services
 
             try
             {
-                if (string.IsNullOrWhiteSpace(groupId))
-                    throw new ArgumentNullException(nameof(groupId));
-
                 response.Model = await _repository.ListAsync(predicate: c => c.Groups.Any(gm => gm.GroupId == groupId), includeString: "", orderBy: o => o.OrderBy(g => g.Name));
                 response.Message = $"Found {response.Model.Count()} clients of Group {groupId}";
             }

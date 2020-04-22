@@ -2,18 +2,8 @@
 
 namespace Announcer.Models
 {
-    public class ApplicationUser : IdentityUser<string>
+    public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser() : base()
-        {
-            Id = System.Guid.NewGuid().ToString();
-        }
-
-        public ApplicationUser(string userName) : base(userName)
-        {
-            Id = System.Guid.NewGuid().ToString();
-        }
-
         /// <summary>
         /// Profile Image
         /// </summary>

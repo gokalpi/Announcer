@@ -12,18 +12,18 @@ namespace Announcer.Helpers.Extensions
         /// <param name="context">Http context</param>
         /// <param name="allowForwarded">Whether to allow x-forwarded-for header check</param>
         /// <returns>IPAddress</returns>
-        public static IPAddress GetRemoteIPAddress(this HttpContext context, bool allowForwarded = true)
+        public static string GetRemoteIPAddress(this HttpContext context, bool allowForwarded = true)
         {
             if (allowForwarded)
             {
                 string header = (context.Request.Headers["CF-Connecting-IP"].FirstOrDefault() ?? context.Request.Headers["X-Forwarded-For"].FirstOrDefault());
                 if (IPAddress.TryParse(header, out IPAddress ip))
                 {
-                    return ip;
+                    return ip.ToString();
                 }
             }
 
-            return context.Connection.RemoteIpAddress;
+            return context.Connection.RemoteIpAddress.ToString();
         }
     }
 }

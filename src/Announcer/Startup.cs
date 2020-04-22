@@ -1,4 +1,5 @@
 using Announcer.Contracts;
+using Announcer.Data.Contexts;
 using Announcer.Data.Repositories;
 using Announcer.Data.UnitOfWork;
 using Announcer.Helpers.Extensions;
@@ -8,7 +9,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,39 +20,38 @@ namespace Announcer
 {
     public class Startup
     {
+        private readonly IConfiguration _config;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
         /// </summary>
-        /// <param name="configuration">The current configuration.</param>
-        /// <param name="env">The current working environment.</param>
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        /// <param name="config">The current configuration.</param>
+        public Startup(IConfiguration config)
         {
-            _env = env;
-            Configuration = configuration;
+            _config = config;
         }
 
-        /// <summary>
-        /// Gets the current configuration.
-        /// </summary>
-        /// <value>The current application configuration.</value>
-        public IConfiguration Configuration { get; }
+        // This method gets called by the runtime in development environment.
+        public void ConfigureDevelopmentServices(IServiceCollection services)
+        {
+            services.AddDbContext<AnnouncerDbContext>(options =>
+                options.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
-        /// <summary>
-        /// Gets the current working environment
-        /// </summary>
-        private readonly IWebHostEnvironment _env;
+            ConfigureServices(services);
+        }
+
+        // This method gets called by the runtime in production environment.
+        public void ConfigureProductionServices(IServiceCollection services)
+        {
+            services.AddDbContext<AnnouncerDbContext>(options =>
+                options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+
+            ConfigureServices(services);
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies
-                // is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
             services.AddRazorPages()
                     .AddRazorPagesOptions(options =>
             {
@@ -57,8 +59,6 @@ namespace Announcer
                 options.Conventions.AuthorizeFolder("/Admin", "RequireAdministratorRole");
                 options.Conventions.AuthorizeFolder("/");
             });
-
-            services.AddDatabaseServices(Configuration.GetConnectionString("DefaultConnection"), _env.EnvironmentName);
 
             services.AddIdentity();
 
@@ -82,13 +82,20 @@ namespace Announcer
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IClientService, ClientService>();
             services.AddScoped<IGroupService, GroupService>();
+            services.AddScoped<IGroupNotificationService, GroupNotificationService>();
             services.AddScoped<INotificationService, NotificationService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IApiVersionDescriptionProvider provider)
+        public void Configure(IApplicationBuilder app, IApiVersionDescriptionProvider provider, IWebHostEnvironment env)
         {
-            if (_env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();

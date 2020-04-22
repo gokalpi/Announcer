@@ -1,12 +1,13 @@
 ﻿using Announcer.Data.Contexts;
 using Announcer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Announcer.Helpers.Extensions
 {
@@ -14,14 +15,8 @@ namespace Announcer.Helpers.Extensions
     {
         public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
-            services.AddDefaultIdentity<ApplicationUser>(options =>
-            {
-                options.SignIn.RequireConfirmedAccount = false;
-                options.SignIn.RequireConfirmedPhoneNumber = false;
-
-                options.User.RequireUniqueEmail = false;
-            })
-                .AddRoles<ApplicationRole>()
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AnnouncerDbContext>();
 
             return services;
@@ -30,6 +25,7 @@ namespace Announcer.Helpers.Extensions
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration config)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

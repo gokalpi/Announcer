@@ -1,10 +1,7 @@
-﻿using Announcer.Helpers.Filters;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Reflection;
@@ -15,21 +12,24 @@ namespace Announcer.Helpers.Extensions
     {
         public static IServiceCollection AddSwagger(this IServiceCollection services)
         {
-            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-
             services.AddSwaggerGen(options =>
             {
-                options.OperationFilter<SwaggerDefaultValues>();
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Announcer API", Version = "v1" });
 
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                var securitySchema = new OpenApiSecurityScheme
                 {
-                    Scheme = "Bearer",
-                    Description = "Enter 'Bearer' following by space and JWT Token.",
                     Name = "Authorization",
-                    Type = SecuritySchemeType.Http
-                });
+                    Description = "Enter JWT Token.",
+                    In = ParameterLocation.Header,
+                    Scheme = "Bearer",
+                    Type = SecuritySchemeType.Http,
+                    Reference = new OpenApiReference { Id = "Bearer", Type = ReferenceType.SecurityScheme }
+                };
 
-                options.OperationFilter<SwaggerAuthorizeCheckOperationFilter>();
+                options.AddSecurityDefinition("Bearer", securitySchema);
+
+                var securityRequirement = new OpenApiSecurityRequirement { { securitySchema, new[] { "Bearer" } } };
+                options.AddSecurityRequirement(securityRequirement);
 
                 // integrate xml comments
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

@@ -19,26 +19,22 @@ namespace Announcer.Controllers
     /// Notification Api Controller v1
     /// </summary>
     [ApiVersion("1.0")]
-    [Route("api/[controller]")]
-    [ApiController]
     [Authorize(Policy = "RequireAdministratorRole")]
-    public class NotificationsController : ControllerBase
+    public class NotificationsController : BaseApiController
     {
         private readonly INotificationService _service;
-        private readonly IMapper _mapper;
-        private readonly ILogger<NotificationsController> _logger;
 
         /// <summary>
         /// Notification Api Controller constructor
         /// </summary>
         /// <param name="service"></param>
         /// <param name="mapper">Automapper instance</param>
+        /// <param name="httpContextAccessor"></param>
         /// <param name="logger"></param>
-        public NotificationsController(INotificationService service, IMapper mapper, ILogger<NotificationsController> logger)
+        public NotificationsController(INotificationService service, IMapper mapper, IHttpContextAccessor httpContextAccessor, ILogger<NotificationsController> logger)
+            : base(mapper, httpContextAccessor, logger)
         {
             _service = service ?? throw new ArgumentNullException(nameof(service));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         /// <summary>

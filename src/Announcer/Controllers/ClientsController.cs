@@ -19,15 +19,11 @@ namespace Announcer.Controllers
     /// Client Api Controller
     /// </summary>
     [ApiVersion("1.0")]
-    [Route("api/[controller]")]
-    [ApiController]
     //[Authorize(Policy = "RequireAdministratorRole")]
-    public class ClientsController : ControllerBase
+    public class ClientsController : BaseApiController
     {
         private readonly IClientService _clientService;
         private readonly IGroupService _groupService;
-        private readonly ILogger<ClientsController> _logger;
-        private readonly IMapper _mapper;
         private readonly INotificationService _notificationService;
 
         /// <summary>
@@ -37,14 +33,15 @@ namespace Announcer.Controllers
         /// <param name="groupService"></param>
         /// <param name="notificationService"></param>
         /// <param name="mapper"></param>
+        /// <param name="httpContextAccessor"></param>
         /// <param name="logger"></param>
-        public ClientsController(IClientService clientService, IGroupService groupService, INotificationService notificationService, IMapper mapper, ILogger<ClientsController> logger)
+        public ClientsController(IClientService clientService, IGroupService groupService, INotificationService notificationService,
+            IMapper mapper, IHttpContextAccessor httpContextAccessor, ILogger<ClientsController> logger)
+            : base(mapper, httpContextAccessor, logger)
         {
             _clientService = clientService ?? throw new ArgumentNullException(nameof(clientService));
             _groupService = groupService ?? throw new ArgumentNullException(nameof(groupService));
             _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         /// <summary>

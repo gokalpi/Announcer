@@ -19,26 +19,22 @@ namespace Announcer.Controllers
     /// Group Api Controller
     /// </summary>
     [ApiVersion("1.0")]
-    [Route("api/[controller]")]
-    [ApiController]
     //[Authorize(Policy = "RequireAdministratorRole")]
-    public class GroupsController : ControllerBase
+    public class GroupsController : BaseApiController
     {
         private readonly IGroupService _service;
-        private readonly IMapper _mapper;
-        private readonly ILogger<GroupsController> _logger;
 
         /// <summary>
         /// Group Api Controller constructor
         /// </summary>
         /// <param name="service"></param>
         /// <param name="mapper">Automapper instance</param>
+        /// <param name="httpContextAccessor"></param>
         /// <param name="logger"></param>
-        public GroupsController(IGroupService service, IMapper mapper, ILogger<GroupsController> logger)
+        public GroupsController(IGroupService service, IMapper mapper, IHttpContextAccessor httpContextAccessor, ILogger<GroupsController> logger)
+            : base(mapper, httpContextAccessor, logger)
         {
             _service = service ?? throw new ArgumentNullException(nameof(service));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         /// <summary>

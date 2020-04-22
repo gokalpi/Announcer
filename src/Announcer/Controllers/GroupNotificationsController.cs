@@ -18,14 +18,12 @@ namespace Announcer.Controllers
     public class GroupNotificationsController : BaseApiController
     {
         private readonly IGroupNotificationService _service;
-        private readonly IMapper _mapper;
 
         public GroupNotificationsController(IGroupNotificationService service, IMapper mapper,
             IHttpContextAccessor httpContextAccessor, ILogger<GroupNotificationsController> logger)
-            : base(httpContextAccessor, logger)
+            : base(mapper, httpContextAccessor, logger)
         {
             _service = service ?? throw new ArgumentNullException(nameof(service));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>

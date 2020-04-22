@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace Announcer.Data.Contexts
@@ -101,10 +103,9 @@ namespace Announcer.Data.Contexts
                     {
                         groupMember.CreatedBy = adminUser.Id;
                         context.GroupMembers.Add(groupMember);
-
-                        await context.SaveChangesAsync();
-                        logger.LogInformation($"'{groupMember.ClientId}' added to group '{groupMember.GroupId}'");
                     }
+
+                    await context.SaveChangesAsync();
 
                     logger.LogInformation($"{groupMembers.Count} group members imported");
                 }

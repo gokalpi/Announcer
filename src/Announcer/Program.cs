@@ -2,7 +2,6 @@ using Announcer.Data.Contexts;
 using Announcer.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -25,18 +24,13 @@ namespace Announcer
                 try
                 {
                     var context = services.GetRequiredService<AnnouncerDbContext>();
-//                    context.Database.Migrate();
+                    //                    context.Database.Migrate();
                     context.Database.EnsureCreated();
 
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                     await AnnouncerDbSeed.SeedAsync(context, userManager, roleManager, loggerFactory);
-
-                    //var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-                    //var roleManager = services.GetRequiredService<RoleManager<ApplicationRole>>();
-
-                    //await AnnouncerDbContextSeed.SeedAsync(context, userManager, roleManager, loggerFactory);
                 }
                 catch (Exception ex)
                 {

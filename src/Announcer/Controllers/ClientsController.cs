@@ -19,7 +19,6 @@ namespace Announcer.Controllers
     /// Client Api Controller
     /// </summary>
     [ApiVersion("1.0")]
-    //[Authorize(Policy = "RequireAdministratorRole")]
     public class ClientsController : BaseApiController
     {
         private readonly IClientService _clientService;
@@ -52,7 +51,7 @@ namespace Announcer.Controllers
         ///
         ///     POST api/Clients/10.1.1.1/Group
         ///     {
-        ///         "groupId": "35bf23d9-835e-4af9-987a-9cde811b35f5",
+        ///         "groupId": 1,
         ///         "clientId": "10.1.1.1"
         ///     }
         /// </remarks>
@@ -60,6 +59,7 @@ namespace Announcer.Controllers
         /// <response code="200">Status of operation</response>
         /// <response code="400">If the group member is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPost("Group")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -89,7 +89,7 @@ namespace Announcer.Controllers
         ///         "id": "10.1.1.1",
         ///         "name": "Sample Client",
         ///         "description": "Sample Client Description",
-        ///         "templateId": null
+        ///         "templateId": 1
         ///     }
         /// </remarks>
         /// <param name="clientDTO">Client to be created</param>
@@ -97,6 +97,7 @@ namespace Announcer.Controllers
         /// <response code="201">Returns the newly created client</response>
         /// <response code="400">If the item is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPost]
         [ProducesResponseType(typeof(ClientDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -139,6 +140,7 @@ namespace Announcer.Controllers
         /// <response code="400">If the id is null</response>
         /// <response code="404">If the client is not found</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -179,6 +181,7 @@ namespace Announcer.Controllers
         /// <returns>All Clients with paging support</returns>
         /// <response code="200">Returns all Clients in specified page</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -259,6 +262,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns groups of Client with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpGet("{id}/Groups")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -295,6 +299,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns notifications of Client with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpGet("{id}/Notifications")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -365,6 +370,7 @@ namespace Announcer.Controllers
         /// <returns>List of all clients matching parameters</returns>
         /// <response code="200">Returns all clients matching parameters</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPost("LoadTable")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -396,7 +402,7 @@ namespace Announcer.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE api/Clients/10.1.1.1/Groups/35bf23d9-835e-4af9-987a-9cde811b35f5
+        ///     DELETE api/Clients/10.1.1.1/Groups/1
         /// </remarks>
         /// <param name="id">Client Id to be deleted</param>
         /// <param name="groupId"></param>
@@ -404,6 +410,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns deleted client</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpDelete("{id}/Groups/{groupId}")]
         [ProducesResponseType(typeof(ClientDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -433,7 +440,7 @@ namespace Announcer.Controllers
         ///         "id": "10.1.1.1",
         ///         "clientName": "Client 2",
         ///         "description": "Client 2",
-        ///         "templateId": "35bf23d9-835e-4af9-987a-9cde811b35f5"
+        ///         "templateId": 1
         ///     }
         /// </remarks>
         /// <param name="id">Client id</param>
@@ -442,6 +449,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns result of operation</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

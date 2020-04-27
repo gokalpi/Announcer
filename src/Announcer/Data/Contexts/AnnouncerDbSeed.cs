@@ -83,13 +83,6 @@ namespace Announcer.Data.Contexts
 
                     await context.SaveChangesAsync();
 
-                    foreach (var client in clients)
-                    {
-                        client.UserId = (await CreateUserWithRoleAsync(userManager, roleManager, client.Id, DEFAULT_PASSWORD, null, USERS_ROLE, client.Id)).Id;
-                    }
-
-                    await context.SaveChangesAsync();
-
                     logger.LogInformation($"{clients.Count} clients imported");
                 }
 
@@ -126,6 +119,13 @@ namespace Announcer.Data.Contexts
 
                     logger.LogInformation($"{notifications.Count} notifications imported");
                 }
+
+                foreach (var client in context.Clients)
+                {
+                    client.UserId = (await CreateUserWithRoleAsync(userManager, roleManager, client.Id, DEFAULT_PASSWORD, null, USERS_ROLE, client.Id)).Id;
+                }
+
+                await context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

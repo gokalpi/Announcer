@@ -44,7 +44,8 @@ namespace Announcer
         public void ConfigureProductionServices(IServiceCollection services)
         {
             services.AddDbContext<AnnouncerDbContext>(options =>
-                options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+                options.UseInMemoryDatabase("AnnouncerDb"));
+                //options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
             ConfigureServices(services);
         }

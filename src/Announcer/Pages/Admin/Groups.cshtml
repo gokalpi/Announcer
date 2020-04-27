@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group form-inline mb-0">
                                 <label for="status" class="mr-4">Durum:</label>
-                                <select id="status" class="custom-select custom-select-sm">
+                                <select id="status" class="btn btn-secondary btn-sm">
                                     <option value="">Hepsi</option>
                                     <option value="1">Aktif</option>
                                     <option value="0">Silindi</option>
@@ -113,6 +113,53 @@
         </div>
     </div>
 </div>
+
+<!-- Modal: Group Members -->
+<div class="modal fade" id="group-members-modal" tabindex="-1" role="dialog" aria-labelledby="group-members-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header px-4">
+                <div class="media flex-fill">
+                    <div class="icon-shape rounded-lg bg-primary text-white mr-5">
+                        <i class="las la-clone"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h5 class="group-members-modal-title">Grup Üyeleri</h5>
+                        <p class="small">Grup üyesi ekleyip, çıkartabilirsiniz.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="group-members-form" action="javascript:void(0);">
+                    <input type="hidden" id="group-id" name="group-id" value="" />
+
+                    <div class="form-group">
+                        <label for="invite-email" class="small">Email</label>
+                        <input type="text" class="form-control form-control-lg" id="invite-email">
+                    </div>
+
+                    <div class="form-group mb-0">
+                        <label for="invite-message" class="small">Invitation message</label>
+                        <textarea class="form-control form-control-lg" id="invite-message" data-autosize="true"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg btn-block btn-primary d-flex align-items-center">
+                    Invite friend
+                    <i class="fe-user-plus ml-auto"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal: Invite friends -->
 
 @section Scripts
 {

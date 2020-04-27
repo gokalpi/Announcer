@@ -33,7 +33,10 @@ $(document).ready(function () {
                 data: "clientCount",
                 orderable: false,
                 searchable: false,
-                className: "text-center"
+                className: "text-center",
+                render: function (data, type, row) {
+                    return `<a class="btn btn-success btn-xs btn-font-sm btn-bold rounded-circle" data-toggle="tooltip" title="Güncelle" onclick="displayGroupMembersModal(${row.id})">${data}</a>`;
+                }
             },
             {
                 data: "notificationsReceivedCount",
@@ -126,6 +129,42 @@ function displayEditModal(id) {
         });
 }
 
+function displayGroupMembersModal(id) {
+    $("#group-members-form")[0].reset();
+
+    fetch(`${uri}/${id}/Clients`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(`${response.status} status code received.`);
+            }
+
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.isSuccessful) {
+                let group = data.model;
+
+                groupId.value = group.id;
+                groupName.value = group.name;
+                groupDescription.value = group.description;
+
+                $("#group-members-modal").modal('show');
+            }
+            else {
+                swal("Grup Okuma Hatası", data.message, "error");
+            }
+        })
+        .catch(error => {
+            console.error('Unable to get group.', error);
+            swal("Grup Okuma Hatası", error, "error");
+        });
+}
 function save() {
     const group = {
         id: groupId.value.trim(),

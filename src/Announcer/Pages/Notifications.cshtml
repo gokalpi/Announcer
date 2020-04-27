@@ -48,7 +48,7 @@
         <div id="error-pane" class="error-pane" style="display: none">
             <h3>Hata: <span id="error-message"></span></h3>
         </div>
-
+        <div id="debug"></div>
         <footer>
             <div id="copyright">Announcer &copy; 2020</div>
             <div id="update-info">
@@ -74,17 +74,39 @@
     </environment>
 
     <script>
+        var isMobile = {
+            Android: function () { return navigator.userAgent.match(/Android/i); },
+            BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
+            iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+            Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
+            Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
+            any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
+        };
+
+        if (isMobile.any()) {
+            var notifications = document.getElementById('notifications');
+            var notificationsHeader = notifications.firstElementChild;
+
+            notifications.style.paddingTop = notificationsHeader.offsetHeight + 'px';
+            notificationsHeader.style.position = 'fixed';
+            notificationsHeader.style.top = '60px';
+            notificationsHeader.style.left = '0';
+            notificationsHeader.style.width = '100%';
+        }
+
+        function showDebugInfo() {
+            document.getElementById('debug').innerText = '(' + window.innerWidth + 'x' + window.innerHeight + ') ' + window.orientation;
+            console.log('isMobile: ', isMobile.any());
+        }
+        window.addEventListener('resize', showDebugInfo);
+
+        showDebugInfo();
+
         // Start displaying clock
         displayClock();
 
         // Set client id
         var clientId = setClientId("@Model.ClientIP");
-
-        // Get client info
-        //var clientInfo = getClientInfo(clientId);
-
-        // Get latest notifications of client
-        //getNotifications(clientId);
 
         // Start the connection.
         start();

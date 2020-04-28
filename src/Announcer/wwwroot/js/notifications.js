@@ -4,14 +4,6 @@ var clientUri = "/api/Clients";
 var infoColumnCount = 0;
 var groups;
 
-// QRCode generation
-var qrCodeUri = location.href;
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: qrCodeUri,
-    width: 100,
-    height: 100
-});
-
 // Create SignalR connection
 var connection = new signalR.HubConnectionBuilder()
     .withUrl(hubUri)
@@ -180,7 +172,7 @@ function displayHeaders(header) {
         var c = document.createDocumentFragment();
 
         header.columns.forEach(column => {
-            let e = document.createElement("div");
+            let e = document.createElement("th");
             e.innerHTML = column;
             c.appendChild(e);
         });
@@ -199,8 +191,7 @@ function displayLastUpdate() {
 
 function displayNotification(group, content) {
     var contentJson = JSON.parse(content);
-    var groupSlug = slugify(group);
-    var groupRowId = `group-${groupSlug}`;
+    var groupRowId = slugify(group);
     var groupRow = document.getElementById(groupRowId);
 
     if (groupRow) {
@@ -216,22 +207,22 @@ function displayNotification(group, content) {
         setTimeout(() => groupRow.className = "notification-item", 6500);
     }
     else {
-        var notifications = document.getElementById('notifications');
+        var notifications = document.getElementById('notifications-body');
         if (notifications) {
-            groupRow = document.createElement('div');
+            groupRow = document.createElement('tr');
             groupRow.id = groupRowId;
             groupRow.className = "notification-item active";
             setTimeout(() => groupRow.className = "notification-item", 6500);
 
             var c = document.createDocumentFragment();
 
-            var divGroupName = document.createElement("div");
+            var divGroupName = document.createElement("td");
             divGroupName.className = "group-name";
             divGroupName.innerHTML = group;
             c.appendChild(divGroupName);
 
             for (var j = 0; j < infoColumnCount; j++) {
-                var divCol = document.createElement('div');
+                var divCol = document.createElement('td');
                 divCol.className = "group-col";
                 if (contentJson.columns[j]) {
                     divCol.innerHTML = contentJson.columns[j];
@@ -337,13 +328,12 @@ function setClientId(id) {
 
     if (id && id.trim().length > 0) {
         clientId = id;
+        console.log('clientId set: %s', id);
     }
     else {
         const urlParams = new URLSearchParams(window.location.search);
 
         clientId = urlParams.get("id");
-        if (!clientId || clientId.trim().length === 0)
-            clientId = clientIP;
     }
 
     if (clientId && clientId.trim().length > 0) {

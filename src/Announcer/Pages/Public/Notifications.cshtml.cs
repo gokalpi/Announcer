@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Net;
 
-namespace Announcer.Pages
+namespace Announcer.Pages.Public
 {
     public class NotificationsModel : PageModel
     {

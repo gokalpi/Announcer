@@ -56,7 +56,7 @@ namespace Announcer
             services.AddRazorPages()
                     .AddRazorPagesOptions(options =>
             {
-                options.Conventions.AllowAnonymousToPage("/Notifications");
+                options.Conventions.AllowAnonymousToFolder("/Public");
                 options.Conventions.AuthorizeFolder("/Admin", "RequireAdministratorRole");
                 options.Conventions.AuthorizeFolder("/");
             });

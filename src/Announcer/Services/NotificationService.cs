@@ -112,7 +112,7 @@ namespace Announcer.Services
                 orderAscendingDirection = false;
             }
 
-            var result = await _repository.ListAsync(includeString: "Sender, Group, Recipient");
+            var result = await _repository.ListAsync(includeString: "Sender, Group, Recipient", includeDeleted: true);
 
             if (!string.IsNullOrEmpty(searchBy))
             {

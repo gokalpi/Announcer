@@ -66,7 +66,7 @@ namespace Announcer.Services
                 orderAscendingDirection = true;
             }
 
-            var result = await _repository.ListAsync(includeString: "Clients");
+            var result = await _repository.ListAsync(includeString: "Clients", includeDeleted: true);
 
             if (!string.IsNullOrEmpty(searchBy))
             {

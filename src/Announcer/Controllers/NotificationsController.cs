@@ -180,7 +180,7 @@ namespace Announcer.Controllers
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Notification id is null or empty");
 
-            var response = await _service.GetAsync(g => g.Id == id, "Sender, Group, Recipient");
+            var response = await _service.GetAsync(g => g.Id == id, "Sender, Group, Recipient", true);
 
             _logger.LogDebug($"Found notification with {id}");
 

@@ -215,7 +215,7 @@ namespace Announcer.Controllers
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(GetTemplateByIdAsync));
 
-            var response = await _templateService.GetAsync(g => g.Id == id, "Clients");
+            var response = await _templateService.GetAsync(g => g.Id == id, "Clients", true);
 
             _logger.LogDebug($"Found template with {id}");
 

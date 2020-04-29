@@ -232,7 +232,7 @@ namespace Announcer.Controllers
                 return BadRequest("Client id is null or empty");
 
             var response = await _clientService.GetAsync(g => g.Id == id,
-                "Template, Groups.Group, NotificationsSent, NotificationsReceived");
+                "Template, Groups.Group, NotificationsSent, NotificationsReceived", true);
 
             _logger.LogDebug($"Found client with {id}");
 

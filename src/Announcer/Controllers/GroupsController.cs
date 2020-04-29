@@ -216,7 +216,7 @@ namespace Announcer.Controllers
             _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupByIdAsync));
 
             var response = await _groupService.GetAsync(g => g.Id == id,
-                "Clients.Client, NotificationsReceived");
+                "Clients.Client, NotificationsReceived", true);
 
             _logger.LogDebug($"Found group with {id}");
 

@@ -21,6 +21,8 @@ namespace Announcer.Data.Config
 
             builder.Property(t => t.Content);
 
+            builder.HasQueryFilter(t => !t.IsDeleted);
+
             builder.HasData(
                 new Template() { Id = 1, Name = "Default Template", Content = "{ \"header\": { \"columns\": [ \"Birim Adı\", \"Çağırılan Hasta\", \"Sonraki Hasta\" ] } }" }
                 );

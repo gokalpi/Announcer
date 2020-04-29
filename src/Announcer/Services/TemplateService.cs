@@ -10,31 +10,31 @@ using System.Threading.Tasks;
 namespace Announcer.Services
 {
     /// <summary>
-    /// Group entity service
+    /// Template entity service
     /// </summary>
     /// <remarks>@Ibrahim Gokalp - 2020</remarks>
-    public class GroupService : BaseService<Group>, IGroupService
+    public class TemplateService : BaseService<Template>, ITemplateService
     {
         /// <summary>
-        /// Group service constructor
+        /// Template service constructor
         /// </summary>
         /// <param name="unitOfWork">Unit of work instance</param>
         /// <param name="logger">Logger instance</param>
-        public GroupService(IUnitOfWork unitOfWork, ILogger<BaseService<Group>> logger)
+        public TemplateService(IUnitOfWork unitOfWork, ILogger<BaseService<Template>> logger)
             : base(unitOfWork, logger)
         {
         }
 
         /// <inheritdoc/>
-        public async Task<ISingleResponse<Group>> GetByIdAsync(int id)
+        public async Task<ISingleResponse<Template>> GetByIdAsync(int id)
         {
             _logger.LogDebug($"'{nameof(GetByIdAsync)}' has been invoked");
 
-            var response = new SingleResponse<Group>();
+            var response = new SingleResponse<Template>();
 
             try
             {
-                response.Model = await _repository.GetAsync(g => g.Id == id, includeDeleted: true);
+                response.Model = await _repository.GetAsync(t => t.Id == id, includeDeleted: true);
             }
             catch (Exception ex)
             {
@@ -45,30 +45,7 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IListResponse<Group>> ListGroupsByClientAsync(string clientId)
-        {
-            _logger.LogDebug($"'{nameof(ListGroupsByClientAsync)}' has been invoked");
-
-            var response = new ListResponse<Group>();
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(clientId))
-                    throw new ArgumentNullException(nameof(clientId));
-
-                response.Model = await _repository.ListAsync(predicate: g => g.Clients.Any(gm => gm.ClientId == clientId), includeString: "", orderBy: o => o.OrderBy(g => g.Name));
-                response.Message = $"Found {response.Model.Count()} groups of Client {clientId}";
-            }
-            catch (Exception ex)
-            {
-                response.SetError(ex, nameof(ListGroupsByClientAsync), _logger);
-            }
-
-            return response;
-        }
-
-        /// <inheritdoc/>
-        public override async Task<DTResult<Group>> LoadDatatableAsync(DTParameters dtParameters)
+        public override async Task<DTResult<Template>> LoadDatatableAsync(DTParameters dtParameters)
         {
             var searchBy = dtParameters.Search?.Value;
             var isDeleted = dtParameters.Columns[3].Search.Value;
@@ -89,12 +66,12 @@ namespace Announcer.Services
                 orderAscendingDirection = true;
             }
 
-            var result = await _repository.ListAsync(includeString: "Clients, NotificationsReceived", includeDeleted: true);
+            var result = await _repository.ListAsync(includeString: "Clients");
 
             if (!string.IsNullOrEmpty(searchBy))
             {
                 result = result.Where(r => r.Name != null && r.Name.ToUpper().Contains(searchBy.ToUpper()) ||
-                                           r.Description != null && r.Description.ToUpper().Contains(searchBy.ToUpper()));
+                                           r.Content != null && r.Content.ToUpper().Contains(searchBy.ToUpper()));
             }
 
             if (!string.IsNullOrEmpty(isDeleted))
@@ -108,7 +85,7 @@ namespace Announcer.Services
             var filteredResultsCount = result.Count();
             var totalResultsCount = await _repository.CountAsync();
 
-            return new DTResult<Group>()
+            return new DTResult<Template>()
             {
                 Draw = dtParameters.Draw,
                 RecordsTotal = totalResultsCount,

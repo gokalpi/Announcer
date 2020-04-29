@@ -10,6 +10,13 @@ namespace Announcer.Contracts
     public interface IGroupService : IService<Group>
     {
         /// <summary>
+        /// Gets a group with specified <paramref name="id"/>
+        /// </summary>
+        /// <param name="id">Id of the group</param>
+        /// <returns>Group with specified id</returns>
+        Task<ISingleResponse<Group>> GetByIdAsync(int id);
+
+        /// <summary>
         /// Lists all groups of client
         /// </summary>
         /// <param name="clientId">Client id</param>

@@ -10,6 +10,13 @@ namespace Announcer.Contracts
     public interface INotificationService : IService<Notification>
     {
         /// <summary>
+        /// Gets a notification with specified <paramref name="id"/>
+        /// </summary>
+        /// <param name="id">Id of the notification</param>
+        /// <returns>Notification with specified id</returns>
+        Task<ISingleResponse<Notification>> GetByIdAsync(string id);
+
+        /// <summary>
         /// Lists all group notifications of client
         /// </summary>
         /// <param name="clientId">Client id</param>

@@ -109,16 +109,13 @@ namespace Announcer.Controllers
             if (clientDTO == null) return BadRequest("Client info is null");
 
             // Check if client exists
-            var getResult = await _clientService.GetAsync(c => c.Id == clientDTO.Id && !c.IsDeleted);
-            if (!getResult.IsSuccessful)
-                return BadRequest(getResult.Message);
-            else if (getResult.Model != null)
+            if (await _clientService.ExistsAsync(c => c.Id == clientDTO.Id))
                 return BadRequest($"A client with id {clientDTO.Id} exists");
 
             // Create a new client
             var addResult = await _clientService.AddAsync(_mapper.Map<Client>(clientDTO));
             if (!addResult.IsSuccessful)
-                return BadRequest(getResult.Message);
+                return BadRequest(addResult.Message);
 
             _logger.LogDebug($"Client with id {addResult.Model.Id} created.");
 
@@ -154,14 +151,14 @@ namespace Announcer.Controllers
                 return BadRequest("Client id is null or empty");
 
             // Check if client exists
-            var getResult = await _clientService.GetAsync(c => c.Id == id && !c.IsDeleted);
+            var getResult = await _clientService.GetByIdAsync(id);
             if (!getResult.IsSuccessful)
                 return BadRequest(getResult.Message);
             else if (getResult.Model == null)
                 return NotFound($"Client with id {id} not found.");
 
             // Delete client
-            var deleteResult = await _clientService.DeleteAsync(id);
+            var deleteResult = await _clientService.DeleteAsync(getResult.Model);
 
             if (deleteResult.IsSuccessful)
                 _logger.LogDebug($"Client with id {id} deleted.");
@@ -462,7 +459,7 @@ namespace Announcer.Controllers
                 return BadRequest("Client id is null or empty");
 
             // Check if client exists
-            var getResult = await _clientService.GetAsync(c => c.Id == id && !c.IsDeleted);
+            var getResult = await _clientService.GetByIdAsync(id);
             if (!getResult.IsSuccessful)
                 return BadRequest(getResult.Message);
             else if (getResult.Model == null)

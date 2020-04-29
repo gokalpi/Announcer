@@ -26,6 +26,25 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
+        public async Task<ISingleResponse<Notification>> GetByIdAsync(string id)
+        {
+            _logger.LogDebug($"'{nameof(GetByIdAsync)}' has been invoked");
+
+            var response = new SingleResponse<Notification>();
+
+            try
+            {
+                response.Model = await _repository.GetAsync(n => n.Id == id, includeDeleted: true);
+            }
+            catch (Exception ex)
+            {
+                response.SetError(ex, nameof(GetByIdAsync), _logger);
+            }
+
+            return response;
+        }
+
+        /// <inheritdoc/>
         public async Task<IListResponse<Notification>> ListGroupNotificationsByClientAsync(string clientId)
         {
             _logger.LogDebug($"'{nameof(ListGroupNotificationsByClientAsync)}' has been invoked");

@@ -53,7 +53,6 @@ namespace Announcer.Controllers
         ///     }
         /// </remarks>
         /// <param name="notificationDTO">Notification to be created</param>
-        /// <param name="version">Version of controller</param>
         /// <returns>A newly created Notification</returns>
         /// <response code="201">Returns the newly created notification</response>
         /// <response code="400">If the item is null</response>
@@ -62,25 +61,21 @@ namespace Announcer.Controllers
         [ProducesResponseType(typeof(NotificationDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> CreateNotification([FromBody] SaveNotificationDTO notificationDTO, ApiVersion version)
+        public async Task<IActionResult> CreateNotification([FromBody] SaveNotificationDTO notificationDTO)
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(CreateNotification));
 
-            if (notificationDTO == null)
-                return BadRequest("Notification info is null");
+            if (notificationDTO == null) return BadRequest("Notification info is null");
 
-            var response = await _service.AddAsync(_mapper.Map<Notification>(notificationDTO));
+            // Create a new notification
+            var addResult = await _service.AddAsync(_mapper.Map<Notification>(notificationDTO));
+            if (!addResult.IsSuccessful)
+                return BadRequest(addResult.Message);
 
-            _logger.LogDebug($"Notification with id {response.Model.Id} created.");
+            _logger.LogDebug($"Notification with id {addResult.Model.Id} created.");
 
-            var result = new SingleResponse<NotificationDTO>()
-            {
-                IsSuccessful = response.IsSuccessful,
-                Message = response.Message,
-                Model = _mapper.Map<NotificationDTO>(response.Model)
-            };
-
-            return CreatedAtAction("GetNotificationById", new { id = result.Model.Id, version = version.ToString() }, result);
+            return CreatedAtRoute("GetNotification", new { id = addResult.Model.Id },
+                _mapper.Map<NotificationDTO>(addResult.Model));
         }
 
         /// <summary>
@@ -109,10 +104,14 @@ namespace Announcer.Controllers
             if (string.IsNullOrWhiteSpace(id))
                 return BadRequest("Notification id is null or empty");
 
-            if (!await _service.ExistsAsync(n => n.Id == id))
+            // Check if notification exists
+            var getResult = await _service.GetByIdAsync(id);
+            if (!getResult.IsSuccessful)
+                return BadRequest(getResult.Message);
+            else if (getResult.Model == null)
                 return NotFound($"Notification with id {id} not found.");
 
-            var response = await _service.DeleteAsync(id);
+            var response = await _service.DeleteAsync(getResult.Model);
 
             _logger.LogDebug($"Notification with id {id} deleted.");
 
@@ -170,7 +169,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns Notification with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetNotification")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

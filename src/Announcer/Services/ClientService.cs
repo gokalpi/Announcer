@@ -52,6 +52,25 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
+        public async Task<ISingleResponse<Client>> GetByIdAsync(string id)
+        {
+            _logger.LogDebug($"'{nameof(GetByIdAsync)}' has been invoked");
+
+            var response = new SingleResponse<Client>();
+
+            try
+            {
+                response.Model = await _repository.GetAsync(c => c.Id == id, includeDeleted: true);
+            }
+            catch (Exception ex)
+            {
+                response.SetError(ex, nameof(GetByIdAsync), _logger);
+            }
+
+            return response;
+        }
+
+        /// <inheritdoc/>
         public async Task<IListResponse<Client>> ListClientsByGroupAsync(int groupId)
         {
             _logger.LogDebug($"'{nameof(ListClientsByGroupAsync)}' has been invoked");
@@ -66,6 +85,26 @@ namespace Announcer.Services
             catch (Exception ex)
             {
                 response.SetError(ex, nameof(ListClientsByGroupAsync), _logger);
+            }
+
+            return response;
+        }
+
+        /// <inheritdoc/>
+        public async Task<IListResponse<Client>> ListClientsByTemplateAsync(int templateId)
+        {
+            _logger.LogDebug($"'{nameof(ListClientsByTemplateAsync)}' has been invoked");
+
+            var response = new ListResponse<Client>();
+
+            try
+            {
+                response.Model = await _repository.ListAsync(predicate: c => c.TemplateId == templateId, includeString: "Template", orderBy: o => o.OrderBy(g => g.Name));
+                response.Message = $"Found {response.Model.Count()} clients of Template {templateId}";
+            }
+            catch (Exception ex)
+            {
+                response.SetError(ex, nameof(ListClientsByTemplateAsync), _logger);
             }
 
             return response;
@@ -93,7 +132,7 @@ namespace Announcer.Services
                 orderAscendingDirection = true;
             }
 
-            var result = await _repository.ListAsync(includeString: "Groups.Group, NotificationsSent, NotificationsReceived");
+            var result = await _repository.ListAsync(includeString: "Groups.Group, NotificationsSent, NotificationsReceived", includeDeleted: true);
 
             if (!string.IsNullOrEmpty(searchBy))
             {

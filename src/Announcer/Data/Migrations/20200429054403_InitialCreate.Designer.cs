@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Announcer.Data.Migrations
 {
     [DbContext(typeof(AnnouncerDbContext))]
-    [Migration("20200422080656_InitialCreate")]
+    [Migration("20200429054403_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -4226,7 +4226,7 @@ namespace Announcer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "299e3160-1289-4b81-8671-f1ec4d9dbfdb",
+                            Id = "361e2122-b073-425f-b95d-b71163bb5b7f",
                             Content = "{ \"columns\": [ \"Özde Acarkan\", \"Zülal Çolak\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 2,
@@ -4236,7 +4236,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b93b613b-4718-4632-b3ba-03fb7a5c712e",
+                            Id = "11401b06-7923-4433-953e-63a9f1a38296",
                             Content = "{ \"columns\": [ \"Atahan Adanır\", \"Ozan Ege Çomu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 3,
@@ -4246,7 +4246,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f6af2042-2470-4cb3-9e92-0ec5e5bd2fab",
+                            Id = "47feb731-168c-4347-b092-73991920a3d1",
                             Content = "{ \"columns\": [ \"Hacı Mehmet Adıgüzel\", \"Hilal Ebru Çonay\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 4,
@@ -4256,7 +4256,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "74c8bf7b-4e2c-47ca-91c8-114529f4c3a0",
+                            Id = "81cb417f-dacb-4cea-ab74-09699fa249ef",
                             Content = "{ \"columns\": [ \"Mükerrem Zeynep Ağca\", \"Ayben Çorumlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 5,
@@ -4266,7 +4266,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e066126c-f576-4dae-8013-377ed9d33e98",
+                            Id = "35f2d9e1-bdfc-4140-bc0a-69918ffcd687",
                             Content = "{ \"columns\": [ \"Bestami Ağırağaç\", \"Abdulbaki Çotur\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 6,
@@ -4276,7 +4276,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "7771dc74-032c-488b-bc54-036e646c15d0",
+                            Id = "d749f01b-1ff8-4c65-99f8-b035c8fc36e0",
                             Content = "{ \"columns\": [ \"Aykanat Ağıroğlu\", \"Neva Çuhadar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 7,
@@ -4286,7 +4286,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "4a0745b0-a186-401d-93c1-8e1ccb7e73f4",
+                            Id = "56e96e39-93b7-4c37-ae79-9bde4446ea8e",
                             Content = "{ \"columns\": [ \"Şennur Ağnar\", \"Öznur Çulhaoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 8,
@@ -4296,7 +4296,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "437dd426-0e9e-41ce-8964-f909a9d815b9",
+                            Id = "7f6165b9-d6dc-4757-87ca-d98ca84ed955",
                             Content = "{ \"columns\": [ \"Tutkum Ahmadı Asl\", \"Olgun Dadalıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 9,
@@ -4306,7 +4306,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "37d8c78f-808a-4cd3-9dfa-1bccd8b8f143",
+                            Id = "cc5e6ab1-75cb-4deb-90e9-9cc69d1e2023",
                             Content = "{ \"columns\": [ \"Mügenur Ahmet\", \"Çağrı Atahan Dağar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 10,
@@ -4316,7 +4316,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c67b542e-0b78-495f-a993-f3f8fde32345",
+                            Id = "e2992aa0-a3d9-44ce-b031-efb09499191a",
                             Content = "{ \"columns\": [ \"Sevinç Ak\", \"Özalp Dağbağ\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 11,
@@ -4326,7 +4326,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6d94f615-738b-488f-8d27-e99c7e3e7bdb",
+                            Id = "616716c2-a7ec-4fe9-89f0-7ee6a7720386",
                             Content = "{ \"columns\": [ \"Kayıhan Nedim Akarcalı\", \"Hüsne Aysun Dal\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 12,
@@ -4336,7 +4336,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f03126ea-577a-44d6-ac6a-0d1fcbdf1da4",
+                            Id = "005bc9c0-1cc5-4175-ba2d-d21c4be40d38",
                             Content = "{ \"columns\": [ \"Fatma Özlem Acar\", \"Gürbüz Çivici\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 1,
@@ -4346,7 +4346,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0d048d80-b6a3-4997-8a6e-4004cecf502e",
+                            Id = "1a77d974-22e7-45d1-8715-37a5a77a3878",
                             Content = "{ \"columns\": [ \"Lemi Akarçay\", \"Aydonat Dalkılıç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 13,
@@ -4356,7 +4356,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1b560dc4-2d79-426b-ae62-1a01d2ec0486",
+                            Id = "f9aca97d-9dcd-463a-84f3-c51214f2bca0",
                             Content = "{ \"columns\": [ \"Cihan Akarpınar\", \"Ezgin Dallı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 14,
@@ -4366,7 +4366,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "72712d57-3758-4496-aa6b-8de96224ce7e",
+                            Id = "8ed215aa-a064-4106-b0a7-878306ab5846",
                             Content = "{ \"columns\": [ \"Rafi Akaş\", \"Refiye Seda Dalyaprak\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 15,
@@ -4376,7 +4376,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "393a4d89-9521-49d3-8679-4c8aab4fc028",
+                            Id = "e53ee136-39da-4707-8fdd-7318581aff62",
                             Content = "{ \"columns\": [ \"Mehmetcan Akay\", \"Esat Erdem Daniş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 16,
@@ -4386,7 +4386,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "15ebc701-ba7d-4b6d-baa0-d9b1b84e4f3a",
+                            Id = "9a95787d-14eb-4d4a-9aa5-3c6e85e4ab45",
                             Content = "{ \"columns\": [ \"Nuhaydar Akbilmez\", \"Ayşe Neslihan Daşdemir\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 17,
@@ -4396,7 +4396,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6d53efcf-6490-4501-a4e2-bafe8383f02a",
+                            Id = "a42057e4-4d44-4b0c-b7fc-1feb5efc3d4c",
                             Content = "{ \"columns\": [ \"Emine Münevver Akca\", \"Fetullah Davutoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 18,
@@ -4406,7 +4406,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "269f8817-7f89-4c21-8a97-d837a8762036",
+                            Id = "c08cf2b8-bec4-46d1-b321-cbf76e23ca96",
                             Content = "{ \"columns\": [ \"Servet Akçagunay\", \"Mert Görkem Dayıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 19,
@@ -4416,7 +4416,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "de811cd6-12ac-48b3-bc9a-3f73fbaba7c7",
+                            Id = "27749623-42a7-4e33-936b-5b88899b0748",
                             Content = "{ \"columns\": [ \"Çilem Akçay\", \"Ergün Değirmendereli\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 20,
@@ -4426,7 +4426,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c6be7c5d-0730-4372-bbc0-8de6c8b20501",
+                            Id = "6bcc5df9-5734-4ebc-89f0-f7b71db88b49",
                             Content = "{ \"columns\": [ \"Recep Ali Samet Akdoğan\", \"Hülya Delı Chasan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 21,
@@ -4436,7 +4436,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1c55299d-de8c-4485-8e8f-c4e0049cba0a",
+                            Id = "244108e0-49cc-48a9-890a-eac948b12910",
                             Content = "{ \"columns\": [ \"Emre Ayberk Akfırat\", \"Doga Elif Delice\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 22,
@@ -4446,7 +4446,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b0d1843c-f3da-4f99-a085-4741e6ae516e",
+                            Id = "af57675c-e2f0-4771-9517-13523c8554c4",
                             Content = "{ \"columns\": [ \"Kerime Hacer Akıllı\", \"Muhammed Bazit Deliloğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 23,
@@ -4456,7 +4456,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b7391ce3-41d7-484a-aae7-7a945f817c42",
+                            Id = "25b50715-637b-4513-b891-a63fcc1f978b",
                             Content = "{ \"columns\": [ \"Ercüment Akıncılar\", \"Miraç Demırören\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 24,
@@ -4466,7 +4466,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b8ace037-483a-487f-b961-0a08665b0c23",
+                            Id = "7690b27b-5f68-4d11-9a96-641bf3df2d7c",
                             Content = "{ \"columns\": [ \"Sarper Akış\", \"Hürel Demiriz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 25,
@@ -4476,7 +4476,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b8daf7c3-41a5-4664-bb62-22b90d75624e",
+                            Id = "ec42184b-cf6d-4a06-8079-6ca896531d28",
                             Content = "{ \"columns\": [ \"Berker Akkiray\", \"Sömer Demiroğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 26,
@@ -4486,7 +4486,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ba05b3a0-f2a7-4e59-b336-27363e11542e",
+                            Id = "4dd630f5-9015-4187-9757-86880333ebe1",
                             Content = "{ \"columns\": [ \"İclal Akkoyun\", \"Aysel Aysu Demirsatan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 27,
@@ -4496,7 +4496,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f9c7df3c-db92-46bc-b3be-6ec9e374a0a4",
+                            Id = "94855de7-23e0-4a52-bfbc-c462730752b2",
                             Content = "{ \"columns\": [ \"Lemis Akküt\", \"Mehmet Kemal Dengizek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 28,
@@ -4506,7 +4506,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6bc9bd0d-46d2-46a0-9ba2-7ba3e9727e50",
+                            Id = "256602db-b8d2-4839-a792-15f3779d1315",
                             Content = "{ \"columns\": [ \"Ahmet Polat Aklar Çörekçi\", \"Alya Denizgünü\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 29,
@@ -4516,7 +4516,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5c8c60e6-d9b2-405b-8826-d7922946fce4",
+                            Id = "cd21a7c6-acd4-4b23-bc6d-911c9816840f",
                             Content = "{ \"columns\": [ \"Ata Kerem Akman\", \"Zeynep Büşra Derdemez\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 30,
@@ -4526,7 +4526,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c8c77311-2c12-4ae7-b9af-0588919bc53e",
+                            Id = "7d5fcbf2-29ef-4004-8f08-773bfe1d36de",
                             Content = "{ \"columns\": [ \"Ahmet Raşit Akoğuz\", \"Tubanur Dereli\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 31,
@@ -4536,7 +4536,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0be97bfc-abd6-4a4f-b883-3790b4887ee1",
+                            Id = "e4a59dd1-acf8-4ae4-827a-8b62548abf8f",
                             Content = "{ \"columns\": [ \"Ecem Hatice Akova\", \"Dalay Derya\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 32,
@@ -4546,7 +4546,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "647b60f0-f3ef-4c89-804d-2c9dc42aa818",
+                            Id = "5101d069-27cf-4053-9ed7-263d3c8a2078",
                             Content = "{ \"columns\": [ \"Nüket Aksan\", \"Bedir Destereci\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 33,
@@ -4556,7 +4556,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "96d3d5b2-1766-4fb0-80eb-67c9d825bb15",
+                            Id = "146b7c38-8be8-466d-b394-53a6ec9311c8",
                             Content = "{ \"columns\": [ \"Senem Aksevim\", \"Rümeysa İrem Devecel\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 34,
@@ -4566,7 +4566,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "9493fc80-381f-40ea-96a3-31d69d0c678f",
+                            Id = "1de60d9a-f2e3-444c-94f8-fa62cc76d43e",
                             Content = "{ \"columns\": [ \"Ayşen Aksoy\", \"Osman Sinan Devrim\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 35,
@@ -4576,7 +4576,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "7cedbfeb-5eff-4790-9d19-dc25670664d2",
+                            Id = "27948960-9471-4d46-b372-555cb76f78d5",
                             Content = "{ \"columns\": [ \"Pekcan Aksöz\", \"Saliha Canan Dıvarcı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 36,
@@ -4586,7 +4586,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c319887f-1767-49ed-b292-222580761718",
+                            Id = "82c8c0b6-4cce-42ba-9bf9-a5cfb527c6cf",
                             Content = "{ \"columns\": [ \"Bedirhan Lütfü Akşamoğlu\", \"Samet Emre Dikbaş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 37,
@@ -4596,7 +4596,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d484756e-f717-48e2-926b-302502fb471c",
+                            Id = "4277e912-ae92-434f-b3e6-af4257cc23e8",
                             Content = "{ \"columns\": [ \"Semina Aktuna\", \"Haldun Dinçtürk\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 38,
@@ -4606,7 +4606,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "66953db4-4de7-41dd-88e9-8389ccdf51c5",
+                            Id = "dee2067b-3652-4b31-a6c0-3609bc8b8ddc",
                             Content = "{ \"columns\": [ \"Eda Sena Akyıldız\", \"Goncagül Diri\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 39,
@@ -4616,7 +4616,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3ded77e1-caea-499a-b20d-e68970533da0",
+                            Id = "c585bb56-00ab-4d7c-8bb7-bd9b519270e3",
                             Content = "{ \"columns\": [ \"Müyesser Akyildirim\", \"Ziya Doğramacı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 40,
@@ -4626,7 +4626,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "38af3e7b-e617-4436-a6d5-1059d9d88ffa",
+                            Id = "84a2718d-d4c8-4021-9f05-715d71ae4150",
                             Content = "{ \"columns\": [ \"Selinti Al\", \"Zehra Pelin Döger\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 41,
@@ -4636,7 +4636,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "bb9ca76e-a3a3-44ef-bffb-549c4774bd93",
+                            Id = "68e61071-bdb5-4669-85c3-08aec2875848",
                             Content = "{ \"columns\": [ \"Bahar Özlem Albaş\", \"Seli M Sharef Dökülmez\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 42,
@@ -4646,7 +4646,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "99fb8eeb-0c14-451f-a01d-5ee4bf72748a",
+                            Id = "f6f46799-6871-4180-bad2-428be035a6ef",
                             Content = "{ \"columns\": [ \"İlma Aldağ\", \"Firuze Dönder\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 43,
@@ -4656,7 +4656,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f45ac260-b8d0-491a-920b-b32d22d5ad49",
+                            Id = "0ba1216d-817f-4bc6-9dc0-c92820e42586",
                             Content = "{ \"columns\": [ \"Kutlu Alibeyoğlu\", \"Doruk Deniz Döner\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 44,
@@ -4666,7 +4666,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "79bb4fb2-70d5-4584-bd1e-d5b3a053a569",
+                            Id = "0f496e40-2a9f-42eb-9d14-3f8a480fd0d3",
                             Content = "{ \"columns\": [ \"Nesibe Nurefşan Alkan\", \"Çisil Zeynep Dönmez\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 45,
@@ -4676,7 +4676,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "745bb61e-1390-4dfa-a0dc-08917cb1e2e4",
+                            Id = "768eea0a-68a2-453e-925c-fc8cb243765c",
                             Content = "{ \"columns\": [ \"Ömer Buğra Alparslan\", \"Tugce Dudu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 46,
@@ -4686,7 +4686,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "8e448575-74d2-48b7-acfd-b24040bbe4ba",
+                            Id = "75b1dfb2-c1ac-41ba-a3c3-4b8aa4e835ec",
                             Content = "{ \"columns\": [ \"Hiba Alpuğan\", \"Enver Dur\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 47,
@@ -4696,7 +4696,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c2309d9c-3374-4c1c-88db-3919b0954301",
+                            Id = "8fd8d658-8ad1-44d8-9a58-5a547703ed13",
                             Content = "{ \"columns\": [ \"Mazlum Altan\", \"Sanber Durak\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 48,
@@ -4706,7 +4706,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3213013f-d12b-4aab-b170-5cee1ef967ea",
+                            Id = "94349c2d-d36d-47cc-acaa-933d8b8a0b97",
                             Content = "{ \"columns\": [ \"Elif Tuğçe Altaş\", \"Birsen Durmuş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 49,
@@ -4716,7 +4716,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "2f72ff04-91ab-4e28-9c7c-18e9dab873a7",
+                            Id = "aca86584-ef99-4e16-829a-e31702f6a403",
                             Content = "{ \"columns\": [ \"Ahmet Ruken Altay\", \"Taçmin Durmuşoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 50,
@@ -4726,7 +4726,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6f3a1962-07ca-4dd1-98a6-10530ee93242",
+                            Id = "65d2a850-a4d2-4104-afdc-fa23deb56f50",
                             Content = "{ \"columns\": [ \"Yaşar Utku Anıl Altın\", \"Karanalp Dursun\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 51,
@@ -4736,7 +4736,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d7a8d8ed-dc95-4e0a-9351-9452c2c7e679",
+                            Id = "feec8bf0-5f9e-43c6-a5f3-2660b3fbe469",
                             Content = "{ \"columns\": [ \"Rana Altınoklu\", \"Öktem Duymuş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 52,
@@ -4746,7 +4746,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "05f17c2e-bc36-4c8c-a7bc-ea59da4df8c5",
+                            Id = "638be3c4-50dd-428f-92de-25d01507e32b",
                             Content = "{ \"columns\": [ \"Fethullah Altınöz\", \"Elanaz Dülgerbaki\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 53,
@@ -4756,7 +4756,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1c519fb3-4535-4bc3-b39c-295c70f68299",
+                            Id = "b30920d5-2d79-4edd-9c69-4e56a8c39ad2",
                             Content = "{ \"columns\": [ \"Burak Tatkan Altıntaş\", \"Fidan Dündar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 54,
@@ -4766,7 +4766,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "07fb140e-f967-47bf-b21e-39ff34b7d979",
+                            Id = "66c7069b-9f51-4bb4-9543-1102c5006736",
                             Content = "{ \"columns\": [ \"Merve Ece Altıok\", \"Barın Düşenkalkar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 55,
@@ -4776,7 +4776,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6e24d2cf-399e-4fde-8980-07072c63bc03",
+                            Id = "6fc3cd4c-025c-4771-8d6b-7adb88eb4dda",
                             Content = "{ \"columns\": [ \"Rima Altıparmak\", \"Mehmet Erman Düzbayır\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 56,
@@ -4786,7 +4786,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "84a2406c-2e72-4d18-a4af-d4ca73f54657",
+                            Id = "26c6ffbf-4e47-4d51-8c40-d01c70f556c0",
                             Content = "{ \"columns\": [ \"Elif Dilay Altinkaya\", \"Cem Efe Edeş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 57,
@@ -4796,7 +4796,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "01227626-b76e-446c-8cc6-2634e7bad9fb",
+                            Id = "ceb1a48d-41b7-4d51-830d-31c1b5e4f311",
                             Content = "{ \"columns\": [ \"Sırma Begüm Altunbaş\", \"Erem Edibali Mp\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 58,
@@ -4806,7 +4806,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "9e2e0a0d-5454-4e71-98c2-89da9da7315b",
+                            Id = "6e8a667a-8dcd-4e94-922d-ea3053256613",
                             Content = "{ \"columns\": [ \"Nefse Altunbulak\", \"Volkan Eyüp Efşin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 59,
@@ -4816,7 +4816,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "9fafb8ed-1a0c-46ae-a395-2d506cd8a61c",
+                            Id = "8c6ce462-7c20-485e-b678-a72492e73561",
                             Content = "{ \"columns\": [ \"Büşra Gül Altundal\", \"İbrahim Alp Tekin Ege\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 60,
@@ -4826,7 +4826,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "355f468d-235b-412d-8633-b5523d1f7737",
+                            Id = "7d690e9f-9b5f-424f-a01b-66230007a5a7",
                             Content = "{ \"columns\": [ \"Erna Aluç\", \"Güngör Erkin Egeli\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 61,
@@ -4836,7 +4836,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "aa348b9f-d150-416e-a032-03fb884a51ee",
+                            Id = "9b045d0b-97c3-4cb0-9efa-f37f4be61825",
                             Content = "{ \"columns\": [ \"Hikmet Nazlı Alver\", \"Çağın Egin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 62,
@@ -4846,7 +4846,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c0ca54f6-d165-48bd-8ba8-242d1379f0a7",
+                            Id = "f966b6a2-4361-4249-8456-1c4dd2c4dbb2",
                             Content = "{ \"columns\": [ \"İsmail Umut Anık\", \"Alphan Ekercan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 63,
@@ -4856,7 +4856,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0e0d33b0-1b18-407f-bbea-eb302990cf6d",
+                            Id = "91b1a9d3-70dc-45f7-8278-78f86d67ed79",
                             Content = "{ \"columns\": [ \"İlkay Ramazan Ankara\", \"Lale Ekrem\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 64,
@@ -4866,7 +4866,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "00b4bcc9-494f-4d50-bca8-00cff0a95d35",
+                            Id = "4e54de84-5066-4e2e-bac7-e0c916cc2f2b",
                             Content = "{ \"columns\": [ \"Nebahat Ansen\", \"Bağış Can Elbaşı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 65,
@@ -4876,7 +4876,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "35699a91-4889-438d-8591-b5a45c260e7c",
+                            Id = "c44a094c-7efa-4474-bf5c-d5c506938059",
                             Content = "{ \"columns\": [ \"İlyas Umut Apul\", \"Mert Cem Eliçin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 66,
@@ -4886,7 +4886,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a41796fe-d855-40f4-946d-6998103aba32",
+                            Id = "cb3b8d9e-6e5d-4677-bace-6c06144425a5",
                             Content = "{ \"columns\": [ \"Halim Aral\", \"Ahmet Sencer Emikoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 67,
@@ -4896,7 +4896,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "810c13f1-af1c-4d9e-938b-433d27a3946e",
+                            Id = "e4ac1756-c6da-4548-a5b3-6113097b105e",
                             Content = "{ \"columns\": [ \"Yasin Şükrü Arap\", \"Akife Erbay\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 68,
@@ -4906,7 +4906,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "cdc1ecbc-f567-4c42-b51b-3972d1c8603c",
+                            Id = "15d468c4-c9bb-431c-abbe-df406757d8b5",
                             Content = "{ \"columns\": [ \"Cansev Arat\", \"Burç Erbil\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 69,
@@ -4916,7 +4916,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1456abe4-8008-4777-9c81-a18afa75be89",
+                            Id = "1f49f33b-65c4-4736-ab80-5eadb032857b",
                             Content = "{ \"columns\": [ \"Memet Ali Ardıç\", \"Nadire Erbul\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 70,
@@ -4926,7 +4926,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "32f59ca2-3a80-4f5b-85e3-157e8dc4a1b0",
+                            Id = "caa05b3b-ba26-494c-a76c-696c3ff0f63c",
                             Content = "{ \"columns\": [ \"Deniz Dilay Arıcan\", \"Hüseyin Zeyd Ercoşkun\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 71,
@@ -4936,7 +4936,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "7067df04-3f5c-469f-8327-6854303ca868",
+                            Id = "0b6fc40a-7ae4-436d-b732-f7c9677bec73",
                             Content = "{ \"columns\": [ \"İzlem Arınç\", \"Aynur Gül Ercüment\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 72,
@@ -4946,7 +4946,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "02ae076a-c879-4175-b60d-940564628146",
+                            Id = "4138e8da-54ef-4920-9b52-9bbf22095013",
                             Content = "{ \"columns\": [ \"Öget Arif\", \"Samed Erek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 73,
@@ -4956,7 +4956,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "90ea02b8-a35b-40b7-8c64-8515c7d4efb2",
+                            Id = "e235d8c7-85ba-4c59-99c6-b3ac4f603c48",
                             Content = "{ \"columns\": [ \"Şeyda Nur Arikan\", \"Cem Ozan Erim\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 74,
@@ -4966,7 +4966,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b01b0cd5-5f59-4def-a110-5a4391b89103",
+                            Id = "b18b7763-fbc5-48d1-b360-b83a9ab0c2f0",
                             Content = "{ \"columns\": [ \"Zeki Yiğithan Armutcu\", \"Bahar Cemre Erin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 75,
@@ -4976,7 +4976,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "26576367-f91b-4dbe-af76-59abbb971386",
+                            Id = "4710e608-f142-4245-baaa-f555a8011264",
                             Content = "{ \"columns\": [ \"Nunazlı Arpacı\", \"Rekin Erkek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 76,
@@ -4986,7 +4986,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "4998db3a-edf3-48c7-9859-f4a7959f27dc",
+                            Id = "85031977-a228-4e08-a937-34f6fa51b8e0",
                             Content = "{ \"columns\": [ \"Ferdacan Aruca\", \"Hüseyin Serkan Erkekli\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 77,
@@ -4996,7 +4996,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d1c37a96-6e4d-4c53-9e23-ea041f6fde6d",
+                            Id = "66bf6c51-9830-48bf-9b11-b75af1bbba56",
                             Content = "{ \"columns\": [ \"Şerife Asil\", \"İbrahim Candaş Erki\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 78,
@@ -5006,7 +5006,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "bda2b9ef-2bf2-4820-986d-27fec6f47aaa",
+                            Id = "39812959-7fc4-4950-928e-5ed3ad054dc3",
                             Content = "{ \"columns\": [ \"Mustafa Burhan Askın\", \"Beniz Erkmen\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 79,
@@ -5016,7 +5016,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "8576f62b-bb50-46e9-9cc6-2aa660065ec6",
+                            Id = "f6561c50-f80a-4bc2-8679-579c43b92b0c",
                             Content = "{ \"columns\": [ \"Ilım Aslantürk\", \"Hasan Burak Erkoç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 80,
@@ -5026,7 +5026,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "8a326b9a-9682-451f-8cfd-c8ecf1ba2f43",
+                            Id = "13527ff1-9a52-481f-82f7-122885cf6905",
                             Content = "{ \"columns\": [ \"Sevginur Aşcı\", \"Selman Erkoşan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 81,
@@ -5036,7 +5036,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b6af6470-8b2f-4620-9657-6653961ffc88",
+                            Id = "16f9bbb3-e297-4f02-9da2-68f21f5e7b96",
                             Content = "{ \"columns\": [ \"Hayrunnisa Aşveren\", \"Hanife Nur Erkovan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 82,
@@ -5046,7 +5046,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "aa2ae1ce-1aec-438b-9ce4-02e35e9185ee",
+                            Id = "03b9bf4c-5272-41c9-a20f-c6838f370e2f",
                             Content = "{ \"columns\": [ \"Hanife Duygu Ata\", \"Alper Emin Erkuş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 83,
@@ -5056,7 +5056,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "4bddbfee-58d9-4fa2-85bc-0e0194c7637f",
+                            Id = "787ab936-5b35-4985-8857-8665e1b527b9",
                             Content = "{ \"columns\": [ \"Sevtap Atan\", \"Elif Kevser Eroğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 84,
@@ -5066,7 +5066,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "fa2d1aa6-c0d4-427e-970f-c31b7eb8947e",
+                            Id = "51cdee72-aebd-4c6e-bce5-88bf985a46ff",
                             Content = "{ \"columns\": [ \"Paksoy Ateş\", \"Abdullah Mert Erol\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 85,
@@ -5076,7 +5076,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d88b99b4-b82d-4a51-b1b8-8df2eb65358c",
+                            Id = "95fa3bf9-e9d9-4861-b2f4-201a3f2eadbb",
                             Content = "{ \"columns\": [ \"İlkim Ateşcan\", \"Çisel Ersin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 86,
@@ -5086,7 +5086,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "795786eb-d86f-4d52-a5c5-aa784ba6e69f",
+                            Id = "4a33f7ab-4a40-48ea-a167-ad15fe95a804",
                             Content = "{ \"columns\": [ \"Rubabe Gökçen Atlı\", \"İlkin Ersöz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 87,
@@ -5096,7 +5096,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "edb1b1ae-c7b5-4ccd-9029-5c29a0f75dec",
+                            Id = "f242500c-f11c-4132-b7ea-2431bf46fcc0",
                             Content = "{ \"columns\": [ \"Saba Atmaca\", \"Cantekin Erten\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 88,
@@ -5106,7 +5106,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "8b1c295c-25fc-4800-a0c8-b5204b5012ad",
+                            Id = "7d84c9a4-c0d9-40a7-9f79-0cc5162ee911",
                             Content = "{ \"columns\": [ \"Çisem Atok\", \"Onur Kerem Ertepınar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 89,
@@ -5116,7 +5116,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "338bb552-822d-464d-8d7d-9032e8255b0a",
+                            Id = "de458374-937e-4ca7-a512-2377b097edde",
                             Content = "{ \"columns\": [ \"Sabiha Elvan Atol\", \"İsmail Enes Eruzun\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 90,
@@ -5126,7 +5126,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "02994ec5-db9b-42a3-842a-99776f98f611",
+                            Id = "731351f6-f2d8-42d8-a3ee-df468c9505f2",
                             Content = "{ \"columns\": [ \"Edip Attila\", \"Hamıd Eryıldız\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 91,
@@ -5136,7 +5136,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b2399dc1-7103-4561-9e6b-c408588f7b50",
+                            Id = "6d1e2d7d-eeaa-4698-bc85-e52baf20c7ce",
                             Content = "{ \"columns\": [ \"Almina Avcı Özsoy\", \"Tunca Eryılmaz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 92,
@@ -5146,7 +5146,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c013a0c2-9fa9-40b7-a320-1dbbb7e0b8ac",
+                            Id = "d03b6682-5793-4001-b64a-75bd1988a94e",
                             Content = "{ \"columns\": [ \"Saime Avıandı\", \"Arslan Erzurumlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 93,
@@ -5156,7 +5156,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1cba1c87-af1a-429e-9c26-21f271da7abe",
+                            Id = "3f4c6a77-22ee-494e-ad5c-ae403bc36d11",
                             Content = "{ \"columns\": [ \"Nehar Avşar\", \"Neslihan Buşra Esat\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 94,
@@ -5166,7 +5166,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a75f3a6c-7a10-436f-acba-d62c55bd6284",
+                            Id = "7716621e-1eb6-46de-9af7-49bbbb7c5195",
                             Content = "{ \"columns\": [ \"Kaan Muharrem Ay\", \"Lütfiye Sena Esen\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 95,
@@ -5176,7 +5176,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "4b725cbc-d939-45a2-8292-5d0211cc0d96",
+                            Id = "ecaf0c85-deb1-4020-b383-f67de9b06945",
                             Content = "{ \"columns\": [ \"Murat Kaan Ayanoglu\", \"Belin Esendemir\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 96,
@@ -5186,7 +5186,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5bf3bda2-5c38-4d3b-bf0c-5dc6c91579e9",
+                            Id = "828ee511-c996-46e1-86cc-b95135a994ef",
                             Content = "{ \"columns\": [ \"Murat Sinan Ayaz\", \"Rukiye Esgin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 97,
@@ -5196,7 +5196,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "604968c2-5225-4835-a7e9-741dc2b9558f",
+                            Id = "eed7db76-4f29-40df-be94-41c55d27e044",
                             Content = "{ \"columns\": [ \"Ateş Aycı\", \"İslam Eshaqzada\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 98,
@@ -5206,7 +5206,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "51216571-2558-49c3-bcf9-d69c02419e70",
+                            Id = "fb171198-a5b2-43a8-bff0-832c17e1840c",
                             Content = "{ \"columns\": [ \"Zeynep Nihan Aydınlıoğlu\", \"Batıray Eski\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 99,
@@ -5216,7 +5216,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "bd7669b5-412e-40ec-b5ce-4b3b939ddd30",
+                            Id = "b5a77283-5fce-4d25-9ad0-234926187a4a",
                             Content = "{ \"columns\": [ \"Kerime Aydoğan Yozgat\", \"Süheyl Esvap\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 100,
@@ -5226,7 +5226,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "612a6893-9c31-4411-838c-9543ef9832bc",
+                            Id = "b8ff4e55-c34b-4877-9cb1-7f9e265fef5b",
                             Content = "{ \"columns\": [ \"Hami Aydoğdu\", \"Yargı Yekta Eşe\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 101,
@@ -5236,7 +5236,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "db59bbe5-fab2-4797-80f1-139bd0b5d8a1",
+                            Id = "4fbae03f-4a0c-4c89-9779-3ef451b485b2",
                             Content = "{ \"columns\": [ \"Thomas Aygen\", \"Elzem Evrenos\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 102,
@@ -5246,7 +5246,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5553474f-a1b0-49c4-9227-5932421d53b5",
+                            Id = "8304e70d-2257-4ef3-aa03-0ff30743bb06",
                             Content = "{ \"columns\": [ \"Güneş Aykan\", \"Ilgaz Eyipişiren\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 103,
@@ -5256,7 +5256,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6e5f7bec-0874-42a3-a46b-2f4175814a62",
+                            Id = "ac6f0591-9863-4f39-aaf1-6407d530d0fe",
                             Content = "{ \"columns\": [ \"Elif Feyza Ayrım\", \"Ongar Eyyupoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 104,
@@ -5266,7 +5266,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "791a2780-7240-452d-b03d-2e3092292f62",
+                            Id = "71652cbe-c3d0-4e13-a941-4faef4348c9f",
                             Content = "{ \"columns\": [ \"Uğur Ali Aysal\", \"Faik Ezber\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 105,
@@ -5276,7 +5276,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f1e97687-1f6b-42c3-9dcd-f6132425d5a0",
+                            Id = "23aa5d00-4665-4e21-bca9-97e581c0d6da",
                             Content = "{ \"columns\": [ \"Osman Yasin Aysan\", \"Turan Fahri\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 106,
@@ -5286,7 +5286,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "291de695-1c94-4ebf-8787-c8ac6b20c550",
+                            Id = "eb8bc3bb-9dee-4406-a283-36a189847ca2",
                             Content = "{ \"columns\": [ \"Adem Ayvacık\", \"Okbay Fatih\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 107,
@@ -5296,7 +5296,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "2a11de79-d394-4213-970c-b190392c8280",
+                            Id = "e2d297f4-d087-4cb5-b114-efbeb9d40d6b",
                             Content = "{ \"columns\": [ \"Sera Cansın Azbay\", \"Latife Fatin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 108,
@@ -5306,7 +5306,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ac7ecfe3-d78c-4f55-9566-3e6dd380d95d",
+                            Id = "0f51943c-be33-41e8-ace7-42dfad894b1a",
                             Content = "{ \"columns\": [ \"Ali İsmail Babacan\", \"Eyüp Orhun Fındık\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 109,
@@ -5316,7 +5316,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6705297a-6cc1-4517-bd5c-eb197f068e9b",
+                            Id = "7f7c3bab-1263-4fb0-a869-397af7e6531a",
                             Content = "{ \"columns\": [ \"Ruhugül Babadostu\", \"İrfan Anıl Fındıkçı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 110,
@@ -5326,7 +5326,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0c091629-8238-4b18-ab1e-79be6c272bf0",
+                            Id = "8ca0dd3c-e377-4ed1-a2d6-c4246743fd1c",
                             Content = "{ \"columns\": [ \"Alçiçek Bad\", \"Ertuğ Furuncuoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 111,
@@ -5336,7 +5336,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "dea65be2-ccbe-4f2b-8d2f-338e816e2388",
+                            Id = "9b668bf7-c542-42e0-adfe-95724ed407f1",
                             Content = "{ \"columns\": [ \"Memet Bağcı\", \"Berhudan Garip\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 112,
@@ -5346,7 +5346,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ca8420f7-f900-49a9-8422-4b2f58cf1135",
+                            Id = "ce08599a-7d8b-4cce-8731-559b0ffed8ed",
                             Content = "{ \"columns\": [ \"Mercan Bağçivan\", \"Nihan Gazitepe\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 113,
@@ -5356,7 +5356,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e1bbda8b-3d86-45cf-bebb-707b339b93db",
+                            Id = "328b0a0d-4f91-4f26-8101-2eec39a39292",
                             Content = "{ \"columns\": [ \"Gökay Bağış\", \"Menekşe Geben\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 114,
@@ -5366,7 +5366,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5b0691d3-e68f-45b7-a49e-f6d4a6ca8100",
+                            Id = "94db4173-86d9-49dd-a562-e793d2632f84",
                             Content = "{ \"columns\": [ \"Pırıltı Bahçeli\", \"Şeniz Geboloğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 115,
@@ -5376,7 +5376,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b54af2a2-cae0-4373-98dc-5eed1d92af0f",
+                            Id = "853c0be1-c916-4c3b-ab5f-02b7faf823cc",
                             Content = "{ \"columns\": [ \"Özgün Bahtıyar\", \"Zeynep Senahan Geçioğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 116,
@@ -5386,7 +5386,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a081ecdf-8aff-44d1-ac67-294ffaf41594",
+                            Id = "0be3c9ad-13af-4e7c-a618-301c68b1da5c",
                             Content = "{ \"columns\": [ \"Özgen Baka\", \"Hayri Anıl Geçkin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 117,
@@ -5396,7 +5396,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c2b0c74b-2a9d-4c18-b93e-c946959176cd",
+                            Id = "d087cc86-5187-4a1c-8fa7-155b30dbfb47",
                             Content = "{ \"columns\": [ \"Seung Hun Baki\", \"Muazzez Ece Gemalmaz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 118,
@@ -5406,7 +5406,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "2077f9d8-71eb-42e1-9e8e-6cce87b4ea60",
+                            Id = "9d38dffa-0788-4944-a07d-e86adc5b2a82",
                             Content = "{ \"columns\": [ \"Gülser Bal\", \"Kerem Cahit Gençoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 119,
@@ -5416,7 +5416,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c3aa93bc-3ff4-4e98-8ffb-2dc02890509f",
+                            Id = "b9ca7fb2-0a80-4ee9-aa28-540dee7ffbd1",
                             Content = "{ \"columns\": [ \"Yüksel Balcı\", \"Sadık Can Gezmiş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 120,
@@ -5426,7 +5426,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "92410500-aabc-4586-9060-c95e6b0c41a0",
+                            Id = "09ee41d5-382c-47e7-9dfe-4c4657c4be7e",
                             Content = "{ \"columns\": [ \"Ecren Baldo\", \"Resmiye Elif Gırgın\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 121,
@@ -5436,7 +5436,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6e24e514-8ad0-4e7d-ae73-8892b07d43f0",
+                            Id = "37faf35a-bd09-41ba-a698-46b1fb818cf4",
                             Content = "{ \"columns\": [ \"Muhammet Raşit Balı\", \"Nergiz Gilim\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 122,
@@ -5446,7 +5446,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ac480e7b-a75c-4e17-bdd8-f81c01b33438",
+                            Id = "6198d826-736c-477c-965e-72b81b073f54",
                             Content = "{ \"columns\": [ \"Sakıp Balıoğlu\", \"Mehmet Gökalp Ginoviç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 123,
@@ -5456,7 +5456,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f48bcdd5-9382-4396-a816-baa198d2c971",
+                            Id = "29c2ea36-9981-4100-926b-2a6adf12238e",
                             Content = "{ \"columns\": [ \"Kazım Balta\", \"Mehmetali Girgin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 124,
@@ -5466,7 +5466,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "95ff9f1b-bc8a-4f14-a2d3-de4f23b21997",
+                            Id = "b849f03f-f8e8-4e16-8cc9-e236a7f7a53a",
                             Content = "{ \"columns\": [ \"Abdullah Atakan Baluken\", \"Abdullah Halit Golba\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 125,
@@ -5476,7 +5476,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f7a64a43-cebe-458b-9c5f-9d123c135155",
+                            Id = "af68a5f2-fbd8-4e61-80a3-6e0f45d01638",
                             Content = "{ \"columns\": [ \"Coşkun Baran\", \"Tilbe Göç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 126,
@@ -5486,7 +5486,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "621be0bb-5364-444b-a612-157e8efff241",
+                            Id = "9240ec53-a893-4f5a-8dad-e592e9b549a5",
                             Content = "{ \"columns\": [ \"Serdar Kaan Barbaros\", \"Kubra Göçmen\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 127,
@@ -5496,7 +5496,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f1232ab0-14d1-4726-a3d4-aba9298c3789",
+                            Id = "8485692e-838d-4449-96f4-bb78ddf3277b",
                             Content = "{ \"columns\": [ \"Ezel Bargan\", \"Kubilay Gödek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 128,
@@ -5506,7 +5506,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "46113564-c216-43c7-81d9-376ba601bfeb",
+                            Id = "3fb8e271-6158-4467-954e-37734eee679a",
                             Content = "{ \"columns\": [ \"Ayşegül Barutçuoğlu\", \"Busem Gökçeaslan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 129,
@@ -5516,7 +5516,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "34882be6-51c3-4f18-88ce-4062f87819ca",
+                            Id = "828d17c4-63ed-46fc-a798-b8c38f069296",
                             Content = "{ \"columns\": [ \"Sefa Kadir Başar\", \"Banuhan Gökçek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 130,
@@ -5526,7 +5526,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0187cc41-da6d-461b-8ae3-099dd3670014",
+                            Id = "c37f5aef-7c59-4cda-ba06-3ddfb2b659a1",
                             Content = "{ \"columns\": [ \"Elif Etga Başeğmez\", \"Örgün Gökhan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 131,
@@ -5536,7 +5536,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "07e8b291-aa7d-448f-b3b2-51a4ae543a2c",
+                            Id = "4058f611-7c3e-4c7d-a822-3df265d87688",
                             Content = "{ \"columns\": [ \"Balın Baştepe\", \"Melike Göksoy\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 132,
@@ -5546,7 +5546,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "266e9818-1a34-4c21-9e02-23d56daa66b2",
+                            Id = "42be7a76-e28a-4820-a9da-32e118c2dadb",
                             Content = "{ \"columns\": [ \"Mahperi Baştopçu\", \"Yeşim Gölmes\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 133,
@@ -5556,7 +5556,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "70ede9f1-6ad0-4dd9-a471-baad1c7c2d37",
+                            Id = "665725dc-f0af-4c89-8ab1-0151106d759a",
                             Content = "{ \"columns\": [ \"Erol Özgür Baştuğ\", \"Nilüfer Gönay\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 134,
@@ -5566,7 +5566,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "127483d9-2c87-4360-9d6c-8d78d5559796",
+                            Id = "4a0cb3eb-3ffb-4f96-b163-7707d4782dc4",
                             Content = "{ \"columns\": [ \"Atak Batar\", \"Denizhan Gönül\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 135,
@@ -5576,7 +5576,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c28f7f50-c93d-4d3f-a50f-cc913dfb7478",
+                            Id = "7758e1e9-4806-45b5-8156-a2ef0d9ab286",
                             Content = "{ \"columns\": [ \"Safa Batga\", \"Şueda Göreke\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 136,
@@ -5586,7 +5586,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e03b6846-c43a-4d77-98bb-45f5fbf4f530",
+                            Id = "c8707880-51b3-44e8-86ff-9c5f4f9b2172",
                             Content = "{ \"columns\": [ \"Gökmen Battal\", \"Ersin Görgülü\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 137,
@@ -5596,7 +5596,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e2887ede-f6f1-4086-87d8-f68eb4d1b479",
+                            Id = "22c915ae-e325-4173-8a09-129f21beaed1",
                             Content = "{ \"columns\": [ \"Fazıl Erem Batuk\", \"Şahabettin Görgüner\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 138,
@@ -5606,7 +5606,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b826ba7c-fa27-42b3-8635-51c4a219113f",
+                            Id = "452df428-8378-45d8-bcf1-ba7260a33998",
                             Content = "{ \"columns\": [ \"Bensu Batur\", \"Ayşe Elif Görür\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 139,
@@ -5616,7 +5616,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d11374d6-a697-4d1f-9dee-4876ca55dc8a",
+                            Id = "0e982d6e-d818-4392-81a8-63bb20bf6175",
                             Content = "{ \"columns\": [ \"Nazım Orhun Baturalp\", \"Nazım Berke Göven\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 140,
@@ -5626,7 +5626,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "60e6d7d1-c535-4bb2-95c8-628df407b3e8",
+                            Id = "74c765d4-adc2-4380-84fd-281b20daaaf2",
                             Content = "{ \"columns\": [ \"Safa Ahmet Baydar\", \"Meltem Göymen\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 141,
@@ -5636,7 +5636,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1515cc31-7a9f-44e9-9571-9daa8fb43fb3",
+                            Id = "735ced16-ec50-48c9-b416-7ba192db3dd6",
                             Content = "{ \"columns\": [ \"Demircan Baydil\", \"Abdulhalim Guguk\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 142,
@@ -5646,7 +5646,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3f7ce268-ad5a-4f4c-b603-568f0548109c",
+                            Id = "bc4b3e3d-5ce2-43f9-bb63-dd0258386bf7",
                             Content = "{ \"columns\": [ \"Burçin Kübra Baykal\", \"Gülten Güdücü\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 143,
@@ -5656,7 +5656,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b3e77416-0f41-428d-8b8c-83bd57c099f3",
+                            Id = "c4556243-4df0-418e-b54f-f7eeaf5552c7",
                             Content = "{ \"columns\": [ \"Derviş Haluk Baykan\", \"Işınbıke Gülcan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 144,
@@ -5666,7 +5666,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "97df17cd-c67f-487c-8afc-9b7416c7a3d5",
+                            Id = "c86f848e-49a5-485a-92c3-1137b385609f",
                             Content = "{ \"columns\": [ \"Taylan Remzi Baykuş\", \"Vedia Gülçin\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 145,
@@ -5676,7 +5676,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a790c29a-7a3e-46a9-9bcc-874929b08b87",
+                            Id = "54901765-a9c4-4ffe-9353-9b2c09624851",
                             Content = "{ \"columns\": [ \"Abdulvahap Bayrakoğlu\", \"Fatma Sena Güldoğuş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 146,
@@ -5686,7 +5686,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "22e026a7-d9fb-4b2c-b722-343e8479a027",
+                            Id = "f8756186-3e0f-42f2-895e-9a24bcbd3f6d",
                             Content = "{ \"columns\": [ \"Aygün Bayram\", \"Ömer Okan Gülebakan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 147,
@@ -5696,7 +5696,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "62452f56-3268-4b9b-aaed-a8488873b06e",
+                            Id = "49fd8f39-a8a3-4971-adf1-43dc833929e4",
                             Content = "{ \"columns\": [ \"Ayla Baytın\", \"Aybike Güleç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 148,
@@ -5706,7 +5706,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a305d7c3-aeb7-4e29-9065-0cc6fc660ba9",
+                            Id = "79409a5f-0fb5-4054-b23d-34186c922b06",
                             Content = "{ \"columns\": [ \"Kubilay Barış Begiç\", \"Bektaş Gülenç\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 149,
@@ -5716,7 +5716,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "428d2db0-75de-43a1-b343-f53221a1c523",
+                            Id = "7ed7c423-e5cf-4d7f-9959-733b3f6d56a6",
                             Content = "{ \"columns\": [ \"Mustafa Samed Beğenilmiş\", \"Emircan Güleryüz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 150,
@@ -5726,7 +5726,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "9ba7a2c0-e1e7-4fc2-92a1-96951474018f",
+                            Id = "9abd638f-8c7f-4de3-80df-962adcec71be",
                             Content = "{ \"columns\": [ \"Berfin Dilay Bekaroğlu\", \"Merter Gülkan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 151,
@@ -5736,7 +5736,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "4d56da73-dcf9-4808-98d3-af64846c237a",
+                            Id = "8434d385-5675-4298-a58e-d2f6f22af565",
                             Content = "{ \"columns\": [ \"İbrahim Onat Belge\", \"Sevgi Tutku Güllüce\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 152,
@@ -5746,7 +5746,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "123099c8-9f67-4f98-97d5-a2dad284f00e",
+                            Id = "f5f8fcb8-7fe7-4c17-b783-0d834c789b9b",
                             Content = "{ \"columns\": [ \"Jutenya Benan\", \"Denktaş Gülşen\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 153,
@@ -5756,7 +5756,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c13e2d93-0c2e-42c5-a4f4-4d4fcb502ea3",
+                            Id = "b3d4ce70-5c8e-4d1d-b183-204828e522f7",
                             Content = "{ \"columns\": [ \"Hulki Bent\", \"Köksal Gültaş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 154,
@@ -5766,7 +5766,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "eb005194-4006-4d47-a5ce-5a4196c5ec94",
+                            Id = "c59f8c08-7088-4cef-9ada-c0d63dfaa2a0",
                             Content = "{ \"columns\": [ \"Mustafa Doğukan Berberoğlu\", \"Hasan Fahri Gültepe\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 155,
@@ -5776,7 +5776,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ac00e9b9-23c5-47fe-9734-43a6a0491433",
+                            Id = "c4abc638-a769-4eeb-abd8-b47aa02bcdd2",
                             Content = "{ \"columns\": [ \"Hüner Berk\", \"Öymen Gümüşsoy\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 156,
@@ -5786,7 +5786,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "32b9f4f5-ad4a-448e-9255-eaa435fd5a45",
+                            Id = "edf86aca-0448-4937-ba3f-be07a9e103ae",
                             Content = "{ \"columns\": [ \"Buse Gizem Berker\", \"Eylem Gündüz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 157,
@@ -5796,7 +5796,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "364cb342-41ad-4cd8-82ee-ea21ec47b944",
+                            Id = "28e139a4-5074-4d22-9e3b-d4c4be982ef7",
                             Content = "{ \"columns\": [ \"Halime Beydağ\", \"Melek Diler Günel\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 158,
@@ -5806,7 +5806,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "416635ee-cb76-489e-8c72-62473d9583ce",
+                            Id = "fa26aa91-3f96-472f-8ef1-6dc2780c7af6",
                             Content = "{ \"columns\": [ \"Didem Bıçaksız\", \"Argun Güneri\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 159,
@@ -5816,7 +5816,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "003b471e-15e6-4348-93f8-4867ccfc99d9",
+                            Id = "d8fe4914-20ed-478c-97f9-9eba54fe0802",
                             Content = "{ \"columns\": [ \"Mihrinaz Bilal\", \"Mehmet Yekta Güneyi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 160,
@@ -5826,7 +5826,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "ae7f6e56-5ee9-44dd-8771-c1de66e7936c",
+                            Id = "058d3322-808c-4280-a658-74f34ff3039b",
                             Content = "{ \"columns\": [ \"Lal Bilgeç\", \"Yasemin Erva Güntek\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 161,
@@ -5836,7 +5836,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "34746421-ceec-4c43-b05a-718dab11eca2",
+                            Id = "1979cded-6a48-4426-a17c-52a4cd0d4256",
                             Content = "{ \"columns\": [ \"Senay Bilgen\", \"Günan Güral\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 162,
@@ -5846,7 +5846,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6fe45d0a-dd9a-4ffd-bfcb-15e2213c2244",
+                            Id = "0b17e5fd-9eba-4e55-8b02-bcb7d81614ab",
                             Content = "{ \"columns\": [ \"Remzi Bilgi\", \"Osman Cihan Gürdemir\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 163,
@@ -5856,7 +5856,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "128adc08-e696-4062-b27f-654b69c36862",
+                            Id = "e22ba746-37c1-4225-b09c-277c905ef0a0",
                             Content = "{ \"columns\": [ \"Armağan Bilgiç\", \"Okyanus Gürel\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 164,
@@ -5866,7 +5866,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d894f6a2-9e67-4a32-aeff-2ec96ae2fbc6",
+                            Id = "36e86512-aaf5-4c8a-8db6-93865cb97d7f",
                             Content = "{ \"columns\": [ \"Çelik Bilgir\", \"Mert Alican Güreş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 165,
@@ -5876,7 +5876,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "60d460bc-5167-4322-8e7e-7cc249839133",
+                            Id = "01fd1956-c063-4907-93d0-a1eb760e06fc",
                             Content = "{ \"columns\": [ \"Kübra Tansu Bilgit\", \"Zeynep Doğa Gürses\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 166,
@@ -5886,7 +5886,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5174bbc9-aeab-44d5-b4c5-2b2af97b352f",
+                            Id = "d1664729-4b14-4230-aff4-faf7d95ac39e",
                             Content = "{ \"columns\": [ \"Uluç Emre Binbay\", \"Tarık Güven\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 167,
@@ -5896,7 +5896,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c5bd7e99-f608-468a-bf2b-d2c80228cad5",
+                            Id = "7dd25f07-bbe7-4f1d-b3f4-fbf6c28ad7ab",
                             Content = "{ \"columns\": [ \"Mehmet Buğrahan Birgili\", \"Birgen Güvener\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 168,
@@ -5906,7 +5906,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "141d0db7-95bf-4b5f-b5fb-cacf238c7d3e",
+                            Id = "a1521f14-885b-411c-9dd2-4b76181a1e5d",
                             Content = "{ \"columns\": [ \"Doğuşcan Biriz\", \"Ahmet Korhan Güzel\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 169,
@@ -5916,7 +5916,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e740fbd6-39c6-437b-a0a1-f7f62836c942",
+                            Id = "5a0682ea-1fed-4105-a473-a9ea74a0aac3",
                             Content = "{ \"columns\": [ \"Altan Boy\", \"Manolya Güzeller\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 170,
@@ -5926,7 +5926,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "591ce889-4d97-4328-89fe-5ee26a23f53c",
+                            Id = "31b46b3e-ac5e-4061-83be-1b206b706d3c",
                             Content = "{ \"columns\": [ \"Bengisu Boya\", \"Mustafa Berkay Güzeloğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 171,
@@ -5936,7 +5936,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "55d65346-2528-4c2f-99af-6246ea29df61",
+                            Id = "522f5445-16ab-431f-8634-159d4790d084",
                             Content = "{ \"columns\": [ \"Onur Taylan Boylu\", \"Mehmet Anıl Hacıalioğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 172,
@@ -5946,7 +5946,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6c66fc78-d5fd-4aa8-80e6-37e8d1547916",
+                            Id = "2c164b1e-d5d7-4a0c-b645-cbc1b4a83c3b",
                             Content = "{ \"columns\": [ \"Ayseren Boyuktaş\", \"Ahmet Furkan Hacılar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 173,
@@ -5956,7 +5956,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "64b397e2-aa88-4866-b785-87440e939d14",
+                            Id = "82d1d814-2245-4187-b1e0-9fbda8080c72",
                             Content = "{ \"columns\": [ \"Pekin Boz\", \"Fazilet Hacıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 174,
@@ -5966,7 +5966,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6df69880-23f1-4413-b50e-05652f8a5aa0",
+                            Id = "40041b3b-896a-4915-8254-c8bb1adf38a7",
                             Content = "{ \"columns\": [ \"Aksu Bozdağ\", \"Kıvılcım Hadi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 175,
@@ -5976,7 +5976,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3a7431aa-cae2-483a-ad44-f36329ad8136",
+                            Id = "bce15038-889f-428a-b7fb-9297acdd077a",
                             Content = "{ \"columns\": [ \"Arkan Bozdemir\", \"Çisil Hazal Hafız\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 176,
@@ -5986,7 +5986,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6059920c-a7ec-4f37-9088-2770f99d5a15",
+                            Id = "91dc0a33-a1fa-4fc4-8ab8-900f2f8340a3",
                             Content = "{ \"columns\": [ \"İltem Boztepe\", \"Feray Hakverdi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 177,
@@ -5996,7 +5996,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3f88e32b-5708-41b5-8a04-116187c5b6e4",
+                            Id = "7ad2ae92-ae08-416d-8937-a8156759a2ea",
                             Content = "{ \"columns\": [ \"Betül Bozyer\", \"Büşranur Halaçoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 178,
@@ -6006,7 +6006,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "58f2123b-8a61-4fd1-a434-342098f4ea5c",
+                            Id = "129d029c-8269-4afb-a4fa-90017aa6a45c",
                             Content = "{ \"columns\": [ \"Ogün Bölge\", \"Selin Sıla Halıcılar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 179,
@@ -6016,7 +6016,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b78650fd-103a-44fd-b3ea-2a2b503f9739",
+                            Id = "6c362027-f3a2-4090-b9fd-3208ea6d53ee",
                             Content = "{ \"columns\": [ \"İbrahim Hakkı Bugey\", \"Yeter Hamamcıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 180,
@@ -6026,7 +6026,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a160ef3b-0a69-4ee8-ada3-5879499bb54d",
+                            Id = "553b967c-0936-4a71-a3e0-1d6760b76113",
                             Content = "{ \"columns\": [ \"Onay Buğdaypınarı\", \"Ramazan Tarık Hamarat\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 181,
@@ -6036,7 +6036,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5e919393-0475-4532-8969-044aab604ffe",
+                            Id = "c34c1e3a-dd75-403b-8883-1462fec47e83",
                             Content = "{ \"columns\": [ \"Cankız Bulgan\", \"Boran Hamidi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 182,
@@ -6046,7 +6046,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a0ee994a-fbdc-4ece-8ed3-266d773c3f52",
+                            Id = "9dcf5c98-053d-4227-9fcd-b8bee0cd031d",
                             Content = "{ \"columns\": [ \"Arzucan Bulgur\", \"Tazika Hilal Hamzaoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 183,
@@ -6056,7 +6056,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e96f6586-0d1e-4378-8568-8eeef30b7918",
+                            Id = "75ad128e-0b15-4ced-a13d-c9311f56952d",
                             Content = "{ \"columns\": [ \"Asiye Burabak\", \"Aynur Dilan Hancı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 184,
@@ -6066,7 +6066,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "055713d0-7d25-464e-90c5-87e1f3aefb2e",
+                            Id = "3d57dfb8-2b27-4d9a-bc7e-62d905aaaf82",
                             Content = "{ \"columns\": [ \"Ahmet Yasin Burak\", \"Ayman Hangül\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 185,
@@ -6076,7 +6076,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "617b9f97-085f-4a2a-8d74-2ee535b0a681",
+                            Id = "a235266e-cda9-4ee9-9f2a-1ee2edb8b27b",
                             Content = "{ \"columns\": [ \"Yaprak Bural\", \"Berrak Harman\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 186,
@@ -6086,7 +6086,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "1beae363-4e7e-4ff0-9cea-6d6cb776dbf7",
+                            Id = "70c6ff30-3be5-4d1c-b110-2de9f6a85d71",
                             Content = "{ \"columns\": [ \"Aleda Buyuran\", \"Erk Deha Harmankaya\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 187,
@@ -6096,7 +6096,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "66178fb2-c205-40a3-843d-c2ab1e6f06f5",
+                            Id = "8e1846eb-0861-4507-a00e-15e071854475",
                             Content = "{ \"columns\": [ \"Can Güney Bülbül\", \"Perihan Haykır\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 188,
@@ -6106,7 +6106,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f0f16eab-8e06-4847-b9c2-97266c312f72",
+                            Id = "ec35c15e-94aa-44c9-b404-bfb462bb37e9",
                             Content = "{ \"columns\": [ \"Mahmut Bilal Bülend\", \"Turhan Onur Hırlak\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 189,
@@ -6116,7 +6116,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "01f1780e-db05-499c-a6cc-0af9626ead0d",
+                            Id = "2154cdac-2d76-4b43-a8f8-00a75e098ce8",
                             Content = "{ \"columns\": [ \"Saliha Zeynep Bülent\", \"Furkan Hızarcıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 190,
@@ -6126,7 +6126,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c86078d1-bfd8-42f7-9413-a47ed592240c",
+                            Id = "c9935ec4-48cf-4fa2-874b-c9e612c8647f",
                             Content = "{ \"columns\": [ \"Melike Dilara Büyükfırat\", \"Mustafa Ali Hiçyılmam\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 191,
@@ -6136,7 +6136,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "176a77cc-0165-48c6-91d7-4f374b3fec9c",
+                            Id = "1270edde-8ee7-489c-b548-bf24c95a6d4e",
                             Content = "{ \"columns\": [ \"Hayriye Büyükgüngör\", \"Muhammed Sefa Hilal\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 192,
@@ -6146,7 +6146,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e11eb266-688c-4bfc-adc9-db05930f6a16",
+                            Id = "2da358e6-4743-4513-8935-45f63b32aa2c",
                             Content = "{ \"columns\": [ \"Sebiha Büyüköztürk\", \"Argün Hilmi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 193,
@@ -6156,7 +6156,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "21ce5003-e4f2-4136-8d8f-ba920f614a6a",
+                            Id = "8ad82ffb-23a1-4c3e-89a6-cdd81b181f69",
                             Content = "{ \"columns\": [ \"Mehmet Can Akçaözoğlu\", \"Fadik Himoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 194,
@@ -6166,7 +6166,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d92a70bc-d011-4caf-bdf9-9da0311055e5",
+                            Id = "405f2346-0dbb-4dea-b2f8-21d9e3330c9e",
                             Content = "{ \"columns\": [ \"Mehmet Enes Canan\", \"Ahmet Hakkı Hirik\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 195,
@@ -6176,7 +6176,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "fb836b31-d8ac-4568-93e4-d09871cc201f",
+                            Id = "7441f3de-e12a-4e92-b057-16eef38ecf96",
                             Content = "{ \"columns\": [ \"Kurtbey Canbağı\", \"Mustafa Sefa Hopacı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 196,
@@ -6186,7 +6186,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "cb005657-6369-42ef-81ad-de73bdbb688b",
+                            Id = "3246d833-a440-4aa5-9794-b1e0def0f92e",
                             Content = "{ \"columns\": [ \"Mustafa Taha Canbek\", \"Toykan Horata\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 197,
@@ -6196,7 +6196,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "23ffc6b7-0de6-4592-842c-548afdf513aa",
+                            Id = "3a64a8c7-6a0e-4bfa-8e81-08b6aa39abc1",
                             Content = "{ \"columns\": [ \"Sena Nur Candan\", \"Selime Hüner\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 198,
@@ -6206,7 +6206,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b754e6d7-72e3-42ae-9447-b95cfeb1c81a",
+                            Id = "a6f5d085-3ef6-4105-abc6-b79c8fe16027",
                             Content = "{ \"columns\": [ \"Abdullah Emirhan Caner\", \"Denizcan Ilık\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 199,
@@ -6216,7 +6216,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3400c96c-41c4-4b60-abc8-141c7733e37c",
+                            Id = "9acda455-a0ea-422b-b8f3-644781c34268",
                             Content = "{ \"columns\": [ \"Mustafa Kerem Cansu\", \"Ayşe Zeyneb Irıcıoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 200,
@@ -6226,7 +6226,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "36017ce0-840f-4065-a795-9a4942eb6d01",
+                            Id = "93651743-325a-4b49-95c7-020d2ff6166f",
                             Content = "{ \"columns\": [ \"Doktora Canuyar\", \"Mustafa Furkan Işınay\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 201,
@@ -6236,7 +6236,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "41f60ba2-fd7c-473b-8d04-2d5273eef4b3",
+                            Id = "5188eb34-b870-4a48-bf27-4192479d7e48",
                             Content = "{ \"columns\": [ \"Seyit Ceran\", \"Sude İbrahim\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 202,
@@ -6246,7 +6246,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "b0742ee4-3cbb-4062-81bf-4c284e03543d",
+                            Id = "7edfcaee-54b7-457b-8a16-e79c4eb7fe5d",
                             Content = "{ \"columns\": [ \"Selma Simge Ceylan\", \"Güçlü İçten\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 203,
@@ -6256,7 +6256,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d6235fd3-0e31-4fb0-837c-d7c6f9fbad9f",
+                            Id = "85ca6dd2-0033-4278-aea8-3d081e6f8a1f",
                             Content = "{ \"columns\": [ \"Aşkım Chiklyaukova\", \"Katya İlgezdi\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 204,
@@ -6266,7 +6266,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "84d52a74-97f2-42f4-9066-70ae47f222da",
+                            Id = "6eb07a6b-0ad6-4b1f-9d70-f7248a78a10a",
                             Content = "{ \"columns\": [ \"Özgür Choi\", \"Halid İlhan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 205,
@@ -6276,7 +6276,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "691d49dd-ceaf-4042-bf29-c11537833ec4",
+                            Id = "f3c8ebf2-8eb4-471e-bd82-4ecb4b431fb6",
                             Content = "{ \"columns\": [ \"Tuğce Cibooğlu\", \"Nihal İlısu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 206,
@@ -6286,7 +6286,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "73e0b817-1894-4cf9-a76a-283d704b285b",
+                            Id = "38cd2e51-ce58-4ea4-84dd-0b67a2c5ef06",
                             Content = "{ \"columns\": [ \"Özer Seçkin Ciddi\", \"Elif Nisan İmamoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 207,
@@ -6296,7 +6296,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d25b56d5-edd6-4a03-8834-0bc129995641",
+                            Id = "61f73123-8d5d-4b61-82af-1e2956c46454",
                             Content = "{ \"columns\": [ \"Balkın Cigerlioğlu\", \"Emine Selcen İmre\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 208,
@@ -6306,7 +6306,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3172c635-127b-4ff0-8fb1-f9fcb83645ca",
+                            Id = "25cdb078-3552-4b56-b9d1-a0e7b57a00d0",
                             Content = "{ \"columns\": [ \"Yücel Civan\", \"Tevfik İnal\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 209,
@@ -6316,7 +6316,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "6cdd3b3b-b2b0-432c-b89b-cf3f7c819a8b",
+                            Id = "0dd0a156-aa12-46a3-9560-3fa8381fa6b3",
                             Content = "{ \"columns\": [ \"Şansal Coşan\", \"İbrahim Kağan İncekara\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 210,
@@ -6326,7 +6326,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "e130b99c-cdf7-4a95-837e-7e8ac0529c45",
+                            Id = "5523313e-8084-4574-bdd9-cc3b9cf14d4b",
                             Content = "{ \"columns\": [ \"Oğuzcan Coşandal\", \"Sidar İnceoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 211,
@@ -6336,7 +6336,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "33f2696f-356b-4410-bcc0-b05062434592",
+                            Id = "b15f5602-bdbe-48af-8477-0499566f0533",
                             Content = "{ \"columns\": [ \"Mayıs Cumalı\", \"Nesli İpçizade\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 212,
@@ -6346,7 +6346,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f1d908b4-c41a-4e16-b728-ccd9e27715ee",
+                            Id = "3dcfa55f-d2bf-4988-964e-63c294a999f0",
                             Content = "{ \"columns\": [ \"Büşra Cüce\", \"İhsan Vehbi İpekoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 213,
@@ -6356,7 +6356,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "20455710-80bd-4d02-8175-486e16ba5042",
+                            Id = "ea0dadfa-e724-4b53-bfb3-63c5e7333276",
                             Content = "{ \"columns\": [ \"Afra Selcen Çağan\", \"Necati İrsoy\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 214,
@@ -6366,7 +6366,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a50f82f0-977c-484b-98e0-e037fae711d5",
+                            Id = "77fd4cf9-3171-4045-ab3e-4c47a571043f",
                             Content = "{ \"columns\": [ \"Gönül Çağatay\", \"Zerin İshakoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 215,
@@ -6376,7 +6376,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "59c4e042-e5b3-4909-9e45-55c1cbb585a6",
+                            Id = "eb83e1bc-af8d-41f6-9230-9aacee3a94aa",
                             Content = "{ \"columns\": [ \"Doğangün Çağlar\", \"Dursun Korel İşgören\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 216,
@@ -6386,7 +6386,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "02f36e03-7483-4603-944e-1166db8869ee",
+                            Id = "3c4cb24f-d207-43ab-9d93-5a958c1c5010",
                             Content = "{ \"columns\": [ \"Elif Ege Çağlayan\", \"Ahuşen İşgüzar\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 217,
@@ -6396,7 +6396,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "df400796-b07e-47f3-91dc-f6e34b5ac994",
+                            Id = "a849e32f-3de6-4c9a-b1b5-c01e8836636c",
                             Content = "{ \"columns\": [ \"Özen Çakan\", \"Uzel Kabataş\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 218,
@@ -6406,7 +6406,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "fd141150-143a-4628-8bca-9c8f2c32f61b",
+                            Id = "df1836f2-8528-424d-ab5b-423bf7d8f8d3",
                             Content = "{ \"columns\": [ \"Dilhan Çakanel\", \"Melis Ezgi Kabayuka\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 219,
@@ -6416,7 +6416,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a4bd4d52-d7a0-49be-b7e9-b4f004ab2ff1",
+                            Id = "b74f72da-1135-4b5f-afcb-50f3cb0a00c6",
                             Content = "{ \"columns\": [ \"Maral Çakıcı\", \"Şaziye Kabukçu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 220,
@@ -6426,7 +6426,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0acbbd0c-340c-4ca6-b95e-5c294f84602a",
+                            Id = "ebcdcc8f-ef3a-48fb-8fb3-07260a76e2c8",
                             Content = "{ \"columns\": [ \"Mahire Çalım\", \"Bergüzar Kaçaranoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 221,
@@ -6436,7 +6436,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a395111e-a27e-4bd2-9ab3-7cba45c6618f",
+                            Id = "b6fcca91-ee74-49fb-b095-3ab3ea3e1230",
                             Content = "{ \"columns\": [ \"Hacı Bayram Ufuk Çamaş\", \"Ömer Faruk Kadı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 222,
@@ -6446,7 +6446,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "8650a59c-94fc-46ff-8de4-49c2efa17ff1",
+                            Id = "9f83c5d0-dcc5-4c88-813f-f253d6e10887",
                             Content = "{ \"columns\": [ \"Oltun Çanga\", \"Dağhan Kadoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 223,
@@ -6456,7 +6456,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3055daa5-1113-4f6e-a7d5-6004ab95bea8",
+                            Id = "b21179fe-cc52-4c7a-8dee-5f75e08778a1",
                             Content = "{ \"columns\": [ \"Önel Çapa\", \"Ünzile Kalfaoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 224,
@@ -6466,7 +6466,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "89937a90-1095-41a3-9d4e-79baae1e391e",
+                            Id = "4a3be722-f359-43c1-9eca-126a18f90f2b",
                             Content = "{ \"columns\": [ \"Bayülken Çaprak\", \"Sezer Kalsın\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 225,
@@ -6476,7 +6476,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "0c3f6059-5dc8-4027-b3e7-6f75a114faec",
+                            Id = "ecdd7619-b074-467d-a005-392241a9352b",
                             Content = "{ \"columns\": [ \"Dilseren Çarıcı\", \"Şensoy Kalyoncu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 226,
@@ -6486,7 +6486,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "7432a61a-0d01-4860-9e15-dc912483a697",
+                            Id = "64260f06-a9b5-48cd-99ff-08a0877c950b",
                             Content = "{ \"columns\": [ \"Elif Beyza Çark\", \"Necatı Kamışlı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 227,
@@ -6496,7 +6496,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "a6950b81-88eb-494b-9061-90218d95abcc",
+                            Id = "6a0c8966-dcdc-4420-a53c-ab64f876aa30",
                             Content = "{ \"columns\": [ \"Elvan Çatal\", \"Şahan Kandaşoğlu\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 228,
@@ -6506,7 +6506,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c410f99e-43ef-4e1c-9a6a-1496acd4a65f",
+                            Id = "977e9cdc-41e2-4281-9c8f-56ffb61d3ccf",
                             Content = "{ \"columns\": [ \"Esim Çaylar\", \"Necip Fazıl Kanlı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 229,
@@ -6516,7 +6516,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d43ab835-2431-4b34-bfdb-22b3860db650",
+                            Id = "5d67322c-c8b0-4c04-8bd4-74410e89bf97",
                             Content = "{ \"columns\": [ \"Sena Çekmecelioğlu\", \"Muharrem Kanmaz\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 230,
@@ -6526,7 +6526,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "03ef9d15-c1d2-46ef-a226-bf612cb0dd71",
+                            Id = "9e12eaa9-bc19-42ec-ab90-0cd80b0cb433",
                             Content = "{ \"columns\": [ \"Muhammed Üzeyir Çekmeci\", \"Zeynep Figen Kantarcı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 231,
@@ -6536,7 +6536,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "61a18ff3-26b4-4372-8eaa-1fed79d095cd",
+                            Id = "2bd10a7a-399f-4e27-94b7-ff8aa09f6531",
                             Content = "{ \"columns\": [ \"Aydın Mert Çelebican\", \"Çilay Kapsız\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 232,
@@ -6546,7 +6546,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "2fe5d0de-ff73-4d59-9383-90cd9546967e",
+                            Id = "64a88f0e-4da8-4a4b-93a4-c4ddfa435d1a",
                             Content = "{ \"columns\": [ \"Çağkan Çelenlioğlu\", \"Suna Karaaslanlı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 233,
@@ -6556,7 +6556,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c6679da9-8372-47b1-9c1e-626feda6aa9a",
+                            Id = "777b0aad-9203-4afe-a764-ac42bd5dbf86",
                             Content = "{ \"columns\": [ \"Zümra Çelık\", \"Ahmet Can Karabacak\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 234,
@@ -6566,7 +6566,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "d98acbb2-c2f6-4539-88d2-c2e8b15dec79",
+                            Id = "1ee4be33-2385-4568-b801-c36672ee389c",
                             Content = "{ \"columns\": [ \"Bayar Çelik\", \"Asya Sema Karabağ\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 235,
@@ -6576,7 +6576,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "28de7457-b228-4c01-9823-a9e7a86768c3",
+                            Id = "a92397c4-190a-4602-aa58-5c6c91d5e042",
                             Content = "{ \"columns\": [ \"Gönülgül Çelikağı\", \"Gül Sena Karabıyık\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 236,
@@ -6586,7 +6586,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3bdbdd71-a644-4c08-99f3-b96d02f74bb1",
+                            Id = "24d1af25-bba4-4456-aa9b-df7f70621f76",
                             Content = "{ \"columns\": [ \"Ece Pınar Çeliker\", \"Fatma Büşra Karabıyıklı\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 237,
@@ -6596,7 +6596,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "7a1d918e-fbb7-49f6-ab3e-a17287bb20e1",
+                            Id = "b6d0fd63-f176-455f-84c8-452736008b16",
                             Content = "{ \"columns\": [ \"Mehmet Tarık Çelikkol\", \"Arca Karabulut\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 238,
@@ -6606,7 +6606,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "3500de1a-1f87-44c7-a3fc-64c09a052bb3",
+                            Id = "09bb695f-e2c7-4a7c-8f9a-030e02e98d92",
                             Content = "{ \"columns\": [ \"Elife Çerçi\", \"Abdullatif Karacabey\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 239,
@@ -6616,7 +6616,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "86d869c9-41f5-4599-8d7e-ef1b056aad53",
+                            Id = "5b31e033-3463-45cd-9a5a-100bf416f623",
                             Content = "{ \"columns\": [ \"Efecan Çetintaş\", \"Tuğra Karacan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 240,
@@ -6626,7 +6626,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c5edc718-655d-46f9-bc23-c3b5df63ad06",
+                            Id = "0d5e9632-ea3d-4966-9aad-5172c6949627",
                             Content = "{ \"columns\": [ \"Rıdvan Çıkıkcı\", \"Emir Doğan Karaçay\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 241,
@@ -6636,7 +6636,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "c7a22424-362e-448e-af56-efe0a77329a4",
+                            Id = "455dde3c-6d01-477c-aae6-21259eb134a2",
                             Content = "{ \"columns\": [ \"Hatice Gamze Çınar\", \"Haluk Barış Karaçeşme\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 242,
@@ -6646,7 +6646,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5f986a9f-8895-43a9-823e-6bad4e534ec4",
+                            Id = "19d01966-e529-47a6-82eb-7b8ea99f55eb",
                             Content = "{ \"columns\": [ \"Yansı Hilal Çınaroğlu\", \"Seyit Ahmet Karadağ\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 243,
@@ -6656,7 +6656,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5b7f8793-5efb-4776-a030-0f95bed0a940",
+                            Id = "2bfd4856-ee79-485b-862b-40e7dcf6276a",
                             Content = "{ \"columns\": [ \"Omaç Çıngır\", \"Cevza Karadalan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 244,
@@ -6666,7 +6666,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "2f2c2293-a36e-4757-99b4-80d4baba228f",
+                            Id = "6cf45b1a-95e1-4d74-a2ac-9b65d7119f42",
                             Content = "{ \"columns\": [ \"Erhan Çıray\", \"Mustafa Emir Karademir\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 245,
@@ -6676,7 +6676,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "5dba48be-4e68-45d7-b1d3-3031049116c6",
+                            Id = "53e0af48-8056-424a-9200-f67d672f2cb4",
                             Content = "{ \"columns\": [ \"Şüheda Çiçekli\", \"Ilgar Pamir Karaismail\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 246,
@@ -6686,7 +6686,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f352a124-fe4a-4a0c-8686-54db4094c051",
+                            Id = "2d2add62-50fa-401c-9a61-b053532757f9",
                             Content = "{ \"columns\": [ \"Ünkan Çini\", \"Seren Karakan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 247,
@@ -6696,7 +6696,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "768b9f36-7716-48db-a542-393115bda3cf",
+                            Id = "00f397ff-3cf8-4b57-8d56-003dfb9de30f",
                             Content = "{ \"columns\": [ \"Ahmet Gazi Çintan\", \"Büşra Hazal Karakaplan\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 248,
@@ -6706,7 +6706,7 @@ namespace Announcer.Data.Migrations
                         },
                         new
                         {
-                            Id = "f84e3fad-4b1b-49f5-a027-54c3f10eb5c1",
+                            Id = "a678cc59-2fc0-437a-abdf-f30c91222be5",
                             Content = "{ \"columns\": [ \"Seher İrem Çitfçi\", \"Naci Karakaya\" ] }",
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GroupId = 249,

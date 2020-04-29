@@ -67,32 +67,6 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IResponse> DeleteAsync(object id)
-        {
-            _logger.LogDebug($"'{nameof(DeleteAsync)}' has been invoked");
-
-            var response = new Response();
-
-            try
-            {
-                var entity = await _repository.GetByIdAsync(id);
-                if (entity == null)
-                    throw new ApplicationException($"{typeof(T)} with id '{id}' not exists");
-
-                _repository.Delete(entity);
-                await _unitOfWork.SaveAsync();
-
-                response.Message = $"{typeof(T)} with id '{id}' deleted successfully";
-            }
-            catch (Exception ex)
-            {
-                response.SetError(ex, nameof(DeleteAsync), _logger);
-            }
-
-            return response;
-        }
-
-        /// <inheritdoc/>
         public async Task<IResponse> DeleteAsync(T entity)
         {
             _logger.LogDebug($"'{nameof(DeleteAsync)}' has been invoked");
@@ -136,25 +110,6 @@ namespace Announcer.Services
             catch (Exception ex)
             {
                 response.SetError(ex, nameof(GetAsync), _logger);
-            }
-
-            return response;
-        }
-
-        /// <inheritdoc/>
-        public async Task<ISingleResponse<T>> GetByIdAsync(object id)
-        {
-            _logger.LogDebug($"'{nameof(GetByIdAsync)}' has been invoked");
-
-            var response = new SingleResponse<T>();
-
-            try
-            {
-                response.Model = await _repository.GetByIdAsync(id);
-            }
-            catch (Exception ex)
-            {
-                response.SetError(ex, nameof(GetByIdAsync), _logger);
             }
 
             return response;

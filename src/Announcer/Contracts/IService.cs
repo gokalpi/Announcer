@@ -29,13 +29,6 @@ namespace Announcer.Contracts
         Task<long> CountAsync(Expression<Func<T, bool>> predicate = null);
 
         /// <summary>
-        /// Deletes an entity with specified id
-        /// </summary>
-        /// <param name="id">Id of the entity to be deleted</param>
-        /// <returns>Response with result of delete operation</returns>
-        Task<IResponse> DeleteAsync(object id);
-
-        /// <summary>
         /// Deletes an entity
         /// </summary>
         /// <param name="entity">Entity to be deleted</param>
@@ -57,13 +50,6 @@ namespace Announcer.Contracts
         /// <param name="includeString">Include properties as string seperated with comma</param>
         /// <returns>Single response with entity matching filter with included properties</returns>
         Task<ISingleResponse<T>> GetAsync(Expression<Func<T, bool>> predicate, string includeString = "");
-
-        /// <summary>
-        /// Gets an entity with specified <paramref name="id"/>
-        /// </summary>
-        /// <param name="id">Id of the entity</param>
-        /// <returns>Single response with entity</returns>
-        Task<ISingleResponse<T>> GetByIdAsync(object id);
 
         /// <summary>
         /// Lists all entities with paging support

@@ -16,173 +16,173 @@ using System.Threading.Tasks;
 namespace Announcer.Controllers
 {
     /// <summary>
-    /// Group Api Controller
+    /// Template Api Controller
     /// </summary>
     [ApiVersion("1.0")]
     [Authorize(Policy = "RequireAdministratorRole")]
-    public class GroupsController : BaseApiController
+    public class TemplatesController : BaseApiController
     {
-        private readonly IGroupService _groupService;
+        private readonly ITemplateService _templateService;
         private readonly IClientService _clientService;
 
         /// <summary>
-        /// Group Api Controller constructor
+        /// Template Api Controller constructor
         /// </summary>
-        /// <param name="groupService"></param>
+        /// <param name="templateService"></param>
         /// <param name="clientService"></param>
         /// <param name="mapper">Automapper instance</param>
         /// <param name="httpContextAccessor"></param>
         /// <param name="logger"></param>
-        public GroupsController(IGroupService groupService, IClientService clientService, IMapper mapper,
-            IHttpContextAccessor httpContextAccessor, ILogger<GroupsController> logger)
+        public TemplatesController(ITemplateService templateService, IClientService clientService, IMapper mapper, 
+            IHttpContextAccessor httpContextAccessor, ILogger<TemplatesController> logger)
             : base(mapper, httpContextAccessor, logger)
         {
-            _groupService = groupService ?? throw new ArgumentNullException(nameof(groupService));
+            _templateService = templateService ?? throw new ArgumentNullException(nameof(templateService));
             _clientService = clientService ?? throw new ArgumentNullException(nameof(clientService));
         }
 
         /// <summary>
-        /// Creates a Group.
+        /// Creates a Template.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     POST api/Groups
+        ///     POST api/Templates
         ///     {
-        ///         "name": "Sample Group",
-        ///         "description": "Sample Group Description"
+        ///         "name": "Sample Template",
+        ///         "content": "{ \"header\": { \"columns\": [ \"Header 1\", \"Header 2\", \"Header 3\" ] } }"
         ///     }
         /// </remarks>
-        /// <param name="groupDTO">Group to be created</param>
-        /// <returns>A newly created Group</returns>
-        /// <response code="201">Returns the newly created group</response>
+        /// <param name="templateDTO">Template to be created</param>
+        /// <returns>A newly created Template</returns>
+        /// <response code="201">Returns the newly created template</response>
         /// <response code="400">If the item is null</response>
         /// <response code="500">If an exception happens</response>
         [HttpPost]
-        [ProducesResponseType(typeof(GroupDTO), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(TemplateDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<GroupDTO>> CreateGroupAsync([FromBody] SaveGroupDTO groupDTO)
+        public async Task<ActionResult<TemplateDTO>> CreateTemplateAsync([FromBody] SaveTemplateDTO templateDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(CreateGroupAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(CreateTemplateAsync));
 
-            if (groupDTO == null) return BadRequest("Group info is null");
+            if (templateDTO == null) return BadRequest("Template info is null");
 
-            // Check if group exists
-            if (await _groupService.ExistsAsync(g => g.Name == groupDTO.Name))
-                return BadRequest($"A group with name {groupDTO.Name} exists");
+            // Check if template exists
+            if (await _templateService.ExistsAsync(t => t.Name == templateDTO.Name))
+                return BadRequest($"A template with name {templateDTO.Name} exists");
 
-            // Create a new group
-            var addResult = await _groupService.AddAsync(_mapper.Map<Group>(groupDTO));
+            // Create a new template
+            var addResult = await _templateService.AddAsync(_mapper.Map<Template>(templateDTO));
             if (!addResult.IsSuccessful)
                 return BadRequest(addResult.Message);
 
-            _logger.LogDebug($"Group '{addResult.Model.Name}' with id '{addResult.Model.Id}' created.");
+            _logger.LogDebug($"Template '{addResult.Model.Name}' with id '{addResult.Model.Id}' created.");
 
-            return CreatedAtRoute("GetGroup", new { id = addResult.Model.Id },
-                _mapper.Map<GroupDTO>(addResult.Model));
+            return CreatedAtRoute("GetTemplate", new { id = addResult.Model.Id },
+                _mapper.Map<TemplateDTO>(addResult.Model));
         }
 
         /// <summary>
-        /// Deletes a Group.
+        /// Deletes a Template.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     DELETE api/Groups/1
+        ///     DELETE api/Templates/1
         /// </remarks>
-        /// <param name="id">Group Id to be deleted</param>
-        /// <returns>Deleted Group</returns>
-        /// <response code="200">Returns deleted group</response>
+        /// <param name="id">Template Id to be deleted</param>
+        /// <returns>Deleted Template</returns>
+        /// <response code="200">Returns deleted template</response>
         /// <response code="400">If the id is null</response>
-        /// <response code="404">If the group is not found</response>
+        /// <response code="404">If the template is not found</response>
         /// <response code="500">If an exception happens</response>
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteGroupAsync(int id)
+        public async Task<IActionResult> DeleteTemplateAsync(int id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteGroupAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(DeleteTemplateAsync));
 
-            // Check if group exists
-            var getResult = await _groupService.GetByIdAsync(id);
+            // Check if template exists
+            var getResult = await _templateService.GetByIdAsync(id);
             if (!getResult.IsSuccessful)
                 return BadRequest(getResult.Message);
             else if (getResult.Model == null)
-                return NotFound($"Group with id {id} not found.");
+                return NotFound($"Template with id {id} not found.");
 
-            // Delete group
-            var deleteResult = await _groupService.DeleteAsync(getResult.Model);
+            // Delete template
+            var deleteResult = await _templateService.DeleteAsync(getResult.Model);
 
             if (deleteResult.IsSuccessful)
-                _logger.LogDebug($"Group with id {id} deleted.");
+                _logger.LogDebug($"Template with id {id} deleted.");
 
             return deleteResult.ToHttpResponse();
         }
 
         /// <summary>
-        /// Lists all Groups with paging support.
+        /// Lists all Templates with paging support.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET api/Groups?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
+        ///     GET api/Templates?Page=1&amp;PageSize=4&amp;IsDetailRequired=true
         /// </remarks>
         /// <param name="queryParams">Paging info (page, page size)</param>
-        /// <returns>All Groups with paging support</returns>
-        /// <response code="200">Returns all Groups in specified page</response>
+        /// <returns>All Templates with paging support</returns>
+        /// <response code="200">Returns all Templates in specified page</response>
         /// <response code="500">If an exception happens</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllGroupsAsync([FromQuery] QueryParams queryParams)
+        public async Task<IActionResult> GetAllTemplatesAsync([FromQuery] QueryParams queryParams)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllGroupsAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetAllTemplatesAsync));
 
-            var includeString = queryParams.IsDetailRequired ? "Clients.Client, NotificationsReceived" : "";
+            var includeString = queryParams.IsDetailRequired ? "Clients" : "";
 
-            var response = await _groupService.ListAsync(includeString: includeString,
+            var response = await _templateService.ListAsync(includeString: includeString,
                 page: queryParams.Page, pageSize: queryParams.PageSize);
 
-            _logger.LogDebug($"Found {response.TotalItems} groups. Listing page {queryParams.Page} of {response.TotalPages}");
+            _logger.LogDebug($"Found {response.TotalItems} templates. Listing page {queryParams.Page} of {response.TotalPages}");
 
-            var result = new PagedResponse<GroupDTO>()
+            var result = new PagedResponse<TemplateDTO>()
             {
                 IsSuccessful = response.IsSuccessful,
                 Message = response.Message,
                 TotalItems = response.TotalItems,
                 PageSize = queryParams.PageSize ?? 0,
                 CurrentPage = queryParams.Page ?? 0,
-                Model = _mapper.Map<IEnumerable<GroupDTO>>(response.Model)
+                Model = _mapper.Map<IEnumerable<TemplateDTO>>(response.Model)
             };
 
             return result.ToHttpResponse();
         }
 
         /// <summary>
-        /// Gets clients of a Group with specified id.
+        /// Gets clients of a Template with specified id.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET api/Groups/1/Clients
+        ///     GET api/Templates/1/Clients
         /// </remarks>
         /// <param name="id">Client id</param>
-        /// <returns>Groups of Client with specified id</returns>
-        /// <response code="200">Returns groups of Client with specified id</response>
+        /// <returns>Templates of Client with specified id</returns>
+        /// <response code="200">Returns templates of Client with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
         [HttpGet("{id:int}/Clients")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetClientsByGroupAsync(int id)
+        public async Task<IActionResult> GetClientsByTemplateAsync(int id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetClientsByGroupAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetClientsByTemplateAsync));
 
-            var response = await _clientService.ListClientsByGroupAsync(id);
+            var response = await _clientService.ListClientsByTemplateAsync(id);
 
             var result = new ListResponse<ClientDTO>()
             {
@@ -195,36 +195,35 @@ namespace Announcer.Controllers
         }
 
         /// <summary>
-        /// Gets a Group with specified id.
+        /// Gets a Template with specified id.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET api/Groups/1
+        ///     GET api/Templates/1
         /// </remarks>
-        /// <param name="id">Group id</param>
-        /// <returns>Group with specified id</returns>
-        /// <response code="200">Returns Group with specified id</response>
+        /// <param name="id">Template id</param>
+        /// <returns>Template with specified id</returns>
+        /// <response code="200">Returns Template with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id:int}", Name = "GetGroup")]
+        [HttpGet("{id:int}", Name = "GetTemplate")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetGroupByIdAsync(int id)
+        public async Task<IActionResult> GetTemplateByIdAsync(int id)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(GetGroupByIdAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(GetTemplateByIdAsync));
 
-            var response = await _groupService.GetAsync(g => g.Id == id,
-                "Clients.Client, NotificationsReceived");
+            var response = await _templateService.GetAsync(g => g.Id == id, "Clients");
 
-            _logger.LogDebug($"Found group with {id}");
+            _logger.LogDebug($"Found template with {id}");
 
-            var result = new SingleResponse<GroupDTO>()
+            var result = new SingleResponse<TemplateDTO>()
             {
                 IsSuccessful = response.IsSuccessful,
                 Message = response.Message,
-                Model = _mapper.Map<GroupDTO>(response.Model)
+                Model = _mapper.Map<TemplateDTO>(response.Model)
             };
 
             return result.ToHttpResponse();
@@ -234,8 +233,8 @@ namespace Announcer.Controllers
         /// Returns data necessary for Datatables operations
         /// </summary>
         /// <param name="dtParameters">Parameters coming from Datatables</param>
-        /// <returns>List of all groups matching parameters</returns>
-        /// <response code="200">Returns all groups matching parameters</response>
+        /// <returns>List of all templates matching parameters</returns>
+        /// <response code="200">Returns all templates matching parameters</response>
         /// <response code="500">If an exception happens</response>
         [HttpPost("LoadTable")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -246,14 +245,14 @@ namespace Announcer.Controllers
 
             try
             {
-                var dtResult = await _groupService.LoadDatatableAsync(dtParameters);
+                var dtResult = await _templateService.LoadDatatableAsync(dtParameters);
 
                 return Ok(new
                 {
                     draw = dtResult.Draw,
                     recordsTotal = dtResult.RecordsTotal,
                     recordsFiltered = dtResult.RecordsFiltered,
-                    data = _mapper.Map<IEnumerable<GroupDTO>>(dtResult.Data)
+                    data = _mapper.Map<IEnumerable<TemplateDTO>>(dtResult.Data)
                 });
             }
             catch (Exception ex)
@@ -263,20 +262,20 @@ namespace Announcer.Controllers
         }
 
         /// <summary>
-        /// Updates Group with specified id.
+        /// Updates Template with specified id.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT api/Groups/1
+        ///     PUT api/Templates/1
         ///     {
-        ///         "name": "Group 2",
-        ///         "description": "Group 2"
+        ///         "name": "Sample Template",
+        ///         "content": "{ \"header\": { \"columns\": [ \"Header 1\", \"Header 2\", \"Header 3\" ] } }"
         ///     }
         /// </remarks>
-        /// <param name="id">Group id</param>
-        /// <param name="groupDTO">Group to be updated</param>
-        /// <returns>Group with specified id</returns>
+        /// <param name="id">Template id</param>
+        /// <param name="templateDTO">Template to be updated</param>
+        /// <returns>Template with specified id</returns>
         /// <response code="204">Returns no content</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
@@ -284,24 +283,24 @@ namespace Announcer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateGroupAsync(int id, [FromBody] SaveGroupDTO groupDTO)
+        public async Task<IActionResult> UpdateTemplateAsync(int id, [FromBody] SaveTemplateDTO templateDTO)
         {
-            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateGroupAsync));
+            _logger.LogDebug("'{0}' has been invoked", nameof(UpdateTemplateAsync));
 
-            // Check if group exists
-            var getResult = await _groupService.GetByIdAsync(id);
+            // Check if template exists
+            var getResult = await _templateService.GetByIdAsync(id);
             if (!getResult.IsSuccessful)
                 return BadRequest(getResult.Message);
             else if (getResult.Model == null)
-                return NotFound($"Group with id {id} not found.");
+                return NotFound($"Template with id {id} not found.");
 
-            // Update group
-            var oldGroup = getResult.Model; 
-            _mapper.Map(groupDTO, oldGroup);
+            // Update template
+            var oldTemplate = getResult.Model; 
+            _mapper.Map(templateDTO, oldTemplate);
 
-            var response = await _groupService.UpdateAsync(oldGroup);
+            var response = await _templateService.UpdateAsync(oldTemplate);
 
-            _logger.LogDebug($"Group with id {id} updated.");
+            _logger.LogDebug($"Template with id {id} updated.");
 
             return response.ToHttpResponse();
         }

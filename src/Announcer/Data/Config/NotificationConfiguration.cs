@@ -60,6 +60,8 @@ namespace Announcer.Data.Config
                 .HasForeignKey(n => n.GroupId)
                 .IsRequired(false);
 
+            builder.HasQueryFilter(n => !n.IsDeleted);
+
             builder.HasData(
                 new Notification() { Content = "{ \"columns\": [ \"Özde Acarkan\", \"Zülal Çolak\" ] }", SenderId = "10.100.1.1", SentTime = DateTime.Parse("2020-04-20T22:15:31"), GroupId = 2 },
                 new Notification() { Content = "{ \"columns\": [ \"Atahan Adanır\", \"Ozan Ege Çomu\" ] }", SenderId = "10.100.1.37", SentTime = DateTime.Parse("2020-04-20T16:35:59"), GroupId = 3 },

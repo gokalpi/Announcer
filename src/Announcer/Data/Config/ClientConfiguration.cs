@@ -37,6 +37,8 @@ namespace Announcer.Data.Config
                 .WithMany(t => t.Clients)
                 .HasForeignKey(c => c.TemplateId);
 
+            builder.HasQueryFilter(c => !c.IsDeleted);
+
             builder.HasData(
                 new Client() { Id = "10.100.1.1", Name = "Alerji ve İmmünoloji Bekleme 1", Description = "E Blok", UserId = null, TemplateId = 1 },
                 new Client() { Id = "10.100.1.2", Name = "Beyin ve Sinir Cerrahisi Bekleme 1", Description = "B Blok", UserId = null, TemplateId = 1 },

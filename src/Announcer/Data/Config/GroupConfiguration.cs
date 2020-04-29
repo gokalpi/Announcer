@@ -22,6 +22,8 @@ namespace Announcer.Data.Config
             builder.Property(g => g.Description)
                    .HasMaxLength(255);
 
+            builder.HasQueryFilter(g => !g.IsDeleted);
+
             builder.HasData(
                 new Group() { Id = 1, Name = "Alerji ve İmmünoloji 1", Description = "E Blok" },
                 new Group() { Id = 2, Name = "Alerji ve İmmünoloji 2", Description = "E Blok" },

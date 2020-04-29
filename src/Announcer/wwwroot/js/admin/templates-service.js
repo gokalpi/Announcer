@@ -1,10 +1,10 @@
-﻿var uri = "/api/Groups";
-var groupsTable;
+﻿var uri = "/api/Templates";
+var templatesTable;
 var operationType;
 
-var groupId = document.getElementById("group-id");
-var groupName = document.getElementById("group-name");
-var groupDescription = document.getElementById("group-description");
+var templateId = document.getElementById("template-id");
+var templateName = document.getElementById("template-name");
+var templateContent = document.getElementById("template-content");
 
 const jsonHeaders = new Headers({
     'Accept': 'application/json',
@@ -12,7 +12,7 @@ const jsonHeaders = new Headers({
 });
 
 $(document).ready(function () {
-    groupsTable = $("#groups").DataTable({
+    templatesTable = $("#templates").DataTable({
         dom: 'rt<"row justify-content-between bottom-information"lip><"clear">',
         language: {
             url: "/lib/datatables/i18n/Turkish.json"
@@ -33,28 +33,21 @@ $(document).ready(function () {
         columns: [
             { data: "id", visible: false },
             { data: "name" },
-            { data: "description" },
+            {
+                data: "content",
+                orderable: false,
+            },
             {
                 data: "clientCount",
                 orderable: false,
-                searchable: false,
-                className: "text-center",
-                render: function (data, type, row) {
-                    return `<a class="btn btn-success btn-xs btn-font-sm btn-bold rounded-circle" data-toggle="tooltip" title="Güncelle" onclick="displayGroupMembersModal(${row.id})">${data}</a>`;
-                }
-            },
-            {
-                data: "notificationsReceivedCount",
-                orderable: false,
-                searchable: false,
-                className: "text-center"
+                searchable: false
             },
             {
                 data: "isDeleted",
                 className: "text-center",
                 render: function (data, type, row) {
-                    return (data) ? `<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>`
-                        : `<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>`;
+                    return (data) ? '<span class="btn btn-xs btn-font-sm btn-bold btn-label-danger">Silindi</span>'
+                        : '<span class="btn btn-xs btn-font-sm btn-bold btn-label-success">Aktif</span>';
                 }
             },
             {
@@ -68,7 +61,7 @@ $(document).ready(function () {
                     if (row.isDeleted)
                         actionButtons = actionButtons + '<i class="las la-trash-alt la-lg ml-2"></i>';
                     else
-                        actionButtons = actionButtons + `<a class="text-danger ml-2" data-toggle="tooltip" title="Sil" onclick="deleteGroup('${row.id}','${data.name}')"><i class="las la-trash-alt la-lg"></i></a></div>`;
+                        actionButtons = actionButtons + `<a class="text-danger ml-2" data-toggle="tooltip" title="Sil" onclick="deleteTemplate('${row.id}','${data.name}')"><i class="las la-trash-alt la-lg"></i></a></div>`;
 
                     return actionButtons;
                 },
@@ -78,24 +71,24 @@ $(document).ready(function () {
     });
 
     $('#search').on('keyup change clear search', function () {
-        if (groupsTable.search() !== this.value) {
-            groupsTable.search(this.value);
-            groupsTable.columns(3).search($('#status').val());
-            groupsTable.draw();
+        if (templatesTable.search() !== this.value) {
+            templatesTable.search(this.value);
+            templatesTable.columns(3).search($('#status').val());
+            templatesTable.draw();
         }
     });
 
     $('#status').on('change', function () {
-        groupsTable.search($('#search').value);
-        groupsTable.columns(3).search($(this).val()).draw();
-        groupsTable.draw();
+        templatesTable.search($('#search').value);
+        templatesTable.columns(3).search($(this).val()).draw();
+        templatesTable.draw();
     });
 });
 
 function displayAddModal() {
     operationType = "add";
     $("#add-edit-form")[0].reset();
-    $("#modal-title").text("Yeni Grup");
+    $("#modal-title").text("Yeni Şablon");
     $("#modal-save-button").html('<i class="las la-save"></i> Ekle');
     $("#modal-form").modal('show');
 }
@@ -103,15 +96,12 @@ function displayAddModal() {
 function displayEditModal(id) {
     operationType = "edit";
     $("#add-edit-form")[0].reset();
-    $("#modal-title").text("Grup Güncelleme");
+    $("#modal-title").text("Şablon Güncelleme");
     $("#modal-save-button").html('<i class="las la-save"></i> Güncelle');
 
     fetch(`${uri}/${id}`, {
         method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
+        headers: jsonHeaders
     })
         .then(function (response) {
             if (!response.ok) {
@@ -122,75 +112,37 @@ function displayEditModal(id) {
         })
         .then(function (data) {
             if (data.isSuccessful) {
-                let group = data.model;
+                let template = data.model;
+                console.log('template: %o', template);
 
-                groupId.value = group.id;
-                groupName.value = group.name;
-                groupDescription.value = group.description;
+                templateId.value = template.id;
+                templateName.value = template.name;
+                templateContent.value = template.content;
 
                 $("#modal-form").modal('show');
             }
             else {
-                swal("Grup Okuma Hatası", data.message, "error");
+                swal("Şablon Okuma Hatası", data.message, "error");
             }
         })
         .catch(error => {
-            console.error('Unable to get group.', error);
-            swal("Grup Okuma Hatası", error, "error");
+            console.error("Unable to get template.", error);
+            swal("Şablon Okuma Hatası", error, "error");
         });
 }
 
-function displayGroupMembersModal(id) {
-    $("#group-members-form")[0].reset();
-
-    fetch(`${uri}/${id}/Clients`, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw Error(`${response.status} status code received.`);
-            }
-
-            return response.json();
-        })
-        .then(function (data) {
-            if (data.isSuccessful) {
-                let group = data.model;
-
-                groupId.value = group.id;
-                groupName.value = group.name;
-                groupDescription.value = group.description;
-
-                $("#group-members-modal").modal('show');
-            }
-            else {
-                swal("Grup Okuma Hatası", data.message, "error");
-            }
-        })
-        .catch(error => {
-            console.error('Unable to get group.', error);
-            swal("Grup Okuma Hatası", error, "error");
-        });
-}
 function save() {
-    const group = {
-        id: groupId.value.trim(),
-        name: groupName.value.trim(),
-        description: groupDescription.value.trim()
+    const template = {
+        id: templateId.value.trim(),
+        name: templateName.value.trim(),
+        content: templateContent.value.trim()
     };
 
     if (operationType === "edit") {
-        fetch(`${uri}/${group.id}`, {
+        fetch(`${uri}/${template.id}`, {
             method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(group)
+            headers: jsonHeaders,
+            body: JSON.stringify(template)
         })
             .then(function (response) {
                 if (!response.ok) {
@@ -203,25 +155,22 @@ function save() {
                 if (data.isSuccessful) {
                     $("#add-edit-form")[0].reset();
                     refreshDatatable();
-                    swal(`${group.name} adlı grup güncellenmiştir.`, { icon: "success" });
+                    swal(`${template.name} adlı şablon güncellenmiştir.`, { icon: "success" });
                 }
                 else {
-                    swal("Grup Güncelleme Hatası", data.message, "error");
+                    swal("Şablon Güncelleme Hatası", data.message, "error");
                 }
             })
             .catch(error => {
-                console.error('Unable to update group.', error);
-                swal("Grup Güncelleme Hatası", error, "error");
+                console.error("Unable to update template.", error);
+                swal("Şablon Güncelleme Hatası", error, "error");
             });
     }
     else {
         fetch(uri, {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(group)
+            headers: jsonHeaders,
+            body: JSON.stringify(template)
         })
             .then(function (response) {
                 if (!response.ok) {
@@ -233,21 +182,21 @@ function save() {
             .then(function (data) {
                 $("#add-edit-form")[0].reset();
                 refreshDatatable();
-                swal(`${data.name} adlı grup eklenmiştir.`, { icon: "success" });
+                swal(`${data.name} adlı şablon eklenmiştir.`, { icon: "success" });
             })
             .catch(error => {
-                console.error('Unable to add group.', error);
-                swal("Grup Ekleme Hatası", error, "error");
+                console.error("Unable to add template.", error);
+                swal("Şablon Ekleme Hatası", error, "error");
             });
     }
 
     $("#modal-form").modal('hide');
 }
 
-function deleteGroup(id, name) {
+function deleteTemplate(id, name) {
     swal({
         title: "Emin misiniz?",
-        text: `${name} grubunu siliyorsunuz.`,
+        text: `${name} şablonu siliyorsunuz.`,
         icon: "warning",
         buttons: true,
         dangerMode: true
@@ -255,7 +204,8 @@ function deleteGroup(id, name) {
         .then((willDelete) => {
             if (willDelete) {
                 fetch(`${uri}/${id}`, {
-                    method: 'DELETE'
+                    method: 'DELETE',
+                    headers: jsonHeaders
                 })
                     .then(function (response) {
                         if (!response.ok) {
@@ -265,22 +215,23 @@ function deleteGroup(id, name) {
                         return response.json();
                     })
                     .then(function (data) {
+                        console.log('data: ', data);
                         if (data.isSuccessful) {
                             refreshDatatable();
-                            swal(`${name} adlı grup silinmiştir.`, { icon: "success" });
+                            swal(`${name} adlı şablon silinmiştir.`, { icon: "success" });
                         }
                         else {
-                            swal("Grup Silme Hatası", data.message, "error");
+                            swal("Şablon Silme Hatası", data.message, "error");
                         }
                     })
                     .catch(error => {
-                        console.error('Unable to delete group.', error);
-                        swal("Grup Silme Hatası", error, "error");
+                        console.error("Unable to delete template.", error);
+                        swal("Şablon Silme Hatası", error, "error");
                     });
             }
         });
 }
 
 function refreshDatatable() {
-    groupsTable.ajax.reload();
+    templatesTable.ajax.reload();
 }

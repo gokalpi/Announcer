@@ -2,7 +2,7 @@
 
 namespace Announcer.Pages.Admin
 {
-    public class GroupMembersModel : PageModel
+    public class TemplatesModel : PageModel
     {
         public void OnGet()
         {

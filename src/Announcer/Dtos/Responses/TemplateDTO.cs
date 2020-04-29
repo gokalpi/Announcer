@@ -12,13 +12,23 @@
         public string Id { get; set; }
 
         /// <summary>
-        /// Name of group
+        /// Name of Template
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Content of group
+        /// Content of Template
         /// </summary>
         public string Content { get; set; }
+
+        /// <summary>
+        /// Number of clients using Template
+        /// </summary>
+        public int ClientCount { get; set; }
+
+        /// <summary>
+        /// Template soft deleted?
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }

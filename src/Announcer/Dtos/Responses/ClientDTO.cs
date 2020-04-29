@@ -24,11 +24,6 @@ namespace Announcer.Dtos.Responses
         public string Description { get; set; }
 
         /// <summary>
-        /// Template of client
-        /// </summary>
-        public string Template { get; set; }
-
-        /// <summary>
         /// Client soft deleted?
         /// </summary>
         public bool IsDeleted { get; set; }
@@ -47,6 +42,21 @@ namespace Announcer.Dtos.Responses
         /// Number of notifications received by client
         /// </summary>
         public int NotificationsReceivedCount { get; set; }
+
+        /// <summary>
+        /// Template id of client
+        /// </summary>
+        public int TemplateId { get; set; }
+
+        /// <summary>
+        /// Template name of client
+        /// </summary>
+        public string TemplateName { get; set; }
+
+        /// <summary>
+        /// Template content of client
+        /// </summary>
+        public string TemplateContent { get; set; }
 
         /// <summary>
         /// Groups client subscribed to

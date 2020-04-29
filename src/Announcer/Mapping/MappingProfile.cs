@@ -15,9 +15,7 @@ namespace Announcer.Mapping
                 .ForMember(dest => dest.NotificationsSentCount,
                     opt => opt.MapFrom(src => src.NotificationsSent.Count))
                 .ForMember(dest => dest.NotificationsReceivedCount,
-                    opt => opt.MapFrom(src => src.NotificationsReceived.Count))
-                .ForMember(dest => dest.Template,
-                    opt => opt.MapFrom(src => src.Template.Content));
+                    opt => opt.MapFrom(src => src.NotificationsReceived.Count));
             CreateMap<Group, GroupDTO>()
                 .ForMember(dest => dest.ClientCount,
                     opt => opt.MapFrom(src => src.Clients.Count))
@@ -35,7 +33,9 @@ namespace Announcer.Mapping
                     opt => opt.MapFrom(src => src.Group.Name))
                 .ForMember(dest => dest.Recipient,
                     opt => opt.MapFrom(src => src.Recipient.Name));
-            CreateMap<Template, TemplateDTO>();
+            CreateMap<Template, TemplateDTO>()
+                .ForMember(dest => dest.ClientCount,
+                    opt => opt.MapFrom(src => src.Clients.Count));
 
             CreateMap<SaveClientDTO, Client>();
             CreateMap<SaveGroupDTO, Group>();

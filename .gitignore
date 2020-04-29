@@ -341,3 +341,4 @@ healthchecksdb
 
 # Sqlite databases
 *.db
+/src/Announcer/wwwroot/css/template.css

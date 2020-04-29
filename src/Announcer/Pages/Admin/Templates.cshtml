@@ -1,7 +1,7 @@
 ﻿@page
-@model GroupMembersModel
+@model TemplatesModel
 @{
-    ViewData["Title"] = "Grup Üyelikler";
+    ViewData["Title"] = "Şablonlar";
 }
 
 @section Header
@@ -21,11 +21,11 @@
         <div class="page-body">
             <!-- Page Header -->
             <div class="page-header border-bottom d-flex justify-content-between py-4 py-lg-6 px-6 px-lg-8">
-                <h2 class="font-bold">Grup Üyeleri</h2>
+                <h2 class="font-bold">@ViewData["Title"]</h2>
             </div>
             <!-- Page Header -->
             <!-- Page Content-->
-            <div class="page-content p-lg-8">
+            <div class="page-content p-6 p-lg-8">
                 <!-- Card -->
                 <div class="card">
                     <!-- Card Header -->
@@ -41,25 +41,28 @@
                             </div>
                             <div class="form-group form-inline mb-0">
                                 <label for="status" class="mr-4">Durum:</label>
-                                <select id="status" class="custom-select custom-select-sm">
+                                <select id="status" class="btn btn-secondary btn-sm">
                                     <option value="">Hepsi</option>
                                     <option value="1">Aktif</option>
                                     <option value="0">Silindi</option>
                                 </select>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="displayAddModal()"><i class="las la-plus"></i> Yeni Üyelik</button>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="displayAddModal()"><i class="las la-plus"></i> Yeni Şablon</button>
                             </div>
                         </div>
                     </div>
                     <!-- Card Header -->
                     <!-- Card Body -->
                     <div class="card-body">
-                        <table id="groups" class="stripe" style="width:100%">
+                        <table id="templates" class="stripe" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Grup Adı</th>
-                                    <th>İstemci Adı</th>
+                                    <th>Şablon No</th>
+                                    <th>Şablon Adı</th>
+                                    <th>Şablon İçeriği</th>
+                                    <th>İstemci</th>
+                                    <th>Durumu</th>
                                     <th class="text-center">Aksiyon</th>
                                 </tr>
                             </thead>
@@ -81,22 +84,22 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <form id="add-edit-form" action="javascript:void(0);">
-                <input type="hidden" id="group-id" name="group-id" value="" />
+                <input type="hidden" id="template-id" name="template-id" value="" />
                 <div class="modal-header px-4">
-                    <h5 class="modal-title" id="modal-title">Yeni Üyelik</h5>
+                    <h5 class="modal-title" id="modal-title">Yeni Şablon</h5>
                 </div>
                 <div class="modal-body px-4">
                     <div class="row mb-2">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label class="control-label" for="group-name">Grup</label>
-                                <input class="form-control" type="text" id="group-name" name="group-name" value="" required />
+                                <label class="control-label" for="template-name">Şablon Adı</label>
+                                <input class="form-control" type="text" id="template-name" name="template-name" value="" required />
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label class="control-label" for="group-description">Açıklama</label>
-                                <textarea class="form-control" id="group-description" name="group-description" rows="3"></textarea>
+                                <label class="control-label" for="template-content">Şablon İçeriği</label>
+                                <textarea class="form-control" id="template-content" name="template-content" rows="3" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -115,11 +118,11 @@
     <environment include="Development">
         <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
         <script src="~/lib/datatables/js/dataTables.bootstrap4.js"></script>
-        <script src="~/js/admin/groups-service.js"></script>
+        <script src="~/js/admin/templates-service.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
         <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
-        <script src="~/js/admin/groups-service.min.js"></script>
+        <script src="~/js/admin/templates-service.min.js"></script>
     </environment>
 }

@@ -1,12 +1,26 @@
-﻿var uri = "/api/Clients";
+﻿var baseUri = "/api";
+var clientsUri = baseUri + "/Clients";
+var groupsUri = baseUri + "/Groups";
+var templatesUri = baseUri + "/Templates";
 var clientsTable;
 var operationType;
+var groups;
+var templates;
 
 var clientId = document.getElementById("client-id");
 var clientName = document.getElementById("client-name");
 var clientDescription = document.getElementById("client-description");
+var clientTemplate = document.getElementById("client-template");
+
+const jsonHeaders = new Headers({
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+});
 
 $(document).ready(function () {
+    getAllGroups();
+    getAllTemplates();
+
     clientsTable = $("#clients").DataTable({
         dom: 'rt<"row justify-content-between bottom-information"lip><"clear">',
         language: {
@@ -16,7 +30,7 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         ajax: {
-            url: `${uri}/LoadTable`,
+            url: `${clientsUri}/LoadTable`,
             type: "POST",
             contentType: "application/json",
             dataType: "json",
@@ -29,6 +43,10 @@ $(document).ready(function () {
             { data: "id" },
             { data: "name" },
             { data: "description" },
+            {
+                data: "templateName",
+                orderable: false
+            },
             {
                 data: "groupCount",
                 orderable: false,
@@ -60,9 +78,15 @@ $(document).ready(function () {
                 orderable: false,
                 searchable: false,
                 render: function (data, type, row) {
-                    return '<div class="action-buttons">' +
-                        `<a class="text-primary" data-toggle="tooltip" title="Güncelle" onclick="displayEditModal('${row.id}')"><i class="las la-pencil-alt la-lg"></i></a>` +
-                        `<a class="text-danger ml-2" data-toggle="tooltip" title="Sil" onclick="deleteClient('${row.id}','${data.name}')"><i class="las la-trash-alt la-lg"></i></a></div>`;
+                    var actionButtons = '<div class="action-buttons">' +
+                        `<a class="text-primary" data-toggle="tooltip" title="Güncelle" onclick="displayEditModal('${row.id}')"><i class="las la-pencil-alt la-lg"></i></a>`;
+
+                    if (row.isDeleted)
+                        actionButtons = actionButtons + '<i class="las la-trash-alt la-lg ml-2"></i>';
+                    else
+                        actionButtons = actionButtons + `<a class="text-danger ml-2" data-toggle="tooltip" title="Sil" onclick="deleteClient('${row.id}','${data.name}')"><i class="las la-trash-alt la-lg"></i></a></div>`;
+
+                    return actionButtons;
                 },
                 width: "75px"
             }
@@ -90,6 +114,7 @@ function displayAddModal() {
     $("#modal-title").text("Yeni İstemci");
     $("#modal-save-button").html('<i class="las la-save"></i> Ekle');
     clientId.readOnly = false;
+
     $("#modal-form").modal('show');
 }
 
@@ -99,12 +124,9 @@ function displayEditModal(id) {
     $("#modal-title").text("İstemci Güncelleme");
     $("#modal-save-button").html('<i class="las la-save"></i> Güncelle');
 
-    fetch(`${uri}/${id}`, {
+    fetch(`${clientsUri}/${id}`, {
         method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
+        headers: jsonHeaders
     })
         .then(function (response) {
             if (!response.ok) {
@@ -121,6 +143,29 @@ function displayEditModal(id) {
                 clientId.readOnly = true;
                 clientName.value = client.name;
                 clientDescription.value = client.description;
+                clientTemplate.value = client.templateId;
+                //const subscribedGroups = client.groups.map(group => group.group);
+
+                //if (groups) {
+                //    var groupList = $("#client-group-list");
+                //    groupList.empty();
+
+                //    var c = document.createDocumentFragment();
+                //    for (var i = 0; i < groups.length; i++) {
+                //        var selected = "";
+                //        if (subscribedGroups.includes(groups[i].name)) {
+                //            console.log(groups[i].name + " found");
+                //            selected = " checked";
+                //        };
+                //        var e = document.createElement("div");
+                //        e.className = "custom-control custom-checkbox mb-3";
+                //        e.innerHTML = '<input class="custom-control-input" type="checkbox" id="group-' + groups[i].id + '" value="' + groups[i].id + '"' + selected +
+                //            '><label class="custom-control-label" for="group-' + groups[i].id + '">' + groups[i].name + '</label>';
+                //        c.appendChild(e);
+                //    }
+
+                //    groupList.append(c);
+                //}
 
                 $("#modal-form").modal('show');
             }
@@ -134,20 +179,85 @@ function displayEditModal(id) {
         });
 }
 
+function getAllGroups() {
+    fetch(groupsUri, {
+        method: 'GET',
+        headers: jsonHeaders
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(`${response.status} status code received.`);
+            }
+
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.isSuccessful) {
+                groups = data.model;
+            }
+            else {
+                swal("Grup Okuma Hatası", data.message, "error");
+            }
+        })
+        .catch(error => {
+            console.error('Unable to get groups.', error);
+            swal("Grup Okuma Hatası", error, "error");
+        });
+}
+
+function getAllTemplates() {
+    fetch(templatesUri, {
+        method: 'GET',
+        headers: jsonHeaders
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(`${response.status} status code received.`);
+            }
+
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.isSuccessful) {
+                templates = data.model;
+
+                if (templates) {
+                    var templateList = $("#client-template");
+                    templateList.empty();
+
+                    var d = document.createDocumentFragment();
+                    for (var j = 0; j < templates.length; j++) {
+                        var f = document.createElement("option");
+                        f.value = templates[j].id;
+                        f.innerText = templates[j].name;
+                        d.appendChild(f);
+                    }
+
+                    templateList.append(d);
+                }
+            }
+            else {
+                swal("Şablon Okuma Hatası", data.message, "error");
+            }
+        })
+        .catch(error => {
+            console.error('Unable to get templates.', error);
+            swal("Şablon Okuma Hatası", error, "error");
+        });
+}
+
 function save() {
     const client = {
         id: clientId.value.trim(),
         name: clientName.value.trim(),
-        description: clientDescription.value.trim()
+        description: clientDescription.value.trim(),
+        templateId: clientTemplate.value.trim()
     };
 
     if (operationType === "edit") {
-        fetch(`${uri}/${client.id}`, {
+        fetch(`${clientsUri}/${client.id}`, {
             method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
+            headers: jsonHeaders,
             body: JSON.stringify(client)
         })
             .then(function (response) {
@@ -173,12 +283,9 @@ function save() {
             });
     }
     else {
-        fetch(uri, {
+        fetch(clientsUri, {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
+            headers: jsonHeaders,
             body: JSON.stringify(client)
         })
             .then(function (response) {
@@ -212,7 +319,7 @@ function deleteClient(id, name) {
     })
         .then((willDelete) => {
             if (willDelete) {
-                fetch(`${uri}/${id}`, {
+                fetch(`${clientsUri}/${id}`, {
                     method: 'DELETE'
                 })
                     .then(function (response) {

@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group form-inline mb-0">
                                 <label for="status" class="mr-4">Durum:</label>
-                                <select id="status" class="custom-select custom-select-sm">
+                                <select id="status" class="btn btn-secondary btn-sm">
                                     <option value="">Hepsi</option>
                                     <option value="1">Aktif</option>
                                     <option value="0">Silindi</option>
@@ -61,6 +61,7 @@
                                     <th>İstemci No</th>
                                     <th>İstemci Adı</th>
                                     <th>İstemci Açıklaması</th>
+                                    <th>Şablon</th>
                                     <th>Grup Üyeliği</th>
                                     <th>Gönderilen Mesaj</th>
                                     <th>Alınan Mesaj</th>
@@ -85,11 +86,11 @@
 <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form id="add-edit-form" action="javascript:void(0);">
-                <div class="modal-header px-4">
-                    <h5 class="modal-title" id="modal-title">Yeni İstemci</h5>
-                </div>
-                <div class="modal-body px-4">
+            <div class="modal-header px-6 pt-6">
+                <h2 class="modal-title" id="modal-title">Yeni İstemci</h2>
+            </div>
+            <div class="modal-body px-4 py-6">
+                <form id="add-edit-form" action="javascript:void(0);">
                     <div class="row mb-2">
                         <div class="col-lg-12">
                             <div class="form-group">
@@ -109,13 +110,20 @@
                                 <textarea class="form-control" id="client-description" name="client-description" rows="3"></textarea>
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label" for="client-template">Şablon</label>
+                                <select class="form-control" id="client-template" required>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer px-4">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="las la-ban mr-1"></i> İptal</button>
-                    <button type="button" class="btn btn-primary" id="modal-save-button" onclick="save()"><i class="las la-save"></i> Ekle</button>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="modal-footer px-4">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="las la-ban mr-1"></i> İptal</button>
+                <button type="button" class="btn btn-primary" id="modal-save-button" onclick="save()"><i class="las la-save"></i> Ekle</button>
+            </div>
         </div>
     </div>
 </div>

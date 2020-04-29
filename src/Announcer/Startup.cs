@@ -85,6 +85,7 @@ namespace Announcer
             services.AddScoped<IGroupService, GroupService>();
             services.AddScoped<IGroupNotificationService, GroupNotificationService>();
             services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<ITemplateService, TemplateService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.Configure<ForwardedHeadersOptions>(options =>

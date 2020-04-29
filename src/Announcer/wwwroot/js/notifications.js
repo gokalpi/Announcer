@@ -260,8 +260,9 @@ function getClientInfo(id) {
         .then(function (data) {
             if (data.isSuccessful) {
                 let client = data.model;
-                if (client.template) {
-                    let template = JSON.parse(client.template);
+
+                if (client.templateContent) {
+                    let template = JSON.parse(client.templateContent);
 
                     displayHeaders(template.header);
 

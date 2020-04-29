@@ -46,5 +46,11 @@
     "inputFiles": [
       "wwwroot/js/notifications.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/admin/templates-service.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/templates-service.js"
+    ]
   }
 ]

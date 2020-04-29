@@ -132,7 +132,7 @@ namespace Announcer.Services
                 orderAscendingDirection = true;
             }
 
-            var result = await _repository.ListAsync(includeString: "Groups.Group, NotificationsSent, NotificationsReceived", includeDeleted: true);
+            var result = await _repository.ListAsync(includeString: "Template, Groups.Group, NotificationsSent, NotificationsReceived", includeDeleted: true);
 
             if (!string.IsNullOrEmpty(searchBy))
             {

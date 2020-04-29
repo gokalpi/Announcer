@@ -53,7 +53,7 @@
         <div id="error-pane" class="error-pane" style="display: none">
             <h3>Hata: <span id="error-message"></span></h3>
         </div>
-        <div id="debug"></div>
+
         <footer>
             <div id="copyright">Announcer &copy; 2020</div>
             <div id="update-info">
@@ -79,13 +79,6 @@
     </environment>
 
     <script>
-        function showDebugInfo() {
-            document.getElementById('debug').innerText = '(' + window.innerWidth + 'x' + window.innerHeight + ') ' + navigator.userAgent;
-        }
-        window.addEventListener('resize', showDebugInfo);
-
-        showDebugInfo();
-
         // Start displaying clock
         displayClock();
 
@@ -95,9 +88,6 @@
         // QRCode generation
         if (clientId) {
             var qrCodeUri;
-            console.log('clientId: ', clientId);
-            console.log('location.search: ', location.search);
-            console.log('location.href: ', location.href);
             if (location.search)
                 qrCodeUri = location.href;
             else

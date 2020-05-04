@@ -31,7 +31,6 @@ namespace Announcer.Dtos.Requests
         /// <summary>
         /// Template Id of client
         /// </summary>
-        [MaxLength(50)]
-        public string TemplateId { get; set; }
+        public int TemplateId { get; set; }
     }
 }

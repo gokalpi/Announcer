@@ -12,8 +12,7 @@ namespace Announcer.Dtos.Requests
         /// Group Id
         /// </summary>
         [Required]
-        [MaxLength(50)]
-        public string GroupId { get; set; }
+        public int GroupId { get; set; }
 
         /// <summary>
         /// Client Id

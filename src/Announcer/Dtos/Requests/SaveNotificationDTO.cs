@@ -25,7 +25,7 @@ namespace Announcer.Dtos.Requests
         /// Group Id of notification
         /// </summary>
         [MaxLength(50)]
-        public string GroupId { get; set; }
+        public int GroupId { get; set; }
 
         /// <summary>
         /// Recipient Id of notification

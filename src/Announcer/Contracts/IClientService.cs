@@ -14,7 +14,7 @@ namespace Announcer.Contracts
         /// </summary>
         /// <param name="groupMember">Group membership of client</param>
         /// <returns>Response with result of group add operation</returns>
-        Task<IResponse> AddToGroupAsync(GroupMember groupMember);
+        Task<ISingleResponse<GroupMember>> AddToGroupAsync(GroupMember groupMember);
 
         /// <summary>
         /// Gets a client with specified <paramref name="id"/>
@@ -42,6 +42,6 @@ namespace Announcer.Contracts
         /// </summary>
         /// <param name="groupMember">Group membership of client</param>
         /// <returns>Response with result of group remove operation</returns>
-        Task<IResponse> RemoveFromGroupAsync(GroupMember groupMember);
+        Task<ISingleResponse<GroupMember>> RemoveFromGroupAsync(GroupMember groupMember);
     }
 }

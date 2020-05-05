@@ -26,11 +26,11 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IResponse> AddToGroupAsync(GroupMember groupMember)
+        public async Task<ISingleResponse<GroupMember>> AddToGroupAsync(GroupMember groupMember)
         {
             _logger.LogDebug($"'{nameof(AddToGroupAsync)}' has been invoked");
 
-            var response = new Response();
+            var response = new SingleResponse<GroupMember>();
 
             try
             {
@@ -39,6 +39,8 @@ namespace Announcer.Services
                 {
                     await groupMemberRepository.AddAsync(groupMember);
                     await _unitOfWork.SaveAsync();
+
+                    response.Model = await groupMemberRepository.GetAsync(gm => gm.GroupId == groupMember.GroupId && gm.ClientId == groupMember.ClientId, "Group, Client");
                 }
 
                 response.Message = $"Client '{groupMember.ClientId}' added to Group '{groupMember.GroupId}' successfully";
@@ -136,14 +138,14 @@ namespace Announcer.Services
 
             if (!string.IsNullOrEmpty(searchBy))
             {
-                result = result.Where(r => r.Id != null && r.Id.ToUpper().Contains(searchBy.ToUpper()) ||
-                                           r.Name != null && r.Name.ToUpper().Contains(searchBy.ToUpper()) ||
-                                           r.Description != null && r.Description.ToUpper().Contains(searchBy.ToUpper()));
+                result = result.Where(c => c.Id != null && c.Id.ToUpper().Contains(searchBy.ToUpper()) ||
+                                           c.Name != null && c.Name.ToUpper().Contains(searchBy.ToUpper()) ||
+                                           c.Description != null && c.Description.ToUpper().Contains(searchBy.ToUpper()));
             }
 
             if (!string.IsNullOrEmpty(isDeleted))
             {
-                result = result.Where(r => r.IsDeleted == (isDeleted == "0"));
+                result = result.Where(c => c.IsDeleted == (isDeleted == "0"));
             }
 
             result = orderAscendingDirection ? result.AsQueryable().OrderByDynamic(orderCriteria, LinqExtensions.Order.Asc).ToList() : result.AsQueryable().OrderByDynamic(orderCriteria, LinqExtensions.Order.Desc).ToList();
@@ -165,19 +167,23 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IResponse> RemoveFromGroupAsync(GroupMember groupMember)
+        public async Task<ISingleResponse<GroupMember>> RemoveFromGroupAsync(GroupMember groupMember)
         {
             _logger.LogDebug($"'{nameof(RemoveFromGroupAsync)}' has been invoked");
 
-            var response = new Response();
+            var response = new SingleResponse<GroupMember>();
 
             try
             {
                 var groupMemberRepository = _unitOfWork.GetRepository<GroupMember>();
-                if (await groupMemberRepository.ExistsAsync(gm => gm.GroupId == groupMember.GroupId && gm.ClientId == groupMember.ClientId))
+                var existingGroupMember = await groupMemberRepository.GetAsync(gm => gm.GroupId == groupMember.GroupId && 
+                                                                            gm.ClientId == groupMember.ClientId, "Group, Client");
+                if (existingGroupMember != null)
                 {
                     groupMemberRepository.Delete(groupMember);
                     await _unitOfWork.SaveAsync();
+
+                    response.Model = existingGroupMember;
                 }
 
                 response.Message = $"Client '{groupMember.ClientId}' removed from Group '{groupMember.GroupId}' successfully";

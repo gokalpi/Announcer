@@ -17,7 +17,7 @@ namespace Announcer.Contracts
         /// Adds an entity to context
         /// </summary>
         /// <param name="entity">Entity to be added</param>
-        Task AddAsync(T entity);
+        Task<T> AddAsync(T entity);
 
         /// <summary>
         /// Counts entities matching <paramref name="predicate"/>
@@ -116,6 +116,6 @@ namespace Announcer.Contracts
         /// Updates an entity at context
         /// </summary>
         /// <param name="entity">Entity to be updated</param>
-        void Update(T entity);
+        T Update(T entity);
     }
 }

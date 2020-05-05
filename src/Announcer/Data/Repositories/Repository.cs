@@ -25,9 +25,9 @@ namespace Announcer.Data.Repositories
         }
 
         /// <inheritdoc/>
-        public async Task AddAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            await _dbContext.Set<T>().AddAsync(entity);
+            return (await _dbContext.Set<T>().AddAsync(entity)).Entity;
         }
 
         /// <inheritdoc/>
@@ -93,9 +93,10 @@ namespace Announcer.Data.Repositories
         }
 
         /// <inheritdoc/>
-        public void Update(T entity)
+        public T Update(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
+            return entity;
         }
 
         private IQueryable<T> GetQueryable(bool includeDeleted = false)

@@ -127,6 +127,6 @@ namespace Announcer.Contracts
         /// </summary>
         /// <param name="entity">Entity to be updated</param>
         /// <returns>Response with result of update operation</returns>
-        Task<IResponse> UpdateAsync(T entity);
+        Task<ISingleResponse<T>> UpdateAsync(T entity);
     }
 }

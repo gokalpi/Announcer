@@ -52,5 +52,11 @@
     "inputFiles": [
       "wwwroot/js/admin/templates-service.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/fetchjson.min.js",
+    "inputFiles": [
+      "wwwroot/js/fetchjson.js"
+    ]
   }
 ]

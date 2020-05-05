@@ -230,15 +230,15 @@ namespace Announcer.Services
         }
 
         /// <inheritdoc/>
-        public async Task<IResponse> UpdateAsync(T entity)
+        public async Task<ISingleResponse<T>> UpdateAsync(T entity)
         {
             _logger.LogDebug($"'{nameof(UpdateAsync)}' has been invoked");
 
-            var response = new Response();
+            var response = new SingleResponse<T>();
 
             try
             {
-                _repository.Update(entity);
+                response.Model = _repository.Update(entity);
                 await _unitOfWork.SaveAsync();
 
                 response.Message = $"{typeof(T)} updated successfully";

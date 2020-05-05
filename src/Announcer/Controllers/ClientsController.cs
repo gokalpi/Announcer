@@ -60,7 +60,7 @@ namespace Announcer.Controllers
         /// <response code="400">If the group member is null</response>
         /// <response code="500">If an exception happens</response>
         [Authorize(Policy = "RequireAdministratorRole")]
-        [HttpPost("Group")]
+        [HttpPost("{id}/Groups")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -75,7 +75,14 @@ namespace Announcer.Controllers
 
             _logger.LogDebug($"Client {groupMemberDTO.ClientId} added to group {groupMemberDTO.GroupId}.");
 
-            return response.ToHttpResponse();
+            var result = new SingleResponse<GroupMemberDTO>()
+            {
+                IsSuccessful = response.IsSuccessful,
+                Message = response.Message,
+                Model = _mapper.Map<GroupMemberDTO>(response.Model)
+            };
+
+            return result.ToHttpResponse();
         }
 
         /// <summary>
@@ -159,11 +166,19 @@ namespace Announcer.Controllers
 
             // Delete client
             var deleteResult = await _clientService.DeleteAsync(getResult.Model);
+            if (!deleteResult.IsSuccessful)
+                return BadRequest(deleteResult.Message);
 
-            if (deleteResult.IsSuccessful)
-                _logger.LogDebug($"Client with id {id} deleted.");
+            _logger.LogDebug($"Client with id {id} deleted.");
 
-            return deleteResult.ToHttpResponse();
+            var result = new SingleResponse<ClientDTO>()
+            {
+                IsSuccessful = deleteResult.IsSuccessful,
+                Message = deleteResult.Message,
+                Model = _mapper.Map<ClientDTO>(getResult.Model)
+            };
+
+            return result.ToHttpResponse();
         }
 
         /// <summary>
@@ -423,7 +438,14 @@ namespace Announcer.Controllers
 
             _logger.LogDebug($"Client '{id}' removed from group '{groupId}'.");
 
-            return response.ToHttpResponse();
+            var result = new SingleResponse<GroupMemberDTO>()
+            {
+                IsSuccessful = response.IsSuccessful,
+                Message = response.Message,
+                Model = _mapper.Map<GroupMemberDTO>(response.Model)
+            };
+
+            return result.ToHttpResponse();
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿using Announcer.Helper.Middlewares;
+﻿using Announcer.Helpers.Middlewares;
 using Microsoft.AspNetCore.Builder;
 
 namespace Announcer.Helpers.Extensions

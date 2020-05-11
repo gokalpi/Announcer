@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
 
-namespace Announcer.Helper.Middlewares
+namespace Announcer.Helpers.Middlewares
 {
     public class ExceptionMiddleware
     {

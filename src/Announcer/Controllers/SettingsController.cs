@@ -179,7 +179,7 @@ namespace Announcer.Controllers
         {
             _logger.LogDebug("'{0}' has been invoked", nameof(GetSettingByKeyAsync));
 
-            var response = await _settingService.GetAsync(g => g.Key.ToUpperInvariant() == id.ToUpperInvariant());
+            var response = await _settingService.GetAsync(g => g.Key == id);
 
             _logger.LogDebug($"Found setting with {id}");
 

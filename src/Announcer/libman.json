@@ -3,7 +3,7 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "twitter-bootstrap@4.4.1",
+      "library": "twitter-bootstrap@4.5.0",
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "library": "jquery-validate@1.19.1",
+      "library": "jquery-validate@1.19.2",
       "destination": "wwwroot/lib/jquery-validate/",
       "files": [
         "additional-methods.js",

@@ -1,6 +1,7 @@
 ﻿// jshint esversion: 6
 var hubUri = "/NotificationHub";
 var clientUri = "/api/Clients";
+var settingsUri = "/api/Settings";
 var infoColumnCount = 0;
 var groups;
 
@@ -134,6 +135,17 @@ function leaveGroup(groupName) {
     }
 }
 
+function createElement(type, id, name, className, html, text) {
+    let e = document.createElement(type);
+    if (id) e.id = id;
+    if (name) e.name = name;
+    if (className) e.className = className;
+    if (html) e.innerHTML = html;
+    else if (text) e.innerText = text;
+
+    return e;
+}
+
 function displayClock() {
     const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
     let clock = document.getElementById("clock");
@@ -172,9 +184,7 @@ function displayHeaders(header) {
         var c = document.createDocumentFragment();
 
         header.columns.forEach(column => {
-            let e = document.createElement("th");
-            e.innerHTML = column;
-            c.appendChild(e);
+            c.appendChild(createElement('th', null, null, null, column, null));
         });
 
         pageHeader.appendChild(c);
@@ -209,21 +219,15 @@ function displayNotification(group, content) {
     else {
         var notifications = document.getElementById('notifications-body');
         if (notifications) {
-            groupRow = document.createElement('tr');
-            groupRow.id = groupRowId;
-            groupRow.className = "notification-item active";
+            groupRow = createElement('tr', groupRowId, null, 'notification-item active', null, null);
             setTimeout(() => groupRow.className = "notification-item", 6500);
 
             var c = document.createDocumentFragment();
 
-            var divGroupName = document.createElement("td");
-            divGroupName.className = "group-name";
-            divGroupName.innerHTML = group;
-            c.appendChild(divGroupName);
+            c.appendChild(createElement('td', null, null, 'group-name', group, null));
 
             for (var j = 0; j < infoColumnCount; j++) {
-                var divCol = document.createElement('td');
-                divCol.className = "group-col";
+                var divCol = createElement('td', null, null, 'group-col', null, null);
                 if (contentJson.columns[j]) {
                     divCol.innerHTML = contentJson.columns[j];
                 }
@@ -240,88 +244,29 @@ function displayNotification(group, content) {
     }
 }
 
+function displayNotifications(result) {
+    if (result.isSuccessful) {
+        let notifications = result.model;
+
+        for (var i = 0; i < notifications.length; i++) {
+            displayNotification(notifications[i].group, notifications[i].content);
+        }
+    }
+    else {
+        displayError("İstemcinin mesajları okunamadı. " + data.message);
+    }
+}
+
 function getClientInfo(id) {
     if (!id) return null;
 
-    fetch(`${clientUri}/${id}`, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw Error(`${response.status} status code received.`);
-            }
-
-            return response.json();
-        })
-        .then(function (data) {
-            if (data.isSuccessful) {
-                let client = data.model;
-
-                if (client.templateContent) {
-                    let template = JSON.parse(client.templateContent);
-
-                    displayHeaders(template.header);
-
-                    if (client.groups && client.groups.length > 0) {
-                        groups = client.groups.map(group => group.group).sort();
-
-                        for (var i = 0; i < groups.length; i++) {
-                            displayNotification(groups[i], '{ "columns": [ "", "" ] }');
-                            joinGroup(groups[i]);
-                        }
-
-                        getNotifications(id);
-                    }
-                    else {
-                        displayError("İstemcinin üye olduğu gruplar bulunamadı.");
-                    }
-                }
-            }
-            else {
-                displayError("İstemci bilgisi okunamadı. " + data.message);
-            }
-        })
-        .catch(error => {
-            displayError("İstemci bilgisi bulunamadı. " + error);
-        });
+    getJSON(`${clientUri}/${id}`, setClientInfo);
 }
 
 function getNotifications(id) {
     if (!id) return;
 
-    fetch(`${clientUri}/${id}/GroupNotifications`, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw Error(`${response.status} status code received.`);
-            }
-
-            return response.json();
-        })
-        .then(function (data) {
-            if (data.isSuccessful) {
-                let notifications = data.model;
-
-                for (var i = 0; i < notifications.length; i++) {
-                    displayNotification(notifications[i].group, notifications[i].content);
-                }
-            }
-            else {
-                displayError("İstemcinin mesajları okunamadı. " + data.message);
-            }
-        })
-        .catch(error => {
-            displayError("İstemcinin mesajları bulunamadı. " + error);
-        });
+    getJSON(`${clientUri}/${id}/GroupNotifications`, displayNotifications);
 }
 
 function setClientId(id) {
@@ -329,7 +274,6 @@ function setClientId(id) {
 
     if (id && id.trim().length > 0) {
         clientId = id;
-        console.log('clientId set: %s', id);
     }
     else {
         const urlParams = new URLSearchParams(window.location.search);
@@ -345,6 +289,49 @@ function setClientId(id) {
     else {
         displayError("İstemci bilgisi bulunamadı");
         return null;
+    }
+}
+
+function setClientInfo(result) {
+    if (result.isSuccessful) {
+        let client = result.model;
+
+        if (client.templateContent) {
+            let template = JSON.parse(client.templateContent);
+
+            displayHeaders(template.header);
+
+            if (client.groups && client.groups.length > 0) {
+                groups = client.groups.map(group => group.group).sort();
+
+                for (var i = 0; i < groups.length; i++) {
+                    displayNotification(groups[i], '{ "columns": [ "", "" ] }');
+                    joinGroup(groups[i]);
+                }
+
+                getNotifications(client.id);
+            }
+            else {
+                displayError("İstemcinin üye olduğu gruplar bulunamadı.");
+            }
+        }
+    }
+    else {
+        displayError("İstemci bilgisi okunamadı. " + data.message);
+    }
+}
+
+function setOrganizationName(result) {
+    if (result.isSuccessful) {
+        organizationName = result.model.value;
+        if (organizationName)
+            document.getElementById("organizationName").innerText = organizationName;
+    }
+    else {
+        if (swal)
+            swal('Organizasyon Adı Okuma Hatası', result.message, 'error');
+        else
+            alert('Organizasyon Adı Okuma Hatası' + result.message);
     }
 }
 

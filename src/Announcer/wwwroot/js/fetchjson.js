@@ -9,7 +9,7 @@ function logResult(result) {
 
 function logError(error) {
     console.error('Hata: \n', error);
-    swal('Hata', error, 'error');
+    alert('Hata' + error);
 }
 
 function readResponseAsJSON(response) {
@@ -33,6 +33,7 @@ function deleteJSON(pathToResource, action) {
         .then(action)
         .catch(logError);
 }
+
 function getJSON(pathToResource, action) {
     fetch(pathToResource, {
         method: 'GET',

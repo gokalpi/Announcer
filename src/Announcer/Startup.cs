@@ -35,7 +35,7 @@ namespace Announcer
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             services.AddDbContext<AnnouncerDbContext>(options =>
-                options.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+                options.UseInMemoryDatabase("AnnouncerDb"));
 
             ConfigureServices(services);
         }
@@ -44,8 +44,8 @@ namespace Announcer
         public void ConfigureProductionServices(IServiceCollection services)
         {
             services.AddDbContext<AnnouncerDbContext>(options =>
-                options.UseInMemoryDatabase("AnnouncerDb"));
-                //options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+                options.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            //options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
             ConfigureServices(services);
         }
@@ -106,10 +106,10 @@ namespace Announcer
             {
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseResponseTimeMiddleware();
@@ -118,6 +118,8 @@ namespace Announcer
             app.UseRouting();
 
             app.UseCorsPolicy();
+
+            app.UseForwardedHeaders();
 
             app.UseAuthentication();
             app.UseAuthorization();

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Announcer
@@ -47,6 +48,7 @@ namespace Announcer
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //webBuilder.UseKestrel(options => options.Listen(IPAddress.Any, port: 80));
                     webBuilder.UseStartup<Startup>();
                 });
     }

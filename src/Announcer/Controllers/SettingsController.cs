@@ -170,7 +170,8 @@ namespace Announcer.Controllers
         /// <response code="200">Returns Setting with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id}", Name = "GetSetting")]
+        [AllowAnonymous]
+        [HttpGet("key/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -205,7 +206,7 @@ namespace Announcer.Controllers
         /// <response code="200">Returns Setting with specified id</response>
         /// <response code="400">If the id is null</response>
         /// <response code="500">If an exception happens</response>
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "GetSetting")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

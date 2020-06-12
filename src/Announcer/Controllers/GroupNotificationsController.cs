@@ -3,6 +3,7 @@ using Announcer.Dtos.Requests;
 using Announcer.Helpers.Extensions;
 using Announcer.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,15 +16,18 @@ namespace Announcer.Controllers
     /// Group Notification Api Controller v1
     /// </summary>
     [ApiVersion("1.0")]
+    [Authorize]
     public class GroupNotificationsController : BaseApiController
     {
-        private readonly IGroupNotificationService _service;
+        private readonly IGroupNotificationService _groupNotificationService;
+        private readonly ISettingService _settingService;
 
-        public GroupNotificationsController(IGroupNotificationService service, IMapper mapper,
+        public GroupNotificationsController(IGroupNotificationService groupNotificationService, ISettingService settingService, IMapper mapper,
             IHttpContextAccessor httpContextAccessor, ILogger<GroupNotificationsController> logger)
             : base(mapper, httpContextAccessor, logger)
         {
-            _service = service ?? throw new ArgumentNullException(nameof(service));
+            _groupNotificationService = groupNotificationService ?? throw new ArgumentNullException(nameof(groupNotificationService));
+            _settingService = settingService ?? throw new ArgumentNullException(nameof(settingService));
         }
 
         /// <summary>
@@ -50,7 +54,7 @@ namespace Announcer.Controllers
             if (notificationDTO == null)
                 return BadRequest("Notification info is null");
 
-            var response = await _service.SendMessageToGroup(_mapper.Map<SendGroupNotification>(notificationDTO));
+            var response = await _groupNotificationService.SendMessageToGroup(_mapper.Map<SendGroupNotification>(notificationDTO));
 
             _logger.LogDebug($"Notification to {notificationDTO.GroupName} group sent.");
 

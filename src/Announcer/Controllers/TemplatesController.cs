@@ -217,7 +217,7 @@ namespace Announcer.Controllers
 
             var response = await _templateService.GetAsync(g => g.Id == id, "Clients", true);
 
-            _logger.LogDebug($"Found template with {id}");
+            _logger.LogDebug($"Found template with id {id}");
 
             var result = new SingleResponse<TemplateDTO>()
             {

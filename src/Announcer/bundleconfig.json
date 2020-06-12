@@ -36,6 +36,18 @@
     ]
   },
   {
+    "outputFileName": "wwwroot/js/admin/settings-service.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/settings-service.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/admin/templates-service.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/templates-service.js"
+    ]
+  },
+  {
     "outputFileName": "wwwroot/js/qrcode.min.js",
     "inputFiles": [
       "wwwroot/js/qrcode.js"
@@ -45,12 +57,6 @@
     "outputFileName": "wwwroot/js/notifications.min.js",
     "inputFiles": [
       "wwwroot/js/notifications.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/js/admin/templates-service.min.js",
-    "inputFiles": [
-      "wwwroot/js/admin/templates-service.js"
     ]
   },
   {

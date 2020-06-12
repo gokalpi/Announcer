@@ -33,6 +33,7 @@ namespace Announcer.Mapping
                     opt => opt.MapFrom(src => src.Group.Name))
                 .ForMember(dest => dest.Recipient,
                     opt => opt.MapFrom(src => src.Recipient.Name));
+            CreateMap<Setting, SettingDTO>();
             CreateMap<Template, TemplateDTO>()
                 .ForMember(dest => dest.ClientCount,
                     opt => opt.MapFrom(src => src.Clients.Count));
@@ -41,6 +42,7 @@ namespace Announcer.Mapping
             CreateMap<SaveGroupDTO, Group>();
             CreateMap<SaveGroupMemberDTO, GroupMember>();
             CreateMap<SaveNotificationDTO, Notification>();
+            CreateMap<SaveSettingDTO, Setting>();
             CreateMap<SaveTemplateDTO, Template>();
             CreateMap<SendGroupNotificationDTO, SendGroupNotification>();
         }

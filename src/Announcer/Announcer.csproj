@@ -14,16 +14,20 @@
 
   <ItemGroup>
     <Content Remove="bundleconfig.json" />
+    <Content Remove="wwwroot\js\admin\settings-service.min.js" />
+    <Content Remove="wwwroot\js\admin\templates-service - Copy.min.js" />
     <Content Remove="wwwroot\js\admin\templates-service.min.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\admin\settings-service.min.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\admin\templates-service.min.js" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\.editorconfig" Link=".editorconfig" />
     <None Include="bundleconfig.json" />
+    <None Include="wwwroot\js\admin\settings-service.min.js" />
     <None Include="wwwroot\js\admin\templates-service.min.js" />
   </ItemGroup>
 

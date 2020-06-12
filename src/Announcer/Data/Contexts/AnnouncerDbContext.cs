@@ -21,6 +21,7 @@ namespace Announcer.Data.Contexts
         public DbSet<GroupMember> GroupMembers { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Setting> Settings { get; set; }
         public DbSet<Template> Templates { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

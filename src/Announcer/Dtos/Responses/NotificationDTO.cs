@@ -37,5 +37,10 @@ namespace Announcer.Dtos.Responses
         /// Recipient of notification
         /// </summary>
         public string Recipient { get; set; }
+
+        /// <summary>
+        /// Notification soft deleted?
+        /// </summary>
+        public bool IsDeleted { get; set; }
     }
 }
